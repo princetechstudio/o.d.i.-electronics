@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Account — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6A0DAD;--dark:#1A1A1A;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-400:#6C757D;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#f8f9fa;color:var(--dark);}
+    a{color:var(--purple);text-decoration:none}
+    header{background:#fff;border-bottom:1px solid var(--gray-200);padding:18px 24px}
+    .container{max-width:960px;margin:32px auto;padding:0 24px}
+    .card{background:#fff;border-radius:18px;padding:32px;box-shadow:0 16px 40px rgba(0,0,0,.06)}
+    .account-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .account-header{margin-bottom:24px}
+    .account-header h1{font-size:32px;font-weight:800}
+    .account-header p{color:var(--gray-400);line-height:1.7;margin-top:10px}
+    .account-form label{display:block;font-weight:700;margin-bottom:8px;color:var(--dark)}
+    .account-form input{width:100%;padding:14px 16px;border:1px solid var(--gray-200);border-radius:12px;margin-bottom:18px;font-size:14px}
+    .account-form button{background:var(--purple);color:#fff;border:none;padding:14px 18px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s}
+    .account-form button:hover{transform:translateY(-2px)}
+    .profile-card{background:#fdf4ff;border:1px solid #f2e4ff;border-radius:18px;padding:24px}
+    .profile-card h2{font-size:20px;margin-bottom:12px}
+    .profile-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-200)}
+    .profile-row:last-child{border-bottom:none}
+    .profile-row span{color:var(--gray-400)}
+    .placeholder-image{margin-top:24px;background:var(--gray-100);border-radius:18px;height:220px;display:flex;align-items:center;justify-content:center;color:var(--gray-400);font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="odi_electronics_homepage.html">← Back to Home</a>
+  </header>
+  <main class="container">
+    <div class="card">
+      <div class="account-grid">
+        <div>
+          <div class="account-header">
+            <h1>My Account</h1>
+            <p>Sign in to manage orders, review warranties, and save your delivery details for faster checkout.</p>
+          </div>
+          <form class="account-form" action="#" method="post">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required>
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+        <aside class="profile-card">
+          <h2>New here?</h2>
+          <p style="color:var(--gray-400);line-height:1.7">Create an account to save billing info, track orders, and access exclusive deals.</p>
+          <div class="profile-row"><span>Saved addresses</span><strong>2</strong></div>
+          <div class="profile-row"><span>Order history</span><strong>0</strong></div>
+          <div class="profile-row"><span>Membership</span><strong>Guest</strong></div>
+          <div class="placeholder-image">Account image placeholder</div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

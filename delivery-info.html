@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Delivery Info | O.D.I. Electronics</title>
+<meta name="description" content="Read O.D.I. Electronics delivery information for fast, reliable shipping across Ghana."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-primary:#6A0DAD; --purple:var(--brand-primary); --brand-accent:#1EA7FF;
+  --purple-dark:#4d0880;
+  --purple-light:#8E44AD;
+  --purple-pale:#f3e8ff;
+  --white:#fff;
+  --gray-50:#F8F9FA;
+  --gray-100:#F1F3F5;
+  --gray-200:#E9ECEF;
+  --gray-300:#dee2e6;
+  --gray-500:#adb5bd;
+  --gray-600:#6c757d;
+  --gray-800:#343a40;
+  --dark:#1A1A1A;
+  --gold:#f59e0b;
+  --green:#16a34a;
+  --red:#dc2626;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit}
+ul{list-style:none}
+.ann-bar{background:var(--purple);color:#fff;font-size:12px;font-weight:500;padding:8px 0;overflow:hidden}
+.ann-bar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ann-bar-center{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.ann-bar-item{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.ann-bar-item svg{width:14px;height:14px;opacity:.85}
+.ann-divider{width:1px;height:14px;background:rgba(255,255,255,.3)}
+.header{background:#fff;border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:0;flex-shrink:0}
+.logo-text{font-size:28px;font-weight:900;color:var(--purple);letter-spacing:-1px;line-height:1;display:none}
+.logo-dot{color:var(--purple-light)}
+.logo-sub{font-size:12px;font-weight:700;color:var(--gray-600);letter-spacing:1px;text-transform:none;line-height:1;margin-top:0}
+.site-logo{height:52px;width:auto;border-radius:8px;box-shadow:0 6px 20px rgba(16,24,40,.06);object-fit:contain}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.search-bar{flex:1;max-width:600px;display:flex;background:var(--gray-50);border:2px solid var(--gray-200);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.search-bar:focus-within{border-color:var(--purple)}
+.search-bar input{flex:1;padding:10px 16px;border:none;background:transparent;font-size:14px;font-family:inherit;outline:none;color:var(--dark)}
+.search-bar input::placeholder{color:var(--gray-500)}
+.search-btn{background:var(--purple);color:#fff;border:none;padding:10px 20px;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.search-btn:hover{background:var(--purple-dark)}
+.search-btn svg{width:18px;height:18px}
+.header-actions{display:flex;align-items:center;gap:4px;margin-left:auto}
+.header-icon-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 12px;border:none;background:transparent;color:var(--gray-600);font-size:10px;font-weight:500;border-radius:10px;transition:all .2s;position:relative}
+.header-icon-btn:hover{background:var(--purple-pale);color:var(--purple)}
+.header-icon-btn svg{width:22px;height:22px}
+.cart-badge{position:absolute;top:4px;right:8px;background:var(--purple);color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nav{background:#fff;border-bottom:2px solid var(--gray-100);position:sticky;top:73px;z-index:99}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:4px;overflow-x:auto}
+.nav-item{padding:14px 16px;font-size:13px;font-weight:600;color:var(--dark);white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:4px;position:relative}
+.nav-item:hover,.nav-item.active{color:var(--purple);border-bottom-color:var(--purple)}
+.nav-item.deals{color:var(--red)}
+.nav-item svg.chevron{width:12px;height:12px;opacity:.6;transition:transform .2s}
+.nav-item:hover svg.chevron{transform:rotate(180deg)}
+.hero{background:linear-gradient(135deg,#f8f0ff 0%,#fdf5ff 50%,#f0e8ff 100%);padding:60px 24px;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(106,13,173,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:.5px}
+.hero-eyebrow span{width:6px;height:6px;background:#fff;border-radius:50%;display:inline-block}
+.hero-h1{font-size:56px;font-weight:900;line-height:1.05;color:var(--dark);margin-bottom:16px}
+.hero-h1 em{color:var(--purple);font-style:normal}
+.hero-sub{font-size:17px;color:var(--gray-600);line-height:1.6;margin-bottom:28px;font-weight:400;max-width:460px}
+.hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.hero-feat{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--dark)}
+.hero-feat-icon{width:22px;height:22px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-feat-icon svg{width:12px;height:12px;color:#fff}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:#fff;border:none;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 4px 15px rgba(106,13,173,.3)}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-2px);box-shadow:0 8px 25px rgba(106,13,173,.4)}
+.btn-primary svg{width:18px;height:18px}
+.btn-outline{background:transparent;color:var(--purple);border:2px solid var(--purple);padding:13px 28px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-outline:hover{background:var(--purple);color:#fff;transform:translateY(-2px)}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-img-box{background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(106,13,173,.15);padding:30px;display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1.1;position:relative;overflow:hidden}
+.hero-img-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(106,13,173,.03),rgba(142,68,173,.05))}
+.hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+.hero-card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.08);border:1px solid var(--gray-100)}
+.hero-card strong{display:block;font-size:18px;font-weight:800;color:var(--purple);margin-bottom:8px}
+.hero-card span{font-size:13px;color:var(--gray-600);line-height:1.7}
+.section{padding:64px 0}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{text-align:center;margin-bottom:40px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;color:var(--purple);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.section-tag::before,.section-tag::after{content:'';display:block;width:32px;height:2px;background:var(--purple)}
+.section-h2{font-size:34px;font-weight:800;color:var(--dark);line-height:1.2}
+.section-sub{font-size:15px;color:var(--gray-600);margin-top:8px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--gray-200);border-radius:20px;padding:28px;box-shadow:0 12px 30px rgba(0,0,0,.05)}
+.card h3{font-size:18px;font-weight:800;margin-bottom:12px}
+.card p{font-size:14px;line-height:1.8;color:var(--gray-600)}
+.list-card{display:flex;align-items:start;gap:14px;margin-top:14px}
+.list-card-icon{width:40px;height:40px;border-radius:14px;background:var(--purple-pale);display:flex;align-items:center;justify-content:center;color:var(--purple);flex-shrink:0}
+.list-card strong{display:block;font-size:15px;font-weight:700;margin-bottom:6px}
+.list-card span{font-size:14px;color:var(--gray-600);line-height:1.8}
+.footer{background:#111;color:#fff;padding:60px 0 0}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-logo{font-size:24px;font-weight:900;color:#fff;margin-bottom:12px}
+.footer-brand-logo span{color:var(--purple-light)}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px}
+.footer-contact-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:8px}
+.footer-contact-item svg{width:15px;height:15px;color:var(--purple-light);flex-shrink:0}
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.social-btn{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:background .2s;cursor:pointer}
+.social-btn:hover{background:var(--purple)}
+.social-btn svg{width:16px;height:16px}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.footer-link{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px;transition:color .2s}
+.footer-link:hover{color:var(--purple-light)}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px}
+.wa-float{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);z-index:9999;transition:all .2s;cursor:pointer;text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.7)}
+.wa-float svg{width:32px;height:32px}
+.wa-tooltip{position:absolute;right:70px;background:var(--dark);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;transform:translateX(4px);transition:all .2s;pointer-events:none}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateX(0)}
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .grid-3{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .ann-bar-inner{justify-content:center}
+  .ann-bar-center{gap:12px}
+  .header-inner{flex-wrap:wrap}
+  .search-bar{order:3;flex:0 0 100%}
+  .nav-inner{overflow-x:auto;gap:0}
+  .nav-item{font-size:12px;padding:12px 12px}
+  .section-h2{font-size:26px}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:30px}
+  .grid-3{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="ann-bar">
+  <div class="ann-bar-inner">
+    <div class="ann-bar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Big Brands. Low Prices. O.D.I. Electronics.
+    </div>
+    <div class="ann-bar-center">
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free Delivery in Accra
+      </div>
+      <div class="ann-divider"></div>
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Flexible Payment Plans
+      </div>
+      <div class="ann-divider"></div>
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.6A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        Call Us: 0550 900 600
+      </div>
+    </div>
+    <div class="ann-bar-item" style="opacity:.85">Need Help? Chat on WhatsApp</div>
+  </div>
+</div>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-wrap">
+        <img src="images/logo.jpeg" alt="O.D.I. Electronics logo" class="site-logo" />
+        <div>
+          <div class="logo-sub">O.D.I. Electronics</div>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Search for appliances, brand or category..."/>
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+    <div class="header-actions">
+      <button class="header-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        My Account
+      </button>
+      <button class="header-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find Store
+      </button>
+      <button class="header-icon-btn" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-badge">0</span>
+        Cart
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-item" href="odi_electronics_homepage.html">Home</a>
+    <a class="nav-item" href="our-story.html">Our Story</a>
+    <a class="nav-item" href="financing-plans.html">Financing Plans</a>
+    <a class="nav-item active" href="delivery-info.html">Delivery Info</a>
+    <a class="nav-item" href="warranty-policy.html">Warranty Policy</a>
+    <a class="nav-item" href="careers.html">Careers</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Delivery Info</div>
+      <h1 class="hero-h1">Delivery across Ghana, from Accra to Tamale.</h1>
+      <p class="hero-sub">Get fast, reliable delivery for your appliances with clear tracking, flexible delivery windows, and trusted handling.</p>
+      <div class="hero-features">
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18"/><path d="M3 6h18"/><path d="M3 14h18"/></svg></span>Next-day dispatch</div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l1.5 9h15L21 10"/><path d="M7 10V6a5 5 0 0110 0v4"/></svg></span>Safe loading & handling</div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17l4 4 4-4"/><path d="M12 3v14"/></svg></span>Real-time order tracking</div>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="contact.html">Track My Order</a>
+        <a class="btn-outline" href="warranty-policy.html">View Warranty</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-box">
+        <div class="image-placeholder" style="width:88%;height:68%;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(180deg,#f7f7fb,#ffffff);box-shadow:inset 0 1px 0 rgba(255,255,255,.6);margin-bottom:14px">
+          <svg viewBox="0 0 400 240" width="60%" height="60%" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <rect width="100%" height="100%" rx="10" fill="#eef9f1"/>
+            <g fill="#a7d7b8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="20" text-anchor="middle">
+              <text x="50%" y="52%">Image</text>
+            </g>
+          </svg>
+        </div>
+        <div class="hero-cards">
+          <div class="hero-card"><strong>Secure handling</strong><span>Every delivery is managed by trained staff that care for appliances end-to-end.</span></div>
+          <div class="hero-card"><strong>Flexible options</strong><span>Choose home delivery or pickup from our Accra warehouse.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Delivery Services</div>
+      <h2 class="section-h2">A delivery experience built for Ghanaian homes.</h2>
+      <p class="section-sub">Fast shipping and clear delivery windows help you plan for your new appliances with confidence.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Nationwide coverage</h3>
+        <p>We deliver to all major cities and towns in Ghana, including Accra, Kumasi, Takoradi, Tamale and beyond.</p>
+      </div>
+      <div class="card">
+        <h3>Home installation</h3>
+        <p>Our team can deliver and install your appliance at home, so you can start using it right away.</p>
+      </div>
+      <div class="card">
+        <h3>Delivery assurance</h3>
+        <p>Products are checked before dispatch and handled carefully until they arrive at your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--gray-50)">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Order tracking</div>
+      <h2 class="section-h2">Stay informed from checkout to delivery.</h2>
+      <p class="section-sub">We keep you updated with tracking notifications and delivery time estimates.</p>
+    </div>
+    <div class="card" style="max-width:760px;margin:0 auto;">
+      <div class="list-card">
+        <div class="list-card-icon">1</div>
+        <div>
+          <strong>Order confirmed</strong>
+          <span>Once your payment is accepted, we confirm the order and schedule dispatch.</span>
+        </div>
+      </div>
+      <div class="list-card">
+        <div class="list-card-icon">2</div>
+        <div>
+          <strong>Dispatch update</strong>
+          <span>Receive a message when your item leaves our warehouse and is on the way.</span>
+        </div>
+      </div>
+      <div class="list-card">
+        <div class="list-card-icon">3</div>
+        <div>
+          <strong>Delivery window</strong>
+          <span>Our team confirms a delivery window so you can plan around your day.</span>
+        </div>
+      </div>
+      <div class="list-card">
+        <div class="list-card-icon">4</div>
+        <div>
+          <strong>Arrival support</strong>
+          <span>We help you unpack and inspect the item before we leave.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Service zones</div>
+      <h2 class="section-h2">Delivery services for every region.</h2>
+      <p class="section-sub">Whether you are in the city or a nearby town, we have options to get your order to you safely.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Greater Accra</h3>
+        <p>Same-day and next-day deliveries available across Accra metropolitan areas.</p>
+      </div>
+      <div class="card">
+        <h3>Central &amp; Western</h3>
+        <p>Regular scheduled deliveries to Cape Coast, Takoradi, and surrounding communities.</p>
+      </div>
+      <div class="card">
+        <h3>Northern Belt</h3>
+        <p>Reliable delivery to Tamale, Bolgatanga, and broader northern regions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">O.D.I. <span>Electronics</span></div>
+        <p class="footer-tagline">Ghana's trusted home appliances and electronics retailer. Big brands, low prices, and flexible payment plans to make your home complete.</p>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.6A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          0550 900 600
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          sales@odielectronics.com
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra, Ghana
+        </div>
+        <div class="footer-social">
+          <div class="social-btn" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+          <div class="social-btn" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="social-btn" title="WhatsApp" onclick="window.open('https://wa.me/233550900600')">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>About Us</h4>
+        <a class="footer-link" href="our-story.html">Our Story</a>
+        <a class="footer-link" href="financing-plans.html">Financing Plans</a>
+        <a class="footer-link" href="delivery-info.html">Delivery Info</a>
+        <a class="footer-link" href="warranty-policy.html">Warranty Policy</a>
+        <a class="footer-link" href="careers.html">Careers</a>
+      </div>
+      <div>
+        <h4>Customer Service</h4>
+        <a class="footer-link" href="#contact">Contact Us</a>
+        <a class="footer-link" href="#">FAQs</a>
+        <a class="footer-link" href="#">Track My Order</a>
+        <a class="footer-link" href="#">Returns Policy</a>
+        <a class="footer-link" href="#">Terms &amp; Conditions</a>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <a class="footer-link" href="#">TVs &amp; Audio</a>
+        <a class="footer-link" href="#">Refrigerators</a>
+        <a class="footer-link" href="#">Washing Machines</a>
+        <a class="footer-link" href="#">Gas Cookers</a>
+        <a class="footer-link" href="#">Microwaves</a>
+        <a class="footer-link" href="#">Air Conditioners</a>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <a class="footer-link" href="tel:0550900600">📞 0550 900 600</a>
+        <a class="footer-link" href="https://wa.me/233550900600">💬 WhatsApp Us</a>
+        <a class="footer-link" href="mailto:sales@odielectronics.com">✉️ sales@odielectronics.com</a>
+        <a class="footer-link" href="#">📍 Accra, Ghana</a>
+        <div style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.5)">Mon – Sat: 8am – 6pm<br/>Sun: 10am – 4pm</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 O.D.I. Electronics. All rights reserved.</span>
+      <span>Proudly serving Ghana 🇬🇭 | Flexible payments. Real brands. Unbeatable prices.</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/233550900600" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
+</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
+    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
+    .container{max-width:900px;margin:28px auto;padding:0 20px}
+    label{display:block;margin-top:12px;font-weight:600}
+    input,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-top:6px}
+    button{background:var(--purple);color:#fff;border:none;padding:10px 14px;border-radius:8px;margin-top:12px}
+    a{color:var(--purple);text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="odi_electronics_homepage.html">← Home</a>
+  </header>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p style="color:var(--gray-600)">Phone: 0550 900 600 — Email: sales@odielectronics.com</p>
+    <form action="#" method="post">
+      <label for="name">Name</label>
+      <input id="name" name="name" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+</body>
+</html>

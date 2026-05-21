@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
+    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
+    .container{max-width:1000px;margin:28px auto;padding:0 20px}
+    .product{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .product img{width:100%;height:auto;border-radius:10px}
+    .price{font-size:22px;font-weight:800;color:var(--purple)}
+    button{background:var(--purple);color:#fff;border:none;padding:10px 14px;border-radius:8px;margin-top:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="odi_electronics_homepage.html">← Home</a>
+  </header>
+  <main class="container">
+    <div id="product-detail" class="product">
+      <div class="product-media">
+        <img id="prod-img" src="images/product-sample.jpg" alt="Product image">
+      </div>
+      <div class="product-info">
+        <h1 id="prod-name">Loading…</h1>
+        <div id="prod-price" class="price">GHS 0.00</div>
+        <p id="prod-desc" style="color:var(--gray-600)"></p>
+        <button id="add-cart">Add to Cart</button>
+      </div>
+    </div>
+    <script>
+      function getQueryParam(name){
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+      async function loadProduct(){
+        const id = parseInt(getQueryParam('id'),10);
+        const res = await fetch('data/products.json');
+        const products = await res.json();
+        const p = products.find(x=>x.id===id) || products[0];
+        document.getElementById('prod-name').textContent = p.name;
+        document.getElementById('prod-price').textContent = 'GHS '+p.price.toFixed(2);
+        document.getElementById('prod-desc').textContent = p.description || 'High quality appliance. Contact us for details.';
+        // image fallback: if there is an image named by id use it
+        const imgEl = document.getElementById('prod-img');
+        const candidate = 'images/product-'+p.id+'.jpg';
+        fetch(candidate, {method:'HEAD'}).then(r=>{ if(r.ok) imgEl.src = candidate; }).catch(()=>{});
+        document.getElementById('add-cart').addEventListener('click', ()=>alert('Add to cart: '+p.name+' (static demo)'));
+      }
+      loadProduct().catch(e=>{console.error(e);document.getElementById('prod-name').textContent='Product not found';});
+    </script>
+  </main>
+</body>
+</html>

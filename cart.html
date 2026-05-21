@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cart — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6A0DAD;--dark:#1A1A1A;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-400:#6C757D;--gray-700:#495057;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#f8f9fa;color:var(--dark);}
+    a{color:var(--purple);text-decoration:none}
+    header{background:#fff;border-bottom:1px solid var(--gray-200);padding:18px 24px}
+    .container{max-width:1100px;margin:32px auto;padding:0 24px}
+    .page-header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+    .page-title{font-size:32px;font-weight:800;line-height:1.1}
+    .page-sub{color:var(--gray-400);max-width:720px;margin-top:8px}
+    .cart-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:28px}
+    .cart-card, .summary-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 16px 40px rgba(0,0,0,.06)}
+    .cart-item{display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--gray-100)}
+    .cart-item:last-child{border-bottom:none}
+    .cart-img{width:120px;height:120px;border-radius:18px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .cart-img img{width:100%;height:auto;display:block}
+    .item-info h3{font-size:18px;margin-bottom:8px}
+    .item-info p{font-size:14px;color:var(--gray-700);line-height:1.6}
+    .item-meta{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+    .item-meta strong{font-size:18px;color:var(--purple)}
+    .qty{display:flex;gap:10px;align-items:center}
+    .qty button{width:30px;height:30px;border:none;background:var(--gray-100);color:var(--dark);font-size:18px;border-radius:8px;cursor:pointer}
+    .qty span{min-width:24px;text-align:center;font-weight:700}
+    .summary-card h2{font-size:22px;margin-bottom:18px}
+    .summary-row{display:flex;justify-content:space-between;margin-bottom:14px;color:var(--gray-700)}
+    .summary-row.total{font-weight:800;color:var(--dark);font-size:18px}
+    .checkout-btn{display:inline-flex;align-items:center;gap:10px;background:var(--purple);color:#fff;border:none;padding:14px 22px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s}
+    .checkout-btn:hover{transform:translateY(-2px)}
+    .empty-state{padding:48px;text-align:center;background:#fff;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.06)}
+    .placeholder{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--gray-400);font-weight:700;font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="odi_electronics_homepage.html">← Back to Home</a>
+  </header>
+  <main class="container">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Your Shopping Cart</h1>
+        <p class="page-sub">Review your selected items, update quantities, and proceed to checkout when you're ready.</p>
+      </div>
+      <div><a href="deals.html">Continue Shopping</a></div>
+    </div>
+    <div class="cart-grid">
+      <div class="cart-card">
+        <div class="empty-state">
+          <div class="placeholder">Your cart is empty. Browse <a href="appliances.html">appliances</a> to add items.</div>
+        </div>
+      </div>
+      <aside class="summary-card">
+        <h2>Order Summary</h2>
+        <div class="summary-row"><span>Subtotal</span><span>GHS 0.00</span></div>
+        <div class="summary-row"><span>Delivery</span><span>GHS 0.00</span></div>
+        <div class="summary-row total"><span>Total</span><span>GHS 0.00</span></div>
+        <button class="checkout-btn" disabled style="opacity:.6;cursor:not-allowed">Proceed to Checkout</button>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

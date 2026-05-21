@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>O.D.I. Electronics | Home Appliances at Affordable Prices in Ghana</title>
+<meta name="description" content="Shop quality home appliances and electronics at unbeatable prices. Flexible installment plans, genuine products, nationwide delivery across Ghana. TVs, Fridges, Washing Machines & more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-primary:#6A0DAD; --purple:var(--brand-primary); --brand-accent:#1EA7FF;
+  --purple-dark:#4d0880;
+  --purple-light:#8E44AD;
+  --purple-pale:#f3e8ff;
+  --white:#fff;
+  --gray-50:#F8F9FA;
+  --gray-100:#F1F3F5;
+  --gray-200:#E9ECEF;
+  --gray-300:#dee2e6;
+  --gray-500:#adb5bd;
+  --gray-600:#6c757d;
+  --gray-800:#343a40;
+  --dark:#1A1A1A;
+  --gold:#f59e0b;
+  --green:#16a34a;
+  --red:#dc2626;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit}
+ul{list-style:none}
+
+/* ─── ANNOUNCEMENT BAR ─── */
+.ann-bar{background:var(--purple);color:#fff;font-size:12px;font-weight:500;padding:8px 0;overflow:hidden}
+.ann-bar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ann-bar-center{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.ann-bar-item{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.ann-bar-item svg{width:14px;height:14px;opacity:.85}
+.ann-divider{width:1px;height:14px;background:rgba(255,255,255,.3)}
+
+/* ─── HEADER ─── */
+.header{background:#fff;border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:0;flex-shrink:0}
+.logo-text{font-size:28px;font-weight:900;color:var(--purple);letter-spacing:-1px;line-height:1;display:none}
+.logo-sub{font-size:12px;font-weight:700;color:var(--gray-600);letter-spacing:1px;text-transform:none;line-height:1;margin-top:0}
+.site-logo{height:52px;width:auto;border-radius:8px;box-shadow:0 6px 20px rgba(16,24,40,.06);object-fit:contain}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-dot{color:var(--purple-light)}
+.search-bar{flex:1;max-width:600px;display:flex;background:var(--gray-50);border:2px solid var(--gray-200);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.search-bar:focus-within{border-color:var(--purple)}
+.search-bar input{flex:1;padding:10px 16px;border:none;background:transparent;font-size:14px;font-family:inherit;outline:none;color:var(--dark)}
+.search-bar input::placeholder{color:var(--gray-500)}
+.search-btn{background:var(--purple);color:#fff;border:none;padding:10px 20px;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.search-btn:hover{background:var(--purple-dark)}
+.search-btn svg{width:18px;height:18px}
+.header-actions{display:flex;align-items:center;gap:4px;margin-left:auto}
+.header-icon-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 12px;border:none;background:transparent;color:var(--gray-600);font-size:10px;font-weight:500;border-radius:10px;transition:all .2s;position:relative}
+.header-icon-btn:hover{background:var(--purple-pale);color:var(--purple)}
+.header-icon-btn svg{width:22px;height:22px}
+.cart-badge{position:absolute;top:4px;right:8px;background:var(--purple);color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* ─── NAV ─── */
+.nav{background:#fff;border-bottom:2px solid var(--gray-100);position:sticky;top:73px;z-index:99}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:4px}
+.nav-item{padding:14px 16px;font-size:13px;font-weight:600;color:var(--dark);white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;cursor:pointer;display:flex;align-items:center;gap:4px;position:relative}
+.nav-item:hover,.nav-item.active{color:var(--purple);border-bottom-color:var(--purple)}
+.nav-item.deals{color:var(--red)}
+.nav-item svg.chevron{width:12px;height:12px;opacity:.6;transition:transform .2s}
+.nav-item:hover svg.chevron{transform:rotate(180deg)}
+
+/* ─── DROPDOWN ─── */
+.nav-item .dropdown{
+  display:none;
+  position:absolute;
+  top:calc(100% + 2px);
+  left:0;
+  background:#fff;
+  border:1px solid var(--gray-200);
+  border-top:3px solid var(--purple);
+  border-radius:0 0 16px 16px;
+  box-shadow:0 16px 48px rgba(0,0,0,.12);
+  z-index:200;
+  min-width:220px;
+  padding:8px 0;
+  animation:dropIn .18s ease;
+}
+.nav-item .dropdown.mega{
+  min-width:700px;
+  padding:24px;
+  display:none;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.nav-item:hover .dropdown{display:block}
+.nav-item:hover .dropdown.mega{display:grid}
+
+@keyframes dropIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* Simple dropdown links */
+.drop-link{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:13px;font-weight:500;color:var(--dark);transition:all .15s;white-space:nowrap}
+.drop-link:hover{background:var(--purple-pale);color:var(--purple);padding-left:26px}
+.drop-link svg{width:16px;height:16px;color:var(--purple);flex-shrink:0}
+.drop-divider{height:1px;background:var(--gray-100);margin:6px 0}
+.drop-footer{padding:10px 20px}
+.drop-footer a{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--purple)}
+.drop-footer a svg{width:12px;height:12px}
+
+/* Mega menu columns */
+.mega-col{padding:0 20px;border-right:1px solid var(--gray-100)}
+.mega-col:last-child{border-right:none}
+.mega-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-500);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-100)}
+.mega-link{display:flex;align-items:center;gap:8px;padding:7px 0;font-size:13px;font-weight:500;color:var(--dark);transition:color .15s;cursor:pointer}
+.mega-link:hover{color:var(--purple)}
+.mega-link svg{width:15px;height:15px;color:var(--purple);opacity:.7;flex-shrink:0}
+.mega-badge{font-size:9px;font-weight:700;background:var(--red);color:#fff;padding:2px 5px;border-radius:4px;margin-left:auto}
+.mega-badge.new{background:var(--green)}
+.mega-promo{background:var(--purple-pale);border-radius:12px;padding:16px;text-align:center}
+.mega-promo-tag{font-size:10px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.mega-promo-title{font-size:15px;font-weight:800;color:var(--dark);margin-bottom:4px}
+.mega-promo-desc{font-size:11px;color:var(--gray-600);margin-bottom:12px;line-height:1.5}
+.mega-promo-btn{background:var(--purple);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s}
+.mega-promo-btn:hover{background:var(--purple-dark)}
+
+/* ─── HERO ─── */
+.hero{background:linear-gradient(135deg,#f8f0ff 0%,#fdf5ff 50%,#f0e8ff 100%);padding:60px 24px;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(106,13,173,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:.5px}
+.hero-eyebrow span{width:6px;height:6px;background:#fff;border-radius:50%;display:inline-block}
+.hero-h1{font-size:56px;font-weight:900;line-height:1.05;color:var(--dark);margin-bottom:16px}
+.hero-h1 em{color:var(--purple);font-style:normal}
+.hero-sub{font-size:17px;color:var(--gray-600);line-height:1.6;margin-bottom:28px;font-weight:400;max-width:460px}
+.hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.hero-feat{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--dark)}
+.hero-feat-icon{width:22px;height:22px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-feat-icon svg{width:12px;height:12px;color:#fff}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:#fff;border:none;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 4px 15px rgba(106,13,173,.3)}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-2px);box-shadow:0 8px 25px rgba(106,13,173,.4)}
+.btn-primary svg{width:18px;height:18px}
+.btn-outline{background:transparent;color:var(--purple);border:2px solid var(--purple);padding:13px 28px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-outline:hover{background:var(--purple);color:#fff;transform:translateY(-2px)}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-img-box{background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(106,13,173,.15);padding:30px;display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1.1;position:relative;overflow:hidden}
+.hero-img-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(106,13,173,.03),rgba(142,68,173,.05))}
+.hero-appliances-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%}
+.appliance-card{background:var(--gray-50);border-radius:16px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid var(--gray-100);transition:transform .2s}
+.appliance-card:hover{transform:scale(1.03)}
+.appliance-card svg{width:56px;height:56px;color:var(--purple)}
+.appliance-card span{font-size:12px;font-weight:600;color:var(--gray-600)}
+.appliance-card.featured{grid-column:span 2;background:linear-gradient(135deg,var(--purple-pale),#ede0ff)}
+.appliance-card.featured svg{width:72px;height:72px}
+.hero-badge{position:absolute;top:16px;right:16px;background:var(--purple);color:#fff;padding:12px 16px;border-radius:16px;text-align:center;box-shadow:0 8px 20px rgba(106,13,173,.4)}
+.hero-badge strong{display:block;font-size:13px;font-weight:800;line-height:1.2}
+.hero-badge span{font-size:10px;font-weight:500;opacity:.85}
+
+/* ─── BENEFITS ─── */
+.benefits{background:#fff;border-bottom:1px solid var(--gray-100);padding:24px 0}
+.benefits-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.benefit-item{display:flex;align-items:center;gap:14px;padding:16px 20px;border-right:1px solid var(--gray-100)}
+.benefit-item:last-child{border-right:none}
+.benefit-icon{width:44px;height:44px;flex-shrink:0;color:var(--purple)}
+.benefit-icon svg{width:44px;height:44px}
+.benefit-title{font-size:13px;font-weight:700;color:var(--dark)}
+.benefit-desc{font-size:11px;color:var(--gray-600);margin-top:2px}
+
+/* ─── SECTION COMMON ─── */
+.section{padding:64px 0}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-header{text-align:center;margin-bottom:40px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;color:var(--purple);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.section-tag::before,.section-tag::after{content:'';display:block;width:32px;height:2px;background:var(--purple)}
+.section-h2{font-size:34px;font-weight:800;color:var(--dark);line-height:1.2}
+.section-sub{font-size:15px;color:var(--gray-600);margin-top:8px}
+
+/* ─── CATEGORIES ─── */
+.categories{background:var(--gray-50)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{background:#fff;border-radius:16px;padding:24px 16px;text-align:center;border:1px solid var(--gray-200);transition:all .25s;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px}
+.cat-card:hover{border-color:var(--purple);box-shadow:0 8px 24px rgba(106,13,173,.12);transform:translateY(-4px)}
+.cat-icon-wrap{width:72px;height:72px;background:var(--purple-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;transition:background .2s}
+.cat-card:hover .cat-icon-wrap{background:var(--purple)}
+.cat-icon-wrap svg{width:36px;height:36px;color:var(--purple);transition:color .2s}
+.cat-card:hover .cat-icon-wrap svg{color:#fff}
+.cat-name{font-size:14px;font-weight:700;color:var(--dark)}
+.cat-link{font-size:12px;color:var(--purple);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.cat-link svg{width:12px;height:12px}
+
+/* ─── PRODUCTS ─── */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product-card{background:#fff;border-radius:16px;border:1px solid var(--gray-200);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+.product-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-4px);border-color:var(--purple)}
+.product-img{background:var(--gray-50);aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-img svg{width:80px;height:80px;color:var(--purple);opacity:.7}
+.product-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px}
+.product-badge.new{background:var(--green)}
+.product-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.product-brand{font-size:10px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.5px}
+.product-name{font-size:14px;font-weight:600;color:var(--dark);line-height:1.3}
+.product-stars{display:flex;align-items:center;gap:4px}
+.stars{display:flex;gap:1px}
+.star-filled{color:var(--gold)}
+.product-reviews{font-size:11px;color:var(--gray-500)}
+.product-prices{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price-new{font-size:18px;font-weight:800;color:var(--purple)}
+.price-old{font-size:13px;color:var(--gray-500);text-decoration:line-through}
+.price-save{font-size:11px;font-weight:700;color:var(--green);background:#d1fae5;padding:2px 6px;border-radius:4px}
+.product-actions{padding:0 14px 14px;display:grid;grid-template-columns:1fr auto;gap:8px}
+.btn-cart{background:var(--purple);color:#fff;border:none;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .2s}
+.btn-cart:hover{background:var(--purple-dark)}
+.btn-cart svg{width:15px;height:15px}
+.btn-view{background:var(--gray-100);color:var(--dark);border:none;padding:10px 14px;border-radius:10px;font-size:12px;font-weight:600;transition:background .2s}
+.btn-view:hover{background:var(--gray-200)}
+
+/* ─── FINANCING ─── */
+.financing{background:linear-gradient(135deg,var(--purple) 0%,#4d0880 100%);color:#fff;padding:72px 0}
+.financing-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.fin-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:12px}
+.fin-h2{font-size:44px;font-weight:900;line-height:1.1;margin-bottom:16px}
+.fin-h2 em{font-style:normal;opacity:.8}
+.fin-desc{font-size:16px;opacity:.85;line-height:1.7;margin-bottom:36px;max-width:460px}
+.fin-steps{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.fin-step{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.12);border-radius:14px;padding:16px 20px;backdrop-filter:blur(4px)}
+.fin-step-num{width:40px;height:40px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--purple);flex-shrink:0}
+.fin-step-text strong{display:block;font-size:15px;font-weight:700}
+.fin-step-text span{font-size:12px;opacity:.8}
+.fin-btns{display:flex;gap:12px}
+.btn-white{background:#fff;color:var(--purple);border:none;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;transition:all .2s;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4);padding:13px 28px;border-radius:12px;font-size:15px;font-weight:700;transition:all .2s;backdrop-filter:blur(4px)}
+.btn-ghost:hover{background:rgba(255,255,255,.25)}
+.fin-visual{display:flex;align-items:center;justify-content:center}
+.fin-calc{background:rgba(255,255,255,.12);border-radius:24px;padding:32px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);width:100%}
+.fin-calc-title{font-size:16px;font-weight:700;margin-bottom:24px;opacity:.9}
+.fin-calc-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:14px}
+.fin-calc-row:last-child{border-bottom:none}
+.fin-calc-label{opacity:.75}
+.fin-calc-val{font-weight:700;font-size:16px}
+.fin-calc-val.highlight{font-size:22px;color:#ffd700}
+.fin-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.2);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;margin-bottom:16px}
+
+/* ─── BRANDS ─── */
+.brands-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.brand-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px 12px;display:flex;align-items:center;justify-content:center;transition:all .2s;cursor:pointer}
+.brand-card:hover{border-color:var(--purple);box-shadow:0 4px 12px rgba(106,13,173,.12)}
+.brand-name{font-size:15px;font-weight:800;color:var(--dark);letter-spacing:-.5px}
+.brand-name.lg{color:#a50034}
+.brand-name.samsung{color:#1428a0}
+.brand-name.hisense{color:#cc0000}
+.brand-name.tcl{color:#003da5}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials{background:var(--gray-50)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:#fff;border-radius:20px;padding:28px;border:1px solid var(--gray-200);position:relative}
+.testi-quote{font-size:48px;color:var(--purple);line-height:1;margin-bottom:8px;font-weight:900;font-family:Georgia,serif;opacity:.3}
+.testi-text{font-size:15px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:700;color:var(--dark)}
+.testi-loc{font-size:12px;color:var(--gray-500)}
+.testi-stars{margin-bottom:12px}
+
+/* ─── NEWSLETTER ─── */
+.newsletter{background:var(--purple);padding:56px 0}
+.newsletter-inner{max-width:600px;margin:0 auto;padding:0 24px;text-align:center}
+.newsletter h2{font-size:30px;font-weight:800;color:#fff;margin-bottom:10px}
+.newsletter p{font-size:15px;color:rgba(255,255,255,.8);margin-bottom:28px}
+.newsletter-form{display:flex;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.newsletter-form input{flex:1;padding:14px 20px;border:none;font-size:14px;font-family:inherit;outline:none;color:var(--dark)}
+.newsletter-form button{background:var(--purple-dark);color:#fff;border:none;padding:14px 24px;font-size:14px;font-weight:700;font-family:inherit;transition:background .2s;white-space:nowrap}
+.newsletter-form button:hover{background:#3a0660}
+
+/* ─── FOOTER ─── */
+.footer{background:#111;color:#fff;padding:60px 0 0}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-logo{font-size:24px;font-weight:900;color:#fff;margin-bottom:12px}
+.footer-brand-logo span{color:var(--purple-light)}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px}
+.footer-contact-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:8px}
+.footer-contact-item svg{width:15px;height:15px;color:var(--purple-light);flex-shrink:0}
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.social-btn{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:background .2s;cursor:pointer}
+.social-btn:hover{background:var(--purple)}
+.social-btn svg{width:16px;height:16px}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.footer-link{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px;transition:color .2s}
+.footer-link:hover{color:var(--purple-light)}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);z-index:9999;transition:all .2s;cursor:pointer;text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.7)}
+.wa-float svg{width:32px;height:32px}
+.wa-tooltip{position:absolute;right:70px;background:var(--dark);color:#fff;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;transform:translateX(4px);transition:all .2s;pointer-events:none}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateX(0)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease forwards}
+.fade-up-d1{animation-delay:.1s}
+.fade-up-d2{animation-delay:.2s}
+.fade-up-d3{animation-delay:.3s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-inner,.financing-inner{grid-template-columns:1fr}
+  .hero-visual,.fin-visual{display:none}
+  .products-grid{grid-template-columns:repeat(3,1fr)}
+  .brands-grid{grid-template-columns:repeat(4,1fr)}
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .ann-bar-inner{justify-content:center}
+  .ann-bar-center{gap:12px}
+  .header-inner{flex-wrap:wrap}
+  .search-bar{order:3;flex:0 0 100%}
+  .nav-inner{overflow-x:auto;gap:0}
+  .nav-item{font-size:12px;padding:12px 12px}
+  .hero-h1{font-size:38px}
+  .section-h2{font-size:26px}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .benefits-inner{grid-template-columns:1fr 1fr}
+  .benefit-item{border-right:none;border-bottom:1px solid var(--gray-100)}
+  .testi-grid{grid-template-columns:1fr}
+  .brands-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .fin-h2{font-size:32px}
+}
+@media(max-width:480px){
+  .products-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-h1{font-size:30px}
+  .benefits-inner{grid-template-columns:1fr}
+  .brands-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-inner">
+    <div class="ann-bar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Big Brands. Low Prices. O.D.I. Electronics.
+    </div>
+    <div class="ann-bar-center">
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free Delivery in Accra
+      </div>
+      <div class="ann-divider"></div>
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Flexible Payment Plans
+      </div>
+      <div class="ann-divider"></div>
+      <div class="ann-bar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.6A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        Call Us: 0550 900 600
+      </div>
+    </div>
+    <div class="ann-bar-item" style="opacity:.85">Need Help? Chat on WhatsApp</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-wrap">
+        <img src="images/logo.jpeg" alt="O.D.I. Electronics logo" class="site-logo" />
+        <div>
+          <div class="logo-sub">O.D.I. Electronics</div>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Search for appliances, brand or category..."/>
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+    <div class="header-actions">
+      <a class="header-icon-btn" href="account.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        My Account
+      </a>
+      <button class="header-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find Store
+      </button>
+      <a class="header-icon-btn" href="cart.html" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-badge">0</span>
+        Cart
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+
+    <!-- Home -->
+    <a class="nav-item active" href="odi_electronics_homepage.html">Home</a>
+
+    <!-- Appliances MEGA -->
+    <div class="nav-item">
+      Appliances
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown mega">
+        <div class="mega-col">
+          <div class="mega-col-title">Cooling</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/></svg>Refrigerators</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Chest Freezers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="22" height="9" rx="2"/><path d="M5 15v4M12 15v4M19 15v4"/></svg>Air Conditioners <span class="mega-badge new">NEW</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Wine Coolers</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Laundry</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/></svg>Washing Machines</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="12" y1="7" x2="12" y2="9"/></svg>Tumble Dryers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2H3v20l9-5 9 5V2z"/></svg>Irons &amp; Steamers</div>
+          <div class="mega-col-title" style="margin-top:14px">Small Appliances</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders &amp; Mixers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Electric Kettles</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Kitchen</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/></svg>Gas Cookers <span class="mega-badge">HOT</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwaves</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Built-in Ovens</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>Electric Cookers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Coffee Machines</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-promo">
+            <div class="mega-promo-tag">🔥 Flash Sale</div>
+            <div class="mega-promo-title">Up to 25% Off</div>
+            <div class="mega-promo-desc">Selected appliances. Limited stock. Don't miss out!</div>
+            <button class="mega-promo-btn">Shop Deals</button>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:var(--gray-50);border-radius:12px;font-size:12px;">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px">💳 Pay Small Small</div>
+            <div style="color:var(--gray-600);line-height:1.5">Take home any appliance today with just 20% deposit.</div>
+            <a href="#" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--purple)">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TVs & Audio MEGA -->
+    <div class="nav-item">
+      TVs &amp; Audio
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown mega">
+        <div class="mega-col">
+          <div class="mega-col-title">Televisions</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Smart TVs <span class="mega-badge">HOT</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>4K UHD TVs</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M7 8h10M7 11h6"/></svg>Android TVs</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="12" cy="10" r="2"/></svg>OLED / QLED TVs <span class="mega-badge new">NEW</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>32" – 43" TVs</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>50" – 75" TVs</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Audio</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Home Theaters</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12" y2="6" stroke-width="3"/></svg>Bluetooth Speakers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a2 2 0 012-2h14a2 2 0 012 2v1z"/></svg>Headphones</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>Soundbars</div>
+          <div class="mega-col-title" style="margin-top:14px">Accessories</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 2v4M16 2v4"/></svg>TV Wall Mounts</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>Remote Controls</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Shop by Brand</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span style="color:#1428a0;font-weight:700">Samsung</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#a50034;font-weight:700">LG</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#003da5;font-weight:700">TCL</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#cc0000;font-weight:700">Hisense</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#cc0000;font-weight:700">Nasco</span></div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-promo" style="background:#1428a0;color:#fff;margin-bottom:12px">
+            <div style="font-size:10px;font-weight:700;opacity:.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Samsung Deal</div>
+            <div style="font-size:15px;font-weight:800;margin-bottom:4px">55" 4K Smart TV</div>
+            <div style="font-size:20px;font-weight:900;margin-bottom:4px">GHS 4,999</div>
+            <div style="font-size:11px;opacity:.75;text-decoration:line-through;margin-bottom:10px">Was GHS 6,299</div>
+            <button class="mega-promo-btn" style="background:#fff;color:#1428a0">Shop Now</button>
+          </div>
+          <div style="padding:10px;background:var(--gray-50);border-radius:10px;font-size:12px;color:var(--gray-600)">
+            <strong style="color:var(--dark);display:block;margin-bottom:4px">Free Wall Mount</strong>
+            On all TVs 43" and above this month.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kitchen MEGA -->
+    <div class="nav-item">
+      Kitchen
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown mega" style="grid-template-columns:repeat(3,1fr);min-width:540px">
+        <div class="mega-col">
+          <div class="mega-col-title">Cooking</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><circle cx="8" cy="13" r="2"/><circle cx="16" cy="13" r="2"/></svg>Gas Cookers <span class="mega-badge">HOT</span></div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwaves</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Built-in Ovens</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="10" r="1.5" fill="currentColor"/><circle cx="14" cy="10" r="1.5" fill="currentColor"/></svg>Induction Cookers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Air Fryers <span class="mega-badge new">NEW</span></div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Preparation</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12"/></svg>Food Processors</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/></svg>Coffee Makers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8h1a4 4 0 010 8h-1V8z"/><rect x="3" y="8" width="14" height="12" rx="2"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>Electric Kettles</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M16 12h.01M12 12h.01M8 12h.01"/></svg>Rice Cookers</div>
+          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>Toasters &amp; Grills</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-promo">
+            <div class="mega-promo-tag">Kitchen Bundle</div>
+            <div class="mega-promo-title">Cooker + Microwave</div>
+            <div class="mega-promo-desc">Buy any gas cooker and get 15% off a microwave. Limited offer!</div>
+            <button class="mega-promo-btn">View Bundle</button>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:var(--gray-600);padding:10px;background:var(--gray-50);border-radius:10px;line-height:1.6">
+            <strong style="color:var(--dark);display:block;margin-bottom:4px">🚚 Delivery Available</strong>
+            We deliver nationwide. Same-day delivery in Accra on orders before 12pm.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laundry SIMPLE DROPDOWN -->
+    <div class="nav-item">
+      Laundry
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown" style="min-width:260px">
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/></svg>
+          Washing Machines
+        </a>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="12" y1="7" x2="12" y2="9"/></svg>
+          Tumble Dryers
+        </a>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2H3v20l9-5 9 5V2z"/></svg>
+          Electric Irons
+        </a>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          Steam Irons
+        </a>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+          Washer-Dryer Combos <span class="mega-badge new" style="font-size:8px">NEW</span>
+        </a>
+        <div class="drop-divider"></div>
+        <a class="drop-link" href="#" style="color:var(--gray-600);font-size:12px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Laundry Accessories
+        </a>
+        <div class="drop-footer">
+          <a href="#" style="color:var(--purple)">View all Laundry products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:11px;height:11px;display:inline;vertical-align:middle"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deals -->
+    <a class="nav-item deals" href="deals.html" style="font-weight:700">🔥 Deals</a>
+
+    <!-- Brands MEGA -->
+    <div class="nav-item">
+      Brands
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown mega" style="min-width:580px;grid-template-columns:repeat(4,1fr)">
+        <div class="mega-col">
+          <div class="mega-col-title">Featured</div>
+          <div class="mega-link" style="font-weight:700;color:#1428a0;font-size:15px">SAMSUNG</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs, Fridges &amp; More</div>
+          <div class="mega-link" style="font-weight:700;color:#a50034;font-size:15px">LG</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Premium Appliances</div>
+          <div class="mega-link" style="font-weight:700;color:#0066cc;font-size:14px">Midea</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">AC, Fridges &amp; Freezers</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Popular</div>
+          <div class="mega-link" style="font-weight:700;color:#cc0000;font-size:14px">Hisense</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs &amp; Freezers</div>
+          <div class="mega-link" style="font-weight:700;color:#003da5;font-size:14px">TCL</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Android TVs</div>
+          <div class="mega-link" style="font-weight:700;color:#cc0000;font-size:14px">Nasco</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Ghana's Favourite Brand</div>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-title">Local Favourites</div>
+          <div class="mega-link" style="font-weight:700;color:#444;font-size:14px">Bruhm</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Gas Cookers &amp; Fridges</div>
+          <div class="mega-link" style="font-weight:700;color:#006633;font-size:14px">Binatone</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Blenders &amp; Small Appliances</div>
+          <div class="mega-link" style="font-weight:600;color:#555;font-size:13px">Scanfrost</div>
+          <div class="mega-link" style="font-weight:600;color:#555;font-size:13px">Polystar</div>
+        </div>
+        <div class="mega-col">
+          <div style="padding:12px">
+            <div class="mega-col-title">Explore Brands</div>
+            <p style="font-size:13px;color:var(--gray-600);margin-top:8px">Browse brands available in our current catalog — powered by the store inventory.</p>
+            <div style="margin-top:12px;text-align:center">
+              <a href="brands.html" style="font-size:12px;font-weight:700;color:var(--purple);display:inline-flex;align-items:center;gap:6px">View All Brands <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:11px;height:11px"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us SIMPLE -->
+    <a class="nav-item" href="financing-plans.html">Financing Plans</a>
+    <a class="nav-item" href="delivery-info.html">Delivery Info</a>
+    <a class="nav-item" href="warranty-policy.html">Warranty Policy</a>
+    <a class="nav-item" href="careers.html">Careers</a>
+    <div class="nav-item">
+      Contact Us
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="dropdown" style="min-width:240px">
+        <a class="drop-link" href="tel:0550900600">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.6A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Call: 0550 900 600
+        </a>
+        <a class="drop-link" href="https://wa.me/233550900600" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
+          WhatsApp Us
+        </a>
+        <a class="drop-link" href="mailto:sales@odielectronics.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Us
+        </a>
+        <div class="drop-divider"></div>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find Our Store — Accra
+        </a>
+        <a class="drop-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          FAQs &amp; Help Centre
+        </a>
+      </div>
+    </a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content fade-up">
+      <div class="hero-eyebrow"><span></span>Ghana's #1 Home Appliance Store</div>
+      <h1 class="hero-h1">Big Brands.<br/><em>Low Prices.</em><br/>O.D.I. Electronics.</h1>
+      <p class="hero-sub">Shop quality home appliances and electronics at unbeatable prices. Your home deserves the best.</p>
+      <div class="hero-features">
+        <div class="hero-feat">
+          <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Flexible payment plans — Pay Small Small
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          100% Genuine products with warranty
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Nationwide delivery across Ghana
+        </div>
+        <div class="hero-feat">
+          <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Manufacturer warranty included
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="appliances.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          Shop Appliances
+        </a>
+        <a class="btn-outline" href="deals.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          View Deals
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up fade-up-d2">
+      <div class="hero-img-box">
+        <div class="hero-appliances-grid">
+          <div class="appliance-card featured">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <span>Smart TV — Samsung &amp; TCL</span>
+          </div>
+          <div class="appliance-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/>
+            </svg>
+            <span>Refrigerator</span>
+          </div>
+          <div class="appliance-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            <span>Washing Machine</span>
+          </div>
+          <div class="appliance-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="16" y1="11" x2="16" y2="16"/>
+            </svg>
+            <span>Gas Cooker</span>
+          </div>
+          <div class="appliance-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+              <circle cx="12" cy="14" r="2"/>
+            </svg>
+            <span>Microwave</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <strong>LOW PRICE<br/>GUARANTEE</strong>
+          <span>We beat any local price!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<div class="benefits">
+  <div class="benefits-inner">
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="benefit-title">Free Delivery in Accra</div>
+        <div class="benefit-desc">On qualifying orders in Accra</div>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><line x1="16.5" y1="7.5" x2="17" y2="8"/></svg>
+      </div>
+      <div>
+        <div class="benefit-title">Price Match Guarantee</div>
+        <div class="benefit-desc">We beat any local price</div>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div>
+        <div class="benefit-title">Easy Financing</div>
+        <div class="benefit-desc">Pay Small Small — flexible plans</div>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="benefit-title">Warranty Included</div>
+        <div class="benefit-desc">Manufacturer warranty on all items</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section categories">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Browse</div>
+      <h2 class="section-h2">Shop By Category</h2>
+      <p class="section-sub">Find exactly what your home needs</p>
+    </div>
+    <div class="cat-grid">
+      <!-- Refrigerators -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="6" x2="9" y2="8"/></svg>
+        </div>
+        <div class="cat-name">Refrigerators</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Smart TVs -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="cat-name">Smart TVs</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Washing Machines -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+        </div>
+        <div class="cat-name">Washing Machines</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Gas Cookers -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><circle cx="8" cy="13" r="2"/><circle cx="16" cy="13" r="2"/></svg>
+        </div>
+        <div class="cat-name">Gas Cookers</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Air Conditioners -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="22" height="9" rx="2"/><path d="M5 15v4M12 15v4M19 15v4M5 6l3-3M12 6V3M19 6l-3-3"/></svg>
+        </div>
+        <div class="cat-name">Air Conditioners</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Chest Freezers -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 6V3"/><path d="M18 6V3"/></svg>
+        </div>
+        <div class="cat-name">Chest Freezers</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Microwaves -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="14" r="3"/></svg>
+        </div>
+        <div class="cat-name">Microwaves</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <!-- Small Appliances -->
+      <div class="cat-card">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+        </div>
+        <div class="cat-name">Small Appliances</div>
+        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" style="background:#fff">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Hot Deals</div>
+      <h2 class="section-h2">Featured Products</h2>
+      <p class="section-sub">Quality appliances at prices you'll love</p>
+    </div>
+    <div class="products-grid" id="featured-products"></div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn-outline" href="appliances.html" style="font-size:14px;padding:12px 32px;display:inline-block">
+        View All Products
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Render featured products from data/products.json (first 8 items)
+  async function renderFeatured(){
+    try{
+      const res = await fetch('data/products.json');
+      const products = await res.json();
+      const target = document.getElementById('featured-products');
+      const list = products.slice(0,8).map(p => `
+        <div class="product-card">
+          <div class="product-img" style="background:#f7f7fb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="width:48px;height:48px"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">${p.name.split(' ')[0]}</div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-prices"><div class="price-new">GHS ${p.price.toFixed(2)}</div></div>
+          </div>
+          <div class="product-actions">
+            <a class="btn-view" href="product.html?id=${p.id}">Details</a>
+            <button class="btn-cart" onclick="alert('Add to cart not available in static demo')">Add to Cart</button>
+          </div>
+        </div>
+      `).join('');
+      target.innerHTML = list;
+    }catch(e){
+      console.error(e);
+    }
+  }
+  renderFeatured();
+</script>
+
+<!-- FINANCING -->
+<section class="financing">
+  <div class="financing-inner">
+    <div>
+      <div class="fin-eyebrow">Easy Financing</div>
+      <h2 class="fin-h2">Take It Home Today.<br/><em>Pay Small Small.</em></h2>
+      <p class="fin-desc">Don't wait to get the appliances your home needs. Our flexible installment plans make it easy to own the best brands with little upfront payment.</p>
+      <div class="fin-steps">
+        <div class="fin-step">
+          <div class="fin-step-num">1</div>
+          <div class="fin-step-text">
+            <strong>Just 20% Deposit</strong>
+            <span>Pay a small deposit to take your appliance home today</span>
+          </div>
+        </div>
+        <div class="fin-step">
+          <div class="fin-step-num">2</div>
+          <div class="fin-step-text">
+            <strong>Weekly or Monthly Payments</strong>
+            <span>Choose a payment schedule that fits your budget</span>
+          </div>
+        </div>
+        <div class="fin-step">
+          <div class="fin-step-num">3</div>
+          <div class="fin-step-text">
+            <strong>Quick Approval Process</strong>
+            <span>Get approved in minutes — no complicated paperwork</span>
+          </div>
+        </div>
+      </div>
+      <div class="fin-btns">
+        <button class="btn-white">Apply Now</button>
+        <button class="btn-ghost">Learn More</button>
+      </div>
+    </div>
+    <div class="fin-visual">
+      <div class="fin-calc">
+        <div class="fin-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Example Payment Plan
+        </div>
+        <div class="fin-calc-title" id="fin-title">Example Payment Plan</div>
+        <div class="fin-calc-row">
+          <span class="fin-calc-label">Product Price</span>
+          <span class="fin-calc-val" id="fin-price">GHS —</span>
+        </div>
+        <div class="fin-calc-row">
+          <span class="fin-calc-label">Deposit (20%)</span>
+          <span class="fin-calc-val" id="fin-deposit">GHS —</span>
+        </div>
+        <div class="fin-calc-row">
+          <span class="fin-calc-label">Balance</span>
+          <span class="fin-calc-val" id="fin-balance">GHS —</span>
+        </div>
+        <div class="fin-calc-row">
+          <span class="fin-calc-label">Duration</span>
+          <span class="fin-calc-val" id="fin-duration">6 months</span>
+        </div>
+        <div class="fin-calc-row" style="border-bottom:none">
+          <span class="fin-calc-label" style="font-size:16px;font-weight:700;opacity:1">Monthly Payment</span>
+          <span class="fin-calc-val highlight" id="fin-monthly">GHS —/mo</span>
+        </div>
+        <script>
+          (async function(){
+            try{
+              const res = await fetch('data/products.json');
+              const products = await res.json();
+              const p = products && products.length? products[0] : null;
+              if(!p) return;
+              const price = Number(p.price || 0);
+              const deposit = Math.round(price * 0.2);
+              const balance = Math.round(price - deposit);
+              const months = 6;
+              const monthly = Math.round(balance / months);
+              document.getElementById('fin-title').textContent = p.name + ' — GHS ' + price.toFixed(2);
+              document.getElementById('fin-price').textContent = 'GHS ' + price.toFixed(2);
+              document.getElementById('fin-deposit').textContent = 'GHS ' + deposit.toFixed(2);
+              document.getElementById('fin-balance').textContent = 'GHS ' + balance.toFixed(2);
+              document.getElementById('fin-duration').textContent = months + ' months';
+              document.getElementById('fin-monthly').textContent = 'GHS ' + monthly.toFixed(2) + '/mo';
+            }catch(e){console.error(e)}
+          })();
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="section" style="background:#fff">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Trusted</div>
+      <h2 class="section-h2">Shop Top Brands</h2>
+      <p class="section-sub">We carry the world's most trusted home appliance brands</p>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-card"><div class="brand-name samsung">SAMSUNG</div></div>
+      <div class="brand-card"><div class="brand-name lg">LG</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#cc0000">NASCO</div></div>
+      <div class="brand-card"><div class="brand-name hisense">Hisense</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#0066cc">Midea</div></div>
+      <div class="brand-card"><div class="brand-name tcl">TCL</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#333">Bruhm</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#006633">Binatone</div></div>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <button class="btn-outline" style="font-size:13px;padding:10px 24px">View All Brands →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Reviews</div>
+      <h2 class="section-h2">What Our Customers Say</h2>
+      <p class="section-sub">Thousands of happy customers across Ghana</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars" style="color:#f59e0b">★★★★★</div>
+        <p class="testi-text">I bought a TV on the Pay Small Small plan and it was so easy. The staff were very helpful and my monthly payments fit my budget.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Abena Kyerewaa</div>
+            <div class="testi-loc">Accra, Ghana</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars" style="color:#f59e0b">★★★★★</div>
+        <p class="testi-text">I purchased a washing machine and it was delivered quickly. The price was the best I found and the service was excellent.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KO</div>
+          <div>
+            <div class="testi-name">Kwame Osei</div>
+            <div class="testi-loc">Tema, Ghana</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars" style="color:#f59e0b">★★★★★</div>
+        <p class="testi-text">O.D.I. Electronics has great prices. I bought a freezer for my shop at a fair price and the warranty was honored when I needed it.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FA</div>
+          <div>
+            <div class="testi-name">Fatima Alhassan</div>
+            <div class="testi-loc">Kumasi, Ghana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <h2>Get Exclusive Deals First</h2>
+    <p>Subscribe to our newsletter and be the first to know about flash sales, new arrivals, and special offers just for subscribers.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address..."/>
+      <button type="button">Subscribe Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand col -->
+      <div>
+        <div class="footer-brand-logo">O.D.I. <span>Electronics</span></div>
+        <p class="footer-tagline">Ghana's trusted home appliances and electronics retailer. Big brands, low prices, and flexible payment plans to make your home complete.</p>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.6A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          0550 900 600
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          sales@odielectronics.com
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accra, Ghana
+        </div>
+        <div class="footer-social">
+          <div class="social-btn" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+          <div class="social-btn" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="social-btn" title="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.7a8.18 8.18 0 004.77 1.52V6.75a4.85 4.85 0 01-1-.06z"/></svg>
+          </div>
+          <div class="social-btn" title="WhatsApp" onclick="window.open('https://wa.me/233550900600')">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
+          </div>
+        </div>
+      </div>
+      <!-- About -->
+      <div>
+<h4>About Us</h4>
+        <a class="footer-link" href="our-story.html">Our Story</a>
+        <a class="footer-link" href="financing-plans.html">Financing Plans</a>
+        <a class="footer-link" href="delivery-info.html">Delivery Info</a>
+        <a class="footer-link" href="warranty-policy.html">Warranty Policy</a>
+        <a class="footer-link" href="careers.html">Careers</a>
+      </div>
+      <!-- Customer Service -->
+      <div>
+        <h4>Customer Service</h4>
+        <a class="footer-link" href="#">Contact Us</a>
+        <a class="footer-link" href="#">FAQs</a>
+        <a class="footer-link" href="#">Track My Order</a>
+        <a class="footer-link" href="#">Returns Policy</a>
+        <a class="footer-link" href="#">Terms &amp; Conditions</a>
+      </div>
+      <!-- Categories -->
+      <div>
+        <h4>Categories</h4>
+        <a class="footer-link" href="#">TVs &amp; Audio</a>
+        <a class="footer-link" href="#">Refrigerators</a>
+        <a class="footer-link" href="#">Washing Machines</a>
+        <a class="footer-link" href="#">Gas Cookers</a>
+        <a class="footer-link" href="#">Microwaves</a>
+        <a class="footer-link" href="#">Air Conditioners</a>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4>Contact Info</h4>
+        <a class="footer-link" href="tel:0550900600">📞 0550 900 600</a>
+        <a class="footer-link" href="https://wa.me/233550900600">💬 WhatsApp Us</a>
+        <a class="footer-link" href="mailto:sales@odielectronics.com">✉️ sales@odielectronics.com</a>
+        <a class="footer-link" href="#">📍 Accra, Ghana</a>
+        <div style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.5)">Mon – Sat: 8am – 6pm<br/>Sun: 10am – 4pm</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 O.D.I. Electronics. All rights reserved.</span>
+      <span>Proudly serving Ghana 🇬🇭 | Flexible payments. Real brands. Unbeatable prices.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="wa-float" href="https://wa.me/233550900600" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/>
+  </svg>
+</a>
+
+<script>
+// Nav active state
+document.querySelectorAll('.nav-item').forEach(item=>{
+  item.addEventListener('click',function(){
+    if(!this.querySelector('.dropdown')){
+      document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Smooth hover effects for product cards
+document.querySelectorAll('.product-card').forEach(card=>{
+  card.addEventListener('mouseenter',()=>card.style.transform='translateY(-4px)');
+  card.addEventListener('mouseleave',()=>card.style.transform='translateY(0)');
+});
+
+// Cart button feedback
+document.querySelectorAll('.btn-cart').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const orig=this.innerHTML;
+    this.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><polyline points="20 6 9 17 4 12"/></svg> Added!';
+    this.style.background='#16a34a';
+    setTimeout(()=>{this.innerHTML=orig;this.style.background='';},1500);
+  });
+});
+
+// Newsletter submit
+const newsForm=document.querySelector('.newsletter-form');
+if(newsForm){
+  newsForm.querySelector('button').addEventListener('click',()=>{
+    const inp=newsForm.querySelector('input');
+    if(inp.value&&inp.value.includes('@')){
+      newsForm.innerHTML='<p style="padding:14px 20px;font-size:14px;font-weight:600;color:var(--purple)">🎉 You\'re subscribed! Check your inbox for deals.</p>';
+    } else {
+      inp.style.outline='2px solid #dc2626';
+      inp.placeholder='Please enter a valid email';
+      setTimeout(()=>inp.style.outline='',1500);
+    }
+  });
+}
+</script>
+</body>
+</html>

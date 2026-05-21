@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Appliances — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
+    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .hero{display:flex;gap:24px;align-items:center}
+    .hero img{max-width:480px;width:100%;height:auto;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+    .hero-content h1{margin:0 0 12px 0}
+    a{color:var(--purple);text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="odi_electronics_homepage.html">← Home</a>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div style="font-size:12px;color:var(--purple);font-weight:700">Appliances</div>
+        <h1>Shop Appliances</h1>
+        <p style="color:var(--gray-600);max-width:540px">Showing the store's current inventory — updated from your list.</p>
+      </div>
+      <img src="images/appliances-hero.jpg" alt="Appliances hero image">
+    </section>
+
+    <section style="margin-top:28px">
+      <div style="max-width:1100px;margin:0 auto;padding:0 20px">
+        <table id="products-table" style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden">
+          <thead>
+            <tr style="text-align:left;border-bottom:1px solid var(--gray-100)">
+              <th style="padding:18px">Name</th>
+              <th style="padding:18px">Price (GHS)</th>
+              <th style="padding:18px">Stock</th>
+              <th style="padding:18px">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      async function loadProducts(){
+        const res = await fetch('data/products.json');
+        const products = await res.json();
+        const tbody = document.getElementById('products-body');
+        tbody.innerHTML = products.map(p => `\
+          <tr style="border-bottom:1px solid var(--gray-100)">\
+            <td style="padding:18px">${p.name}</td>\
+            <td style="padding:18px">${p.price.toFixed(2)}</td>\
+            <td style="padding:18px;color:${p.stock>0? 'var(--purple-dark)':'#d33'}">${p.stock}</td>\
+            <td style="padding:18px">\
+              <a href="product.html?id=${p.id}" style="margin-right:12px;color:var(--purple)">View</a>\
+              <button onclick="addToCart(${p.id})" style="background:transparent;border:none;color:#e11;padding:6px;cursor:pointer">Add</button>\
+            </td>\
+          </tr>
+        `).join('');
+      }
+      function addToCart(id){
+        alert('Add to cart: product id '+id+' — cart functionality is not persisted in this static demo.');
+      }
+      loadProducts().catch(e=>{console.error(e);document.getElementById('products-body').innerHTML='<tr><td colspan="4" style="padding:18px">Failed to load products.</td></tr>'});
+    </script>
+    
+  </main>
+</body>
+</html>
