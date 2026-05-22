@@ -1,0 +1,46 @@
+/* Shared responsive tweaks for mobile alignment */
+:root{
+  --max-width:1120px;
+}
+html,body{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,video,iframe{max-width:100%;height:auto;display:block}
+a{word-break:break-word}
+
+/* Utility spacing fixes for small screens */
+.container,.page-wrap{padding-left:16px;padding-right:16px}
+
+/* Make buttons full width on narrow screens */
+.button-primary,.secondary-action,.dashboard-link{min-width:0}
+
+@media (max-width:900px){
+  .hero-card{grid-template-columns:1fr!important}
+  .feature-strip{grid-template-columns:1fr}
+}
+
+@media (max-width:680px){
+  header{padding-left:16px;padding-right:16px}
+  .hero-body,.form-panel{padding:20px}
+  .hero-title{font-size:28px}
+}
+
+@media (max-width:480px){
+  .hero-card{grid-template-columns:1fr!important}
+  .hero-body{padding:16px}
+  .form-panel{padding:16px}
+  .header{padding:12px 16px}
+  .header-logo{width:44px;height:44px}
+  .form input{padding:12px}
+  .button-primary{width:100%;padding:12px;border-radius:12px}
+  .social-row{flex-direction:column}
+  .dashboard-grid{grid-template-columns:1fr!important}
+  .trust-panel{padding:12px}
+  .feature-card{padding:14px}
+  .hero-copy{font-size:15px}
+  .steps{gap:12px}
+}
+
+/* Small layout centering for narrow screens */
+@media (max-width:380px){
+  .hero-title{font-size:22px}
+  .header-title strong{font-size:16px}
+}
