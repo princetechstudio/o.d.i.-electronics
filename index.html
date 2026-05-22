@@ -197,6 +197,7 @@ ul{list-style:none}
 .product-card{background:#fff;border-radius:16px;border:1px solid var(--gray-200);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
 .product-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-4px);border-color:var(--purple)}
 .product-img{background:var(--gray-50);aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-img img{width:100%;height:100%;object-fit:cover;display:block}
 .product-img svg{width:80px;height:80px;color:var(--purple);opacity:.7}
 .product-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px}
 .product-badge.new{background:var(--green)}
@@ -356,10 +357,10 @@ ul{list-style:none}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       Big Brands. Low Prices. O.D.I. Electronics.
     </div>
-    <div class="ann-bar-center">
+      <div class="ann-bar-center">
       <div class="ann-bar-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        Free Delivery in Accra
+        Delivery available in Accra
       </div>
       <div class="ann-divider"></div>
       <div class="ann-bar-item">
@@ -416,7 +417,7 @@ ul{list-style:none}
   <div class="nav-inner">
 
     <!-- Home -->
-    <a class="nav-item active" href="odi_electronics_homepage.html">Home</a>
+    <a class="nav-item active" href="index.html">Home</a>
 
     <!-- Appliances MEGA -->
     <div class="nav-item">
@@ -424,28 +425,34 @@ ul{list-style:none}
       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
       <div class="dropdown mega">
         <div class="mega-col">
-          <div class="mega-col-title">Cooling</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/></svg>Refrigerators</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Chest Freezers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="22" height="9" rx="2"/><path d="M5 15v4M12 15v4M19 15v4"/></svg>Air Conditioners <span class="mega-badge new">NEW</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Wine Coolers</div>
+          <div class="mega-col-title">Televisions</div>
+          <a class="mega-link" href="tvs-audio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Smart TVs &amp; LED Screens</a>
+          <a class="mega-link" href="tvs-audio.html?size=55"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>55" TVs</a>
+          <a class="mega-link" href="tvs-audio.html?size=43"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M7 8h10M7 11h6"/></svg>43" TVs</a>
+          <a class="mega-link" href="tvs-audio.html?size=50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>50" TVs</a>
         </div>
         <div class="mega-col">
-          <div class="mega-col-title">Laundry</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/></svg>Washing Machines</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="12" y1="7" x2="12" y2="9"/></svg>Tumble Dryers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2H3v20l9-5 9 5V2z"/></svg>Irons &amp; Steamers</div>
-          <div class="mega-col-title" style="margin-top:14px">Small Appliances</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders &amp; Mixers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Electric Kettles</div>
+          <div class="mega-col-title">Refrigeration</div>
+          <a class="mega-link" href="products.html?category=Refrigeration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/></svg>Refrigerators</a>
+          <a class="mega-link" href="products.html?category=Refrigeration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Fridges</a>
+          <a class="mega-link" href="products.html?category=Refrigeration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Freezers</a>
+          <a class="mega-link" href="products.html?category=Cooling"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="22" height="9" rx="2"/><path d="M5 15v4M12 15v4M19 15v4"/></svg>Air Conditioners</a>
         </div>
         <div class="mega-col">
-          <div class="mega-col-title">Kitchen</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/></svg>Gas Cookers <span class="mega-badge">HOT</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwaves</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Built-in Ovens</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>Electric Cookers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Coffee Machines</div>
+          <div class="mega-col-title">Laundry + Kitchen</div>
+          <a class="mega-link" href="laundry.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/></svg>Washing Machines</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Electric Kettles</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwave Ovens</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Rice Cookers</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-promo">
+            <div class="mega-promo-tag">New Inventory</div>
+            <div class="mega-promo-title">Shop products from your current catalog</div>
+            <div class="mega-promo-desc">Only the appliances you listed are shown — TVs, fridges, washing machines, microwaves, kettles and more.</div>
+            <button class="mega-promo-btn" onclick="location.href='products.html'">Shop Products</button>
+          </div>
         </div>
         <div class="mega-col">
           <div class="mega-promo">
@@ -455,8 +462,8 @@ ul{list-style:none}
             <button class="mega-promo-btn">Shop Deals</button>
           </div>
           <div style="margin-top:16px;padding:12px;background:var(--gray-50);border-radius:12px;font-size:12px;">
-            <div style="font-weight:700;color:var(--dark);margin-bottom:6px">💳 Pay Small Small</div>
-            <div style="color:var(--gray-600);line-height:1.5">Take home any appliance today with just 20% deposit.</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px">💳 Pay small when it reaches</div>
+            <div style="color:var(--gray-600);line-height:1.5">Pay small when it reaches, then you come for it.</div>
             <a href="#" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--purple)">Learn More →</a>
           </div>
         </div>
@@ -470,22 +477,22 @@ ul{list-style:none}
       <div class="dropdown mega">
         <div class="mega-col">
           <div class="mega-col-title">Televisions</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Smart TVs <span class="mega-badge">HOT</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>4K UHD TVs</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M7 8h10M7 11h6"/></svg>Android TVs</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="12" cy="10" r="2"/></svg>OLED / QLED TVs <span class="mega-badge new">NEW</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>32" – 43" TVs</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>50" – 75" TVs</div>
+          <a class="mega-link" href="tvs-audio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Smart TVs <span class="mega-badge">HOT</span></a>
+          <a class="mega-link" href="tvs-audio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>4K UHD TVs</a>
+          <a class="mega-link" href="tvs-audio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M7 8h10M7 11h6"/></svg>Android TVs</a>
+          <a class="mega-link" href="tvs-audio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="12" cy="10" r="2"/></svg>OLED / QLED TVs <span class="mega-badge new">NEW</span></a>
+          <a class="mega-link" href="tvs-audio.html?size=32-43"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>32" – 43" TVs</a>
+          <a class="mega-link" href="tvs-audio.html?size=50-75"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>50" – 75" TVs</a>
         </div>
         <div class="mega-col">
           <div class="mega-col-title">Audio</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Home Theaters</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12" y2="6" stroke-width="3"/></svg>Bluetooth Speakers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a2 2 0 012-2h14a2 2 0 012 2v1z"/></svg>Headphones</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>Soundbars</div>
+          <a class="mega-link" href="products.html?category=Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Home Theaters</a>
+          <a class="mega-link" href="products.html?category=Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12" y2="6" stroke-width="3"/></svg>Bluetooth Speakers</a>
+          <a class="mega-link" href="products.html?category=Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a2 2 0 012-2h14a2 2 0 012 2v1z"/></svg>Headphones</a>
+          <a class="mega-link" href="products.html?category=Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>Soundbars</a>
           <div class="mega-col-title" style="margin-top:14px">Accessories</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 2v4M16 2v4"/></svg>TV Wall Mounts</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>Remote Controls</div>
+          <a class="mega-link" href="products.html?category=Accessories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 2v4M16 2v4"/></svg>TV Wall Mounts</a>
+          <a class="mega-link" href="products.html?category=Accessories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>Remote Controls</a>
         </div>
         <div class="mega-col">
           <div class="mega-col-title">Shop by Brand</div>
@@ -515,34 +522,25 @@ ul{list-style:none}
     <div class="nav-item">
       Kitchen
       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
-      <div class="dropdown mega" style="grid-template-columns:repeat(3,1fr);min-width:540px">
+      <div class="dropdown mega" style="grid-template-columns:repeat(3,1fr);min-width:520px">
         <div class="mega-col">
           <div class="mega-col-title">Cooking</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><circle cx="8" cy="13" r="2"/><circle cx="16" cy="13" r="2"/></svg>Gas Cookers <span class="mega-badge">HOT</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwaves</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Built-in Ovens</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="10" r="1.5" fill="currentColor"/><circle cx="14" cy="10" r="1.5" fill="currentColor"/></svg>Induction Cookers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Air Fryers <span class="mega-badge new">NEW</span></div>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><circle cx="8" cy="13" r="2"/><circle cx="16" cy="13" r="2"/></svg>Gas Cookers</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><circle cx="12" cy="14" r="3"/></svg>Microwave Ovens</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2h16l2 6H2L4 2z"/><rect x="2" y="8" width="20" height="14" rx="1"/></svg>Rice Cookers</a>
         </div>
         <div class="mega-col">
-          <div class="mega-col-title">Preparation</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12"/></svg>Food Processors</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/></svg>Coffee Makers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8h1a4 4 0 010 8h-1V8z"/><rect x="3" y="8" width="14" height="12" rx="2"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>Electric Kettles</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M16 12h.01M12 12h.01M8 12h.01"/></svg>Rice Cookers</div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>Toasters &amp; Grills</div>
+          <div class="mega-col-title">Small Appliances</div>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>Blenders</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8h1a4 4 0 010 8h-1V8z"/><rect x="3" y="8" width="14" height="12" rx="2"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>Electric Kettles</a>
+          <a class="mega-link" href="kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M16 12h.01M12 12h.01M8 12h.01"/></svg>Rice Cooker Accessories</a>
         </div>
         <div class="mega-col">
           <div class="mega-promo">
-            <div class="mega-promo-tag">Kitchen Bundle</div>
-            <div class="mega-promo-title">Cooker + Microwave</div>
-            <div class="mega-promo-desc">Buy any gas cooker and get 15% off a microwave. Limited offer!</div>
-            <button class="mega-promo-btn">View Bundle</button>
-          </div>
-          <div style="margin-top:12px;font-size:12px;color:var(--gray-600);padding:10px;background:var(--gray-50);border-radius:10px;line-height:1.6">
-            <strong style="color:var(--dark);display:block;margin-bottom:4px">🚚 Delivery Available</strong>
-            We deliver nationwide. Same-day delivery in Accra on orders before 12pm.
+            <div class="mega-promo-tag">Kitchen Essentials</div>
+            <div class="mega-promo-title">Cookers &amp; Small Appliances</div>
+            <div class="mega-promo-desc">Shop the exact appliances you listed: gas cookers, kettles, blenders, rice cookers and microwaves.</div>
+            <button class="mega-promo-btn" onclick="location.href='appliances.html'">Shop Kitchen</button>
           </div>
         </div>
       </div>
@@ -559,27 +557,19 @@ ul{list-style:none}
         </a>
         <a class="drop-link" href="#">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="12" y1="7" x2="12" y2="9"/></svg>
-          Tumble Dryers
+          7KG Washing Machines
         </a>
         <a class="drop-link" href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2H3v20l9-5 9 5V2z"/></svg>
-          Electric Irons
-        </a>
-        <a class="drop-link" href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          Steam Irons
-        </a>
-        <a class="drop-link" href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-          Washer-Dryer Combos <span class="mega-badge new" style="font-size:8px">NEW</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="12" y1="7" x2="12" y2="9"/></svg>
+          5KG Washing Machines
         </a>
         <div class="drop-divider"></div>
         <a class="drop-link" href="#" style="color:var(--gray-600);font-size:12px">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Laundry Accessories
+          Browse all washing machine models
         </a>
         <div class="drop-footer">
-          <a href="#" style="color:var(--purple)">View all Laundry products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:11px;height:11px;display:inline;vertical-align:middle"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="products.html?category=Laundry" style="color:var(--purple)">View all Laundry products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:11px;height:11px;display:inline;vertical-align:middle"><polyline points="9 18 15 12 9 6"/></svg></a>
         </div>
       </div>
     </div>
@@ -677,7 +667,7 @@ ul{list-style:none}
       <div class="hero-features">
         <div class="hero-feat">
           <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Flexible payment plans — Pay Small Small
+          Flexible payment plans — pay small when it reaches then you come for it
         </div>
         <div class="hero-feat">
           <div class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -707,34 +697,23 @@ ul{list-style:none}
       <div class="hero-img-box">
         <div class="hero-appliances-grid">
           <div class="appliance-card featured">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/samsung43inches.jpg" alt="Smart TV — Samsung" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Smart TV — Samsung &amp; TCL</span>
           </div>
           <div class="appliance-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/>
-            </svg>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/product-8.svg" alt="Refrigerator" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Refrigerator</span>
           </div>
           <div class="appliance-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/>
-            </svg>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/5kgwashingmachine.jpg" alt="Washing Machine" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Washing Machine</span>
           </div>
           <div class="appliance-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="16" y1="11" x2="16" y2="16"/>
-            </svg>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/nasco4burner.jpg" alt="Gas Cooker" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Gas Cooker</span>
           </div>
           <div class="appliance-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-              <circle cx="12" cy="14" r="2"/>
-            </svg>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/mediamicrowave30litrs.jpg" alt="Microwave" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Microwave</span>
           </div>
         </div>
@@ -755,7 +734,7 @@ ul{list-style:none}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
       </div>
       <div>
-        <div class="benefit-title">Free Delivery in Accra</div>
+        <div class="benefit-title">Delivery available in Accra</div>
         <div class="benefit-desc">On qualifying orders in Accra</div>
       </div>
     </div>
@@ -774,7 +753,7 @@ ul{list-style:none}
       </div>
       <div>
         <div class="benefit-title">Easy Financing</div>
-        <div class="benefit-desc">Pay Small Small — flexible plans</div>
+        <div class="benefit-desc">Pay small when it reaches — flexible plans</div>
       </div>
     </div>
     <div class="benefit-item">
@@ -876,7 +855,7 @@ ul{list-style:none}
     </div>
     <div class="products-grid" id="featured-products"></div>
     <div style="text-align:center;margin-top:36px">
-      <a class="btn-outline" href="appliances.html" style="font-size:14px;padding:12px 32px;display:inline-block">
+      <a class="btn-outline" href="products.html" style="font-size:14px;padding:12px 32px;display:inline-block">
         View All Products
       </a>
     </div>
@@ -884,7 +863,42 @@ ul{list-style:none}
 </section>
 
 <script>
+  function formatPrice(price){
+    return (price * 1.02).toFixed(2);
+  }
+
   // Render featured products from data/products.json (first 8 items)
+  function resolveFeaturedImage(p){
+    const name = String(p.name).toLowerCase();
+    if(name.includes('samsung')) return 'images/samsung43inches.jpg';
+    if(name.includes('tcl') && name.includes('55')) return 'images/tcl55inches.jpg';
+    if(name.includes('televion')) return 'images/tcl55inches.jpg';
+    if(name.includes('55')) return 'images/tcl55inches.jpg';
+    if(name.includes('tcl') && name.includes('43')) return 'images/tcl43inches.jpg';
+    if(name.includes('nasco') && name.includes('50')) return 'images/nasco50inches.jpg';
+    if(name.includes('50')) return 'images/nasco50inches.jpg';
+    if(name.includes('nasco') && name.includes('43')) return 'images/nasco43inches.jpg';
+    if(name.includes('nasco') && name.includes('32')) return 'images/nasco32inches.jpg';
+    if(name.includes('nas360')) return 'images/nas360freezer.jpg';
+    if(name.includes('2-11') || name.includes('2-11fl')) return 'images/nas2-11fridge.jpg';
+    if(name.includes('2-14') || name.includes('2-14fl')) return 'images/nas-2-14fridge.jpg';
+    if(name.includes('display fridge') && name.includes('nasco')) return 'images/nascodisplayfridge.jpg';
+    if(name.includes('zara 450')) return 'images/450deepfreezer.jpg';
+    if(name.includes('display fridge') && name.includes('zara')) return 'images/zaradisplayfridge.jpg';
+    if(/microwave|midea|media|medea/.test(name)){
+      if(name.includes('34')) return 'images/mediamicrowave34litrs.jpg';
+      if(name.includes('30')) return 'images/mediamicrowave30litrs.jpg';
+      if(name.includes('20')) return 'images/mediamicrowave20litrs.jpg';
+    }
+    if(/wash/.test(name)){
+      if(name.includes('7kg')) return 'images/7kgwashinemachine.jpg';
+      if(name.includes('5kg')) return 'images/5kgwashingmachine.jpg';
+    }
+    if(name.includes('4 burner') || name.includes('4-burner') || name.includes('4burner')) return 'images/nasco4burner.jpg';
+    // fallback to existing SVG
+    return `images/product-${p.id}.svg`;
+  }
+
   async function renderFeatured(){
     try{
       const res = await fetch('data/products.json');
@@ -892,13 +906,13 @@ ul{list-style:none}
       const target = document.getElementById('featured-products');
       const list = products.slice(0,8).map(p => `
         <div class="product-card">
-          <div class="product-img" style="background:#f7f7fb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="width:48px;height:48px"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+          <div class="product-img">
+            <img src="${resolveFeaturedImage(p)}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'" />
           </div>
           <div class="product-body">
             <div class="product-brand">${p.name.split(' ')[0]}</div>
             <div class="product-name">${p.name}</div>
-            <div class="product-prices"><div class="price-new">GHS ${p.price.toFixed(2)}</div></div>
+            <div class="product-prices"><div class="price-new">GHS ${formatPrice(p.price)}</div></div>
           </div>
           <div class="product-actions">
             <a class="btn-view" href="product.html?id=${p.id}">Details</a>
@@ -919,7 +933,7 @@ ul{list-style:none}
   <div class="financing-inner">
     <div>
       <div class="fin-eyebrow">Easy Financing</div>
-      <h2 class="fin-h2">Take It Home Today.<br/><em>Pay Small Small.</em></h2>
+      <h2 class="fin-h2">Pay small when it reaches.<br/><em>Then you come for it.</em></h2>
       <p class="fin-desc">Don't wait to get the appliances your home needs. Our flexible installment plans make it easy to own the best brands with little upfront payment.</p>
       <div class="fin-steps">
         <div class="fin-step">
@@ -945,7 +959,7 @@ ul{list-style:none}
         </div>
       </div>
       <div class="fin-btns">
-        <button class="btn-white">Apply Now</button>
+        <button class="btn-white" onclick="window.location='apply-now.html'">Apply Now</button>
         <button class="btn-ghost">Learn More</button>
       </div>
     </div>
@@ -983,7 +997,7 @@ ul{list-style:none}
               const products = await res.json();
               const p = products && products.length? products[0] : null;
               if(!p) return;
-              const price = Number(p.price || 0);
+              const price = Number(p.price || 0) * 1.02;
               const deposit = Math.round(price * 0.2);
               const balance = Math.round(price - deposit);
               const months = 6;
@@ -1038,7 +1052,7 @@ ul{list-style:none}
       <div class="testi-card">
         <div class="testi-quote">"</div>
         <div class="testi-stars" style="color:#f59e0b">★★★★★</div>
-        <p class="testi-text">I bought a TV on the Pay Small Small plan and it was so easy. The staff were very helpful and my monthly payments fit my budget.</p>
+        <p class="testi-text">I bought a TV on the Pay small when it reaches plan and it was so easy. The staff were very helpful and my monthly payments fit my budget.</p>
         <div class="testi-author">
           <div class="testi-avatar">AK</div>
           <div>
@@ -1203,7 +1217,26 @@ document.querySelectorAll('.btn-cart').forEach(btn=>{
   });
 });
 
-// Newsletter submit
+// Search button behavior
+  const searchInput = document.querySelector('.search-bar input');
+  const searchButton = document.querySelector('.search-btn');
+  function performSearch(){
+    const term = searchInput?.value.trim();
+    window.location.href = term ? `products.html?search=${encodeURIComponent(term)}` : 'products.html';
+  }
+  if(searchButton){
+    searchButton.addEventListener('click', performSearch);
+  }
+  if(searchInput){
+    searchInput.addEventListener('keydown', event => {
+      if(event.key === 'Enter'){
+        event.preventDefault();
+        performSearch();
+      }
+    });
+  }
+
+  // Newsletter submit
 const newsForm=document.querySelector('.newsletter-form');
 if(newsForm){
   newsForm.querySelector('button').addEventListener('click',()=>{

@@ -17,12 +17,12 @@
 </head>
 <body>
   <header>
-    <a href="odi_electronics_homepage.html">← Home</a>
+    <a href="index.html">← Home</a>
   </header>
   <main class="container">
     <div id="product-detail" class="product">
       <div class="product-media">
-        <img id="prod-img" src="images/product-sample.jpg" alt="Product image">
+        <img id="prod-img" src="images/product-sample.svg" alt="Product image">
       </div>
       <div class="product-info">
         <h1 id="prod-name">Loading…</h1>
@@ -36,18 +36,50 @@
         const params = new URLSearchParams(window.location.search);
         return params.get(name);
       }
+      function formatPrice(price){
+        return (price * 1.02).toFixed(2);
+      }
+      function resolveProductImage(name, id){
+        const key = String(name).toLowerCase();
+        if(key.includes('samsung')) return 'images/samsung43inches.jpg';
+        if(key.includes('tcl') && key.includes('55')) return 'images/tcl55inches.jpg';
+        if(key.includes('televion')) return 'images/tcl55inches.jpg';
+        if(key.includes('55')) return 'images/tcl55inches.jpg';
+        if(key.includes('tcl') && key.includes('43')) return 'images/tcl43inches.jpg';
+        if(key.includes('nasco') && key.includes('50')) return 'images/nasco50inches.jpg';
+        if(key.includes('50')) return 'images/nasco50inches.jpg';
+        if(key.includes('nasco') && key.includes('43')) return 'images/nasco43inches.jpg';
+        if(key.includes('nasco') && key.includes('32')) return 'images/nasco32inches.jpg';
+        if(key.includes('nas360')) return 'images/nas360freezer.jpg';
+        if(key.includes('2-11') || key.includes('2-11fl')) return 'images/nas2-11fridge.jpg';
+        if(key.includes('2-14') || key.includes('2-14fl')) return 'images/nas-2-14fridge.jpg';
+        if(key.includes('display fridge') && key.includes('nasco')) return 'images/nascodisplayfridge.jpg';
+        if(key.includes('zara 450')) return 'images/450deepfreezer.jpg';
+        if(key.includes('display fridge') && key.includes('zara')) return 'images/zaradisplayfridge.jpg';
+        if(/microwave|midea|media|medea/.test(key)){
+          if(key.includes('34')) return 'images/mediamicrowave34litrs.jpg';
+          if(key.includes('30')) return 'images/mediamicrowave30litrs.jpg';
+          if(key.includes('20')) return 'images/mediamicrowave20litrs.jpg';
+        }
+        if(/wash/.test(key)){
+          if(key.includes('7kg')) return 'images/7kgwashinemachine.jpg';
+          if(key.includes('5kg')) return 'images/5kgwashingmachine.jpg';
+        }
+        if(key.includes('4 burner') || key.includes('4-burner') || key.includes('4burner')) return 'images/nasco4burner.jpg';
+        return `images/product-${id}.svg`;
+      }
       async function loadProduct(){
         const id = parseInt(getQueryParam('id'),10);
         const res = await fetch('data/products.json');
         const products = await res.json();
         const p = products.find(x=>x.id===id) || products[0];
         document.getElementById('prod-name').textContent = p.name;
-        document.getElementById('prod-price').textContent = 'GHS '+p.price.toFixed(2);
+        document.getElementById('prod-price').textContent = 'GHS '+formatPrice(p.price);
         document.getElementById('prod-desc').textContent = p.description || 'High quality appliance. Contact us for details.';
-        // image fallback: if there is an image named by id use it
         const imgEl = document.getElementById('prod-img');
-        const candidate = 'images/product-'+p.id+'.jpg';
-        fetch(candidate, {method:'HEAD'}).then(r=>{ if(r.ok) imgEl.src = candidate; }).catch(()=>{});
+        const candidate = resolveProductImage(p.name, p.id);
+        imgEl.src = candidate;
+        imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = 'images/product-sample.svg'; };
         document.getElementById('add-cart').addEventListener('click', ()=>alert('Add to cart: '+p.name+' (static demo)'));
       }
       loadProduct().catch(e=>{console.error(e);document.getElementById('prod-name').textContent='Product not found';});

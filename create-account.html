@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Account — O.D.I. Electronics</title>
+  <style>
+    :root{
+      --purple:#6A0DAD;
+      --dark:#1A1A1A;
+      --gray-100:#F1F3F5;
+      --gray-200:#E9ECEF;
+      --gray-300:#DEE2E6;
+      --gray-500:#868E96;
+      --white:#FFFFFF;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:linear-gradient(180deg,#f7f4ff 0%,#ffffff 80%);font-family:'Inter',system-ui,sans-serif;color:var(--dark)}
+    body::before{content:'';position:fixed;top:-120px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,#8E44AD20 0%,transparent 70%);pointer-events:none;z-index:-1}
+    body::after{content:'';position:fixed;bottom:-120px;right:-120px;width:360px;height:360px;background:radial-gradient(circle,#1EA7FF18 0%,transparent 70%);pointer-events:none;z-index:-1}
+    a{color:inherit;text-decoration:none}
+    .page-wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:52px;height:52px;border-radius:14px;object-fit:cover}
+    .logo strong{font-size:18px;color:var(--purple)}
+    .back-link{font-size:14px;color:var(--purple);font-weight:700}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:40px}
+    .hero-copy{max-width:520px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--purple);letter-spacing:.18em;margin-bottom:18px}
+    .eyebrow::before{content:'';width:34px;height:2px;background:var(--purple);border-radius:999px}
+    .hero-title{font-size:44px;line-height:1.05;font-weight:900;margin-bottom:18px}
+    .hero-text{font-size:16px;line-height:1.75;color:var(--gray-500)}
+    .form-card{background:#ffffff;border-radius:32px;box-shadow:0 30px 80px rgba(17,24,39,.08);padding:42px 42px 48px;border:1px solid rgba(106,13,173,.08)}
+    .form-card h2{font-size:28px;line-height:1.1;font-weight:900;margin-bottom:10px}
+    .form-card p{font-size:14px;color:var(--gray-500);margin-bottom:28px}
+    .form{display:grid;gap:20px}
+    .form label{font-size:13px;font-weight:700;color:var(--dark)}
+    .form input{width:100%;padding:16px 18px;border:1px solid var(--gray-200);border-radius:16px;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+    .form input:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(106,13,173,.08)}
+    .button-primary{display:inline-flex;align-items:center;justify-content:center;padding:16px 20px;background:var(--purple);color:#fff;border:none;border-radius:16px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .button-primary:hover{transform:translateY(-1px);box-shadow:0 16px 32px rgba(106,13,173,.22)}
+    .note{font-size:13px;color:var(--gray-500);line-height:1.7}
+    .message{display:none;padding:16px;border-radius:14px;font-size:14px;line-height:1.6}
+    .success{background:#eef7ff;color:#0b4a8b;border:1px solid #c2ddff}
+    .error{background:#fee2e2;color:#7a1f1f;border:1px solid #fecaca}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:24px}}    
+    @media(max-width:480px){
+      .hero{grid-template-columns:1fr}
+      .form-card{padding:28px}
+      .hero-title{font-size:28px}
+      .form input{padding:12px}
+      .button-primary{width:100%;padding:14px}
+      #google-signup-btn,#apple-signup-btn{display:block;width:100%;margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <header>
+      <a href="index.html" class="logo"><img src="images/logo.jpeg" alt="O.D.I. Electronics"><strong>O.D.I. Electronics</strong></a>
+      <a href="account.html" class="back-link">← Back to Account</a>
+    </header>
+
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Create Account</div>
+        <h1 class="hero-title">Register for faster shopping and order tracking.</h1>
+        <p class="hero-text">Create your account to save delivery information, track orders, and receive member-only offers. Your details are stored securely and ready for checkout.</p>
+      </div>
+      <div class="form-card">
+        <h2>Start your account</h2>
+        <p>Fill in the form below and we'll save your account to Firebase Realtime Database.</p>
+        <form id="create-account-form" class="form" action="#" method="post">
+          <label for="new-name">Full name</label>
+          <input id="new-name" name="new-name" type="text" placeholder="e.g. Ama Mensah" required>
+          <label for="new-email">Email address</label>
+          <input id="new-email" name="new-email" type="email" placeholder="you@example.com" required>
+          <label for="new-password">Password</label>
+          <input id="new-password" name="new-password" type="password" placeholder="Create a password" required>
+          <button class="button-primary" type="submit">Create Account</button>
+          <div style="margin-top:10px;text-align:center;color:var(--gray-500);font-size:13px">or</div>
+          <button id="google-signup-btn" type="button" class="button-primary" style="background:#fff;color:var(--purple);border:2px solid var(--purple);margin-top:10px">Continue with Google</button>
+          <button id="apple-signup-btn" type="button" class="button-primary" style="background:#fff;color:var(--purple);border:2px solid var(--purple);margin-top:10px">Continue with Apple</button>
+          <div id="create-success" class="message success" role="status" aria-live="polite"></div>
+          <div id="create-error" class="message error" role="alert" aria-live="assertive"></div>
+        </form>
+        <p class="note">Note: This page creates a Firebase Authentication user and stores profile details in Realtime Database for your account.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
+    import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, GoogleAuthProvider, OAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
+    import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCCxRdcHxFIrvtQgPkvj_bisiHDdejsnIQ",
+      authDomain: "odi-ele.firebaseapp.com",
+      databaseURL: "https://odi-ele-default-rtdb.firebaseio.com",
+      projectId: "odi-ele",
+      storageBucket: "odi-ele.firebasestorage.app",
+      messagingSenderId: "289670780458",
+      appId: "1:289670780458:web:f3afa3d470eab9f9fcd553",
+      measurementId: "G-2L3KCEJ6HR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+
+    const createForm = document.getElementById('create-account-form');
+    const googleSignupBtn = document.getElementById('google-signup-btn');
+    const appleSignupBtn = document.getElementById('apple-signup-btn');
+    const createSuccess = document.getElementById('create-success');
+    const createError = document.getElementById('create-error');
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        window.location.href = 'index.html';
+      }
+    });
+
+    createForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      createError.style.display = 'none';
+      createSuccess.style.display = 'none';
+
+      const name = document.getElementById('new-name').value.trim();
+      const email = document.getElementById('new-email').value.trim();
+      const password = document.getElementById('new-password').value;
+
+      if (!name || !email || !password) {
+        createError.textContent = 'Please complete all fields.';
+        createError.style.display = 'block';
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        createError.textContent = 'Please enter a valid email address.';
+        createError.style.display = 'block';
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.debug('New account created', { uid: user.uid, email: user.email });
+        await updateProfile(user, { displayName: name });
+        await set(ref(db, `accounts/${user.uid}`), {
+          name,
+          email,
+          createdAt: Date.now()
+        });
+
+        createSuccess.textContent = 'Account created and logged in. Redirecting...';
+        createSuccess.style.display = 'block';
+        setTimeout(() => window.location.href = 'index.html', 1200);
+      } catch (error) {
+        createError.textContent = 'Unable to create account: ' + (error.message || error);
+        createError.style.display = 'block';
+      }
+    });
+
+    googleSignupBtn.addEventListener('click', async function() {
+      createError.style.display = 'none';
+      createSuccess.style.display = 'none';
+      try {
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        console.debug('Google signup popup result', { uid: user.uid, email: user.email });
+        await set(ref(db, `accounts/${user.uid}`), {
+          name: user.displayName || user.email,
+          email: user.email,
+          createdAt: Date.now()
+        });
+        createSuccess.textContent = 'Signed in with Google. Redirecting...';
+        createSuccess.style.display = 'block';
+        setTimeout(() => window.location.href = 'index.html', 800);
+      } catch (error) {
+        createError.textContent = 'Google sign-in failed: ' + (error.message || error);
+        createError.style.display = 'block';
+      }
+    });
+    appleSignupBtn.addEventListener('click', async function() {
+      createError.style.display = 'none';
+      createSuccess.style.display = 'none';
+      try {
+        const provider = new OAuthProvider('apple.com');
+        provider.addScope('email');
+        provider.addScope('name');
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        console.debug('Apple signup popup result', { uid: user.uid, email: user.email });
+        await set(ref(db, `accounts/${user.uid}`), {
+          name: user.displayName || user.email,
+          email: user.email,
+          createdAt: Date.now()
+        });
+        createSuccess.textContent = 'Signed in with Apple. Redirecting...';
+        createSuccess.style.display = 'block';
+        setTimeout(() => window.location.href = 'index.html', 800);
+      } catch (error) {
+        createError.textContent = 'Apple sign-in failed: ' + (error.message || error);
+        createError.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

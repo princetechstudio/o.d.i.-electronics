@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — O.D.I. Electronics</title>
+  <style>
+    :root{
+      --purple:#6A0DAD;
+      --dark:#1A1A1A;
+      --gray-100:#F1F3F5;
+      --gray-200:#E9ECEF;
+      --gray-300:#DEE2E6;
+      --gray-500:#868E96;
+      --white:#FFFFFF;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:linear-gradient(180deg,#f7f4ff 0%,#ffffff 80%);font-family:'Inter',system-ui,sans-serif;color:var(--dark)}
+    body::before{content:'';position:fixed;top:-120px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,#8E44AD20 0%,transparent 70%);pointer-events:none;z-index:-1}
+    body::after{content:'';position:fixed;bottom:-120px;right:-120px;width:360px;height:360px;background:radial-gradient(circle,#1EA7FF18 0%,transparent 70%);pointer-events:none;z-index:-1}
+    a{color:inherit;text-decoration:none}
+    .page-wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:52px;height:52px;border-radius:14px;object-fit:cover}
+    .logo strong{font-size:18px;color:var(--purple)}
+    .back-link{font-size:14px;color:var(--purple);font-weight:700}
+    .hero{background:#ffffff;border-radius:32px;box-shadow:0 30px 80px rgba(17,24,39,.08);padding:42px;border:1px solid rgba(106,13,173,.08);margin-top:24px}
+    .hero-headline{font-size:34px;line-height:1.05;font-weight:900;margin-bottom:12px}
+    .hero-text{font-size:16px;line-height:1.75;color:var(--gray-500);margin-bottom:30px}
+    .card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+    .card{background:#f8f5ff;border:1px solid rgba(106,13,173,.12);border-radius:28px;padding:28px;min-height:180px}
+    .card h3{font-size:18px;margin-bottom:10px}
+    .card p{color:var(--gray-500);line-height:1.75}
+    .button-primary{display:inline-flex;align-items:center;justify-content:center;padding:16px 20px;background:var(--purple);color:#fff;border:none;border-radius:16px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .button-primary:hover{transform:translateY(-1px);box-shadow:0 16px 32px rgba(106,13,173,.22)}
+    .secondary-action{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;background:#fff;color:var(--purple);border:2px solid var(--purple);border-radius:16px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .secondary-action:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(106,13,173,.12)}
+    .user-card{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px;border-radius:24px;background:#ffffff;border:1px solid rgba(106,13,173,.08);margin-top:24px}
+    .user-card div{min-width:0}
+    .user-name{font-size:22px;font-weight:900;margin-bottom:6px}
+    .user-email{color:var(--gray-500)}
+    .status{display:inline-flex;padding:8px 14px;border-radius:999px;background:#eef7ff;color:#0b4a8b;font-weight:700;font-size:13px}
+    .alert{margin-top:18px;padding:18px;border-radius:18px;background:#fff4e5;color:#7a4f00;border:1px solid #ffdfba}
+    @media(max-width:760px){.hero{padding:28px}.card-grid{grid-template-columns:1fr}.user-card{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <header>
+      <a href="index.html" class="logo"><img src="images/logo.jpeg" alt="O.D.I. Electronics"><strong>O.D.I. Electronics</strong></a>
+      <a href="account.html" class="back-link">← Back to Account</a>
+    </header>
+
+    <section class="hero">
+      <div class="user-card">
+        <div>
+          <p class="status">Member dashboard</p>
+          <p class="user-name" id="user-name">Loading...</p>
+          <p class="user-email" id="user-email">Checking account…</p>
+        </div>
+        <button id="dashboard-signout-btn" class="secondary-action">Sign Out</button>
+      </div>
+
+      <h1 class="hero-headline">Your account hub</h1>
+      <p class="hero-text">Manage recent activity, orders, saved delivery information, and exclusive offers in one place. Your session stays secure with Firebase Authentication.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Recent orders</h3>
+          <p>View your latest purchases, shipment status, and order history from O.D.I. Electronics.</p>
+        </div>
+        <div class="card">
+          <h3>Saved details</h3>
+          <p>Keep your billing address, payment preferences, and delivery notes ready for faster checkout.</p>
+        </div>
+        <div class="card">
+          <h3>Support access</h3>
+          <p>Get priority help for returns, warranties, and device support directly from your account.</p>
+        </div>
+        <div class="card">
+          <h3>Member perks</h3>
+          <p>Unlock exclusive deals, early access promotions, and personalized recommendations.</p>
+        </div>
+      </div>
+
+      <div class="alert" id="dashboard-notice" style="display:none"></div>
+    </section>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
+    import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCCxRdcHxFIrvtQgPkvj_bisiHDdejsnIQ",
+      authDomain: "odi-ele.firebaseapp.com",
+      databaseURL: "https://odi-ele-default-rtdb.firebaseio.com",
+      projectId: "odi-ele",
+      storageBucket: "odi-ele.firebasestorage.app",
+      messagingSenderId: "289670780458",
+      appId: "1:289670780458:web:f3afa3d470eab9f9fcd553",
+      measurementId: "G-2L3KCEJ6HR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const userName = document.getElementById('user-name');
+    const userEmail = document.getElementById('user-email');
+    const dashboardNotice = document.getElementById('dashboard-notice');
+    const signOutBtn = document.getElementById('dashboard-signout-btn');
+
+    function requireSignedIn(user) {
+      if (!user) {
+        window.location.href = 'account.html';
+        return false;
+      }
+      return true;
+    }
+
+    onAuthStateChanged(auth, user => {
+      if (!requireSignedIn(user)) return;
+      userName.textContent = user.displayName || 'Customer';
+      userEmail.textContent = user.email || 'No email available';
+      dashboardNotice.style.display = 'block';
+      dashboardNotice.textContent = 'Welcome back! If you need order status or account support, return to your account page or sign out from here.';
+    });
+
+    signOutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'account.html';
+      } catch (error) {
+        dashboardNotice.style.display = 'block';
+        dashboardNotice.textContent = 'Unable to sign out: ' + (error.message || error);
+      }
+    });
+  </script>
+</body>
+</html>

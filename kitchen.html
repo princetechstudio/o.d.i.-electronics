@@ -1,33 +1,91 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kitchen — O.D.I. Electronics</title>
+  <title>Kitchen Appliances — O.D.I. Electronics</title>
   <style>
-    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
-    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
-    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
-    .container{max-width:1100px;margin:28px auto;padding:0 20px}
-    .hero{display:flex;gap:24px;align-items:center}
-    .hero img{max-width:480px;width:100%;height:auto;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
-    .hero-content h1{margin:0 0 12px 0}
-    a{color:var(--purple);text-decoration:none}
+    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666;--gray-200:#e6e6ea;--gray-100:#f6f6f9;}
+    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);background:#fafafa;}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid var(--gray-200)}
+    .container{max-width:1120px;margin:28px auto;padding:0 20px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+    .hero h1{margin:0 0 14px 0;font-size:32px}
+    .hero p{max-width:680px;color:var(--gray-600);line-height:1.75}
+    .hero img{width:100%;height:auto;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+    .table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--gray-200);border-radius:16px;margin-top:24px}
+    table{width:100%;border-collapse:collapse;min-width:720px}
+    th,td{padding:18px;text-align:left;border-bottom:1px solid var(--gray-100)}
+    th{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-600)}
+    .label{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gray-100);color:var(--gray-600)}
+    .price{font-weight:800;color:var(--purple)}
+    .btn-link{color:var(--purple);text-decoration:none;font-weight:700}
+    .empty{padding:40px;text-align:center;color:var(--gray-600)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr} .hero img{max-width:100%}}
   </style>
 </head>
 <body>
   <header>
-    <a href="odi_electronics_homepage.html">← Home</a>
+    <a href="index.html">← Home</a>
   </header>
   <main class="container">
     <section class="hero">
-      <div class="hero-content">
-        <div style="font-size:12px;color:var(--purple);font-weight:700">Kitchen</div>
+      <div>
+        <div style="font-size:12px;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:1px">Kitchen</div>
         <h1>Kitchen Appliances</h1>
-        <p style="color:var(--gray-600);max-width:540px">Ovens, cookers, blenders and small kitchen appliances to make cooking easier.</p>
+        <p style="color:var(--gray-600);max-width:680px;line-height:1.75">Shop blenders, kettles, microwave ovens, rice cookers, and all small kitchen essentials available now.</p>
       </div>
       <img src="images/kitchen-hero.jpg" alt="Kitchen hero image">
     </section>
+    <section class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price (GHS)</th>
+            <th>Stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="products-table"></tbody>
+      </table>
+    </section>
   </main>
+  <script>
+    function inferCategory(name){
+      const value = String(name).toUpperCase();
+      if(/TV|INCH/.test(value)) return 'Televisions';
+      if(/WASHING/.test(value)) return 'Laundry';
+      if(/KETTLE|BLENDER|MICROWAVE|RICE COOKER|COOKER|BURNER/.test(value)) return 'Kitchen';
+      if(/FRIDGE|FREEZER/.test(value)) return 'Refrigeration';
+      if(/AC\b/.test(value)) return 'Cooling';
+      return 'Other';
+    }
+    function formatPrice(price){
+      return (price * 1.02).toFixed(2);
+    }
+    async function loadProducts(){
+      const res = await fetch('data/products.json');
+      const products = await res.json();
+      const filtered = products.filter(p => inferCategory(p.name) === 'Kitchen');
+      const body = document.getElementById('products-table');
+      if(!filtered.length){
+        body.innerHTML = '<tr><td colspan="4" class="empty">No kitchen products are available at the moment.</td></tr>';
+        return;
+      }
+      body.innerHTML = filtered.map(product => `
+        <tr>
+          <td>${product.name}</td>
+          <td class="price">GHS ${formatPrice(product.price)}</td>
+          <td style="color:${product.stock > 0 ? '#166534' : '#be123c'}">${product.stock}</td>
+          <td><a class="btn-link" href="product.html?id=${product.id}">View details</a></td>
+        </tr>
+      `).join('');
+    }
+    loadProducts().catch(err => {
+      console.error(err);
+      document.getElementById('products-table').innerHTML = '<tr><td colspan="4" class="empty">Failed to load kitchen products.</td></tr>';
+    });
+  </script>
 </body>
 </html>

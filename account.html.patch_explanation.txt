@@ -1,0 +1,1 @@
+Patch adds firebase-database imports, initializes db, adds dashboard HTML references, modifies onAuthStateChanged to display the in-page dashboard and loads account data from Realtime Database; adds functions loadAccountData, renderOrders, renderAddresses.

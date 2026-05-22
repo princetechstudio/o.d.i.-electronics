@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" rx="24" ry="24" fill="#f3f2f8"/>
+  <rect x="40" y="40" width="520" height="220" rx="18" fill="#e9e7ff"/>
+  <rect x="40" y="280" width="220" height="24" rx="12" fill="#ddd"/>
+  <rect x="40" y="320" width="420" height="24" rx="12" fill="#ddd"/>
+  <text x="300" y="140" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="40" fill="#8a7ed2" opacity="0.85">Image</text>
+  <text x="300" y="190" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" fill="#7b72b3" opacity="0.75">Placeholder</text>
+</svg>

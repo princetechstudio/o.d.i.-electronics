@@ -30,7 +30,18 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
+
+
+
+
+
+
+
+
+
+
+
+
 img{max-width:100%;display:block}
 button{cursor:pointer;font-family:inherit}
 ul{list-style:none}
@@ -92,6 +103,18 @@ ul{list-style:none}
 .hero-card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.08);border:1px solid var(--gray-100)}
 .hero-card strong{display:block;font-size:18px;font-weight:800;color:var(--purple);margin-bottom:8px}
 .hero-card span{font-size:13px;color:var(--gray-600);line-height:1.7}
+.referral-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.referral-card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 18px 40px rgba(16,24,40,.08);border:1px solid var(--gray-200)}
+.referral-card h3{font-size:20px;font-weight:800;margin-bottom:12px}
+.referral-card p{font-size:14px;color:var(--gray-600);line-height:1.75}
+.referral-form{background:#fff;border-radius:24px;padding:30px;box-shadow:0 18px 40px rgba(16,24,40,.08);border:1px solid var(--gray-200)}
+.referral-form label{display:block;font-size:14px;font-weight:700;color:var(--gray-800);margin-top:18px}
+.referral-form input,.referral-form textarea{width:100%;padding:14px 16px;margin-top:8px;border:1px solid var(--gray-200);border-radius:14px;font-size:15px;outline:none;color:var(--dark);background:#fafafa}
+.referral-form textarea{min-height:120px;resize:vertical}
+.referral-form button{margin-top:22px;background:var(--purple);color:#fff;border:none;padding:14px 22px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer}
+.reward-box{background:linear-gradient(135deg,rgba(106,13,173,.07),rgba(106,13,173,.15));border:1px dashed rgba(106,13,173,.3);border-radius:18px;padding:24px;margin-top:24px}
+.reward-box strong{display:block;font-size:18px;font-weight:800;color:var(--purple);margin-bottom:10px}
+.reward-box span{display:block;font-size:14px;color:var(--gray-600);line-height:1.7}
 .section{padding:64px 0}
 .section-inner{max-width:1280px;margin:0 auto;padding:0 24px}
 .section-header{text-align:center;margin-bottom:40px}
@@ -160,7 +183,7 @@ ul{list-style:none}
     <div class="ann-bar-center">
       <div class="ann-bar-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        Free Delivery in Accra
+        Delivery available in Accra
       </div>
       <div class="ann-divider"></div>
       <div class="ann-bar-item">
@@ -211,7 +234,7 @@ ul{list-style:none}
 </header>
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-item" href="odi_electronics_homepage.html">Home</a>
+    <a class="nav-item" href="index.html">Home</a>
     <a class="nav-item" href="our-story.html">Our Story</a>
     <a class="nav-item" href="financing-plans.html">Financing Plans</a>
     <a class="nav-item" href="delivery-info.html">Delivery Info</a>
@@ -222,17 +245,17 @@ ul{list-style:none}
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">Careers</div>
-      <h1 class="hero-h1">Join a team that builds better buying experiences.</h1>
-      <p class="hero-sub">Work with O.D.I. Electronics to help Ghanaian homes access quality appliances, exceptional service, and trusted warranty support.</p>
+      <div class="hero-eyebrow">Referral Program</div>
+      <h1 class="hero-h1">Invite a buyer and earn 2% of their purchase.</h1>
+      <p class="hero-sub">Refer someone to O.D.I. Electronics. When they buy an appliance, you receive 2% of the final sale value as a reward — no CV required, just great recommendations.</p>
       <div class="hero-features">
-        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4z"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>Career growth</div>
-        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h18"/><path d="M8 17h8"/><path d="M12 7v4"/></svg></span>Friendly culture</div>
-        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-5V5l-7-3-7 3v9l7 5z"/><path d="M12 12v7"/></svg></span>Competitive compensation</div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-7z"/></svg></span>No application needed</div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 22v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="11" cy="7" r="4"/></svg></span>Fast referral payout</div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg></span>Works for any appliance</div>
       </div>
       <div class="hero-btns">
-        <a class="btn-primary" href="#positions">View Open Roles</a>
-        <a class="btn-outline" href="contact.html">Send Your CV</a>
+        <a class="btn-primary" href="#referral-form">Refer Now</a>
+        <a class="btn-outline" href="#how-it-works">How it works</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -246,87 +269,92 @@ ul{list-style:none}
           </svg>
         </div>
         <div class="hero-cards">
-          <div class="hero-card"><strong>Team-first</strong><span>We celebrate flexible thinkers, service minded people, and reliable doers.</span></div>
-          <div class="hero-card"><strong>Meaningful work</strong><span>Support customers across Ghana with appliances that improve homes and daily life.</span></div>
+          <div class="hero-card"><strong>2% referral reward</strong><span>Get paid a reward for every completed purchase from someone you refer.</span></div>
+          <div class="hero-card"><strong>Refer any appliance</strong><span>From TVs to fridges, any purchase qualifies for the reward.</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section" id="positions">
+<section class="section" id="how-it-works">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-tag">Open Roles</div>
-      <h2 class="section-h2">Find your next role with O.D.I. Electronics.</h2>
-      <p class="section-sub">We are growing rapidly and hiring for customer support, delivery coordination, sales, and service roles.</p>
+      <div class="section-tag">How it works</div>
+      <h2 class="section-h2">Simple referrals with real rewards.</h2>
+      <p class="section-sub">Share appliances with friends and family. When they complete a purchase, you earn a 2% reward based on their total order.</p>
     </div>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Sales Consultant</h3>
-        <p>Help customers choose the right appliances, provide plan guidance, and support the checkout process.</p>
+    <div class="referral-grid">
+      <div class="referral-card">
+        <h3>1. Refer a friend</h3>
+        <p>Send the person your referral details and let them choose the appliance they want from our store.</p>
       </div>
-      <div class="card">
-        <h3>Delivery Coordinator</h3>
-        <p>Manage delivery schedules, communicate with customers, and ensure timely arrival of appliances.</p>
+      <div class="referral-card">
+        <h3>2. They make a purchase</h3>
+        <p>Once the referred buyer completes a purchase, the transaction is verified by our team.</p>
       </div>
-      <div class="card">
-        <h3>Service Technician</h3>
-        <p>Perform installations and warranty repairs with care, quality, and a focus on customer satisfaction.</p>
+      <div class="referral-card">
+        <h3>3. You earn 2%</h3>
+        <p>We reward you with 2% of the final purchase value. That means more earnings for higher-value appliances.</p>
+      </div>
+      <div class="referral-card">
+        <h3>4. Get paid fast</h3>
+        <p>Receive your reward soon after the sale is confirmed so you can keep referring more buyers.</p>
       </div>
     </div>
   </div>
 </section>
-<section class="section" style="background:var(--gray-50)">
+<section class="section" id="referral-form">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-tag">Our culture</div>
-      <h2 class="section-h2">A workplace rooted in trust and teamwork.</h2>
-      <p class="section-sub">We value respect, open communication, and doing right by our customers and each other.</p>
+      <div class="section-tag">Refer & Earn</div>
+      <h2 class="section-h2">Submit a referral and start earning interest on purchases.</h2>
+      <p class="section-sub">Provide your contact details, the buyer's information, and the appliance they want. We'll take it from there.</p>
     </div>
-    <div class="card" style="max-width:760px;margin:0 auto;">
-      <div class="list-card">
-        <div class="list-card-icon">✓</div>
-        <div>
-          <strong>Supportive environment</strong>
-          <span>Teamwork is central to how we serve customers and grow the business together.</span>
+    <div class="referral-grid">
+      <div class="referral-form">
+        <form id="referral-program-form">
+          <label for="referrer-name">Your Name</label>
+          <input id="referrer-name" name="referrer-name" type="text" placeholder="Enter your full name" required>
+          <label for="referrer-phone">Your Phone</label>
+          <input id="referrer-phone" name="referrer-phone" type="tel" placeholder="e.g. 0550 900 600" required>
+          <label for="referrer-email">Your Email</label>
+          <input id="referrer-email" name="referrer-email" type="email" placeholder="you@example.com" required>
+          <label for="referred-name">Referred Person</label>
+          <input id="referred-name" name="referred-name" type="text" placeholder="Enter the buyer's name" required>
+          <label for="referred-contact">Referred Contact</label>
+          <input id="referred-contact" name="referred-contact" type="text" placeholder="Phone or email for the buyer" required>
+          <label for="referred-appliance">Appliance they want</label>
+          <input id="referred-appliance" name="referred-appliance" type="text" placeholder="e.g. 55-inch Samsung TV" required>
+          <label for="estimated-value">Estimated Purchase Value</label>
+          <input id="estimated-value" name="estimated-value" type="number" placeholder="e.g. 5500" required>
+          <label for="referral-notes">Notes</label>
+          <textarea id="referral-notes" name="referral-notes" placeholder="Any extra details about the referral"></textarea>
+          <button type="submit">Submit Referral</button>
+          <div id="referral-success" class="reward-box" style="display:none"></div>
+        </form>
+      </div>
+      <div class="referral-card">
+        <h3>Popular referral items</h3>
+        <div class="list-card">
+          <div class="list-card-icon">TV</div>
+          <div><strong>Smart TVs</strong><span>High demand, great reward potential.</span></div>
         </div>
-      </div>
-      <div class="list-card">
-        <div class="list-card-icon">✓</div>
-        <div>
-          <strong>Learning focus</strong>
-          <span>We invest in training so employees develop skills and career momentum.</span>
+        <div class="list-card">
+          <div class="list-card-icon">AC</div>
+          <div><strong>Air Conditioners</strong><span>Perfect for families and offices.</span></div>
         </div>
-      </div>
-      <div class="list-card">
-        <div class="list-card-icon">✓</div>
-        <div>
-          <strong>Reward for results</strong>
-          <span>Delivering strong customer service and reliability is recognized and rewarded.</span>
+        <div class="list-card">
+          <div class="list-card-icon">FR</div>
+          <div><strong>Fridges & Freezers</strong><span>Essential appliances with steady interest.</span></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">How to apply</div>
-      <h2 class="section-h2">Send us your CV and start the conversation.</h2>
-      <p class="section-sub">Email your application or drop by our Accra office to meet the hiring team.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Email your CV</h3>
-        <p>Send your resume to sales@odielectronics.com with the role title in the subject line.</p>
-      </div>
-      <div class="card">
-        <h3>Walk-in applications</h3>
-        <p>Visit our Accra office during business hours to speak with our HR team in person.</p>
-      </div>
-      <div class="card">
-        <h3>Interview process</h3>
-        <p>We keep hiring fast and professional, with clear steps and friendly feedback.</p>
+        <div class="list-card">
+          <div class="list-card-icon">WM</div>
+          <div><strong>Washing Machines</strong><span>Popular household purchase with strong reward value.</span></div>
+        </div>
+        <div class="reward-box">
+          <strong>Referral reward example</strong>
+          <span>If the referred buyer purchases a GHS 5,000 appliance, you earn GHS 100 — that’s 2% of the total sale.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -405,5 +433,31 @@ ul{list-style:none}
   <div class="wa-tooltip">Chat on WhatsApp</div>
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
 </a>
+<script>
+  document.getElementById('referral-program-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('referrer-name').value.trim();
+    const phone = document.getElementById('referrer-phone').value.trim();
+    const email = document.getElementById('referrer-email').value.trim();
+    const referredName = document.getElementById('referred-name').value.trim();
+    const referredContact = document.getElementById('referred-contact').value.trim();
+    const appliance = document.getElementById('referred-appliance').value.trim();
+    const value = parseFloat(document.getElementById('estimated-value').value);
+    const success = document.getElementById('referral-success');
+    if (!name || !phone || !email || !referredName || !referredContact || !appliance || !value) {
+      success.style.display = 'block';
+      success.innerHTML = '<strong>Please complete all referral fields before submitting.</strong>';
+      success.style.borderColor = '#dc2626';
+      success.style.color = '#a91c21';
+      return;
+    }
+    const reward = (value * 0.02).toFixed(2);
+    success.style.display = 'block';
+    success.style.borderColor = 'rgba(22,163,74,.4)';
+    success.style.color = '#11432f';
+    success.innerHTML = `<strong>Referral submitted!</strong> Thanks ${name}. Once ${referredName} completes the purchase, you will earn GHS ${reward}. We will contact you at ${phone} or ${email}.`;
+    event.target.reset();
+  });
+</script>
 </body>
 </html>

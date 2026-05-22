@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apply Now — O.D.I. Electronics</title>
+  <style>
+    :root{--purple:#6a0dad;--dark:#111;--gray-800:#333;--gray-600:#666;--gray-100:#f6f6f9}
+    body{margin:0;font-family:Inter, system-ui, Arial, Helvetica, sans-serif;background:#f4f4fb;color:var(--dark)}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid #e6e6ea}
+    .container{max-width:940px;margin:32px auto;padding:0 20px}
+    .page-head{display:grid;gap:14px}
+    .page-head h1{margin:0;font-size:36px;line-height:1.05}
+    .page-head p{margin:0;color:var(--gray-600);font-size:16px;line-height:1.75;max-width:720px}
+    .form-card{margin-top:28px;background:#fff;border:1px solid #e6e6ea;border-radius:22px;box-shadow:0 24px 60px rgba(108,43,163,.09);padding:32px}
+    label{display:block;margin-top:18px;font-size:14px;font-weight:700;color:var(--gray-800)}
+    input,textarea,select{width:100%;padding:14px 16px;margin-top:8px;border:1px solid #dcdce7;border-radius:14px;font-size:15px;color:var(--dark);background:#fff;box-sizing:border-box}
+    textarea{resize:vertical;min-height:120px}
+    .submit-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:24px}
+    .submit-row button{border:none;border-radius:14px;padding:14px 24px;background:var(--purple);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
+    .submit-row .note{color:var(--gray-600);font-size:14px}
+    .form-error{margin-top:18px;padding:14px 16px;border:1px solid #fecaca;background:#fee2e2;color:#b91c1c;border-radius:14px;display:none}
+    .success-message{margin-top:20px;padding:18px 20px;border-radius:14px;background:#eef7ff;color:#1f4eab;border:1px solid #c2ddff;display:none}
+    @media(max-width:760px){.page-head{gap:10px}.form-card{padding:22px}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to home</a>
+  </header>
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <div style="font-size:12px;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:1px">Apply Now</div>
+        <h1>Complete your financing application</h1>
+        <p>Provide your details and tell us the appliance you want. Our team will review your request and contact you by phone or email.</p>
+      </div>
+    </div>
+    <section class="form-card">
+      <form id="apply-form">
+        <label for="full-name">Full Name</label>
+        <input id="full-name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9\s+()-]{7,20}" title="Enter a valid phone number" placeholder="e.g. 0550 900 600" required>
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" name="address" autocomplete="street-address" placeholder="Enter your street address, city, and region" required></textarea>
+
+        <label for="appliance">Appliance you want</label>
+        <input id="appliance" name="appliance" type="text" autocomplete="off" placeholder="e.g. 55-inch Samsung TV" required>
+
+        <div class="submit-row">
+          <button type="submit">Submit Application</button>
+          <span class="note">We will reach out to you quickly to complete the process.</span>
+        </div>
+        <div id="form-error" class="form-error" role="alert" aria-live="assertive"></div>
+      </form>
+      <div id="success-message" class="success-message" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('apply-form');
+    const errorBox = document.getElementById('form-error');
+    const successBox = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      errorBox.style.display = 'none';
+      successBox.style.display = 'none';
+
+      const name = document.getElementById('full-name');
+      const phone = document.getElementById('phone');
+      const email = document.getElementById('email');
+      const address = document.getElementById('address');
+      const appliance = document.getElementById('appliance');
+
+      const values = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+        email: email.value.trim(),
+        address: address.value.trim(),
+        appliance: appliance.value.trim()
+      };
+
+      const missingFields = [];
+      for (const [field, value] of Object.entries(values)) {
+        if (!value) {
+          missingFields.push(field.replace(/(^.|-.)/g, s => s.toUpperCase().replace('-', '')));
+        }
+      }
+
+      if (missingFields.length) {
+        errorBox.textContent = `Please complete the following fields: ${missingFields.join(', ')}.`;
+        errorBox.style.display = 'block';
+        form.querySelector('[name=' + missingFields[0].toLowerCase() + ']').focus();
+        return;
+      }
+
+      if (!email.checkValidity()) {
+        errorBox.textContent = 'Please enter a valid email address.';
+        errorBox.style.display = 'block';
+        email.focus();
+        return;
+      }
+
+      if (!phone.checkValidity()) {
+        errorBox.textContent = 'Please enter a valid phone number.';
+        errorBox.style.display = 'block';
+        phone.focus();
+        return;
+      }
+
+      successBox.textContent = `Thanks ${values.name}! Your application for "${values.appliance}" has been received. We will contact you soon at ${values.phone} or ${values.email}.`;
+      successBox.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

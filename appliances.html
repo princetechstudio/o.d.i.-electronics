@@ -17,7 +17,7 @@
 </head>
 <body>
   <header>
-    <a href="odi_electronics_homepage.html">← Home</a>
+    <a href="index.html">← Home</a>
   </header>
   <main class="container">
     <section class="hero">
@@ -46,6 +46,9 @@
     </section>
 
     <script>
+      function formatPrice(price){
+        return (price * 1.02).toFixed(2);
+      }
       async function loadProducts(){
         const res = await fetch('data/products.json');
         const products = await res.json();
@@ -53,7 +56,7 @@
         tbody.innerHTML = products.map(p => `\
           <tr style="border-bottom:1px solid var(--gray-100)">\
             <td style="padding:18px">${p.name}</td>\
-            <td style="padding:18px">${p.price.toFixed(2)}</td>\
+            <td style="padding:18px">${formatPrice(p.price)}</td>\
             <td style="padding:18px;color:${p.stock>0? 'var(--purple-dark)':'#d33'}">${p.stock}</td>\
             <td style="padding:18px">\
               <a href="product.html?id=${p.id}" style="margin-right:12px;color:var(--purple)">View</a>\
