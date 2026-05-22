@@ -61,7 +61,7 @@
             <td style="padding:18px;color:${p.stock>0? 'var(--purple-dark)':'#d33'}">${p.stock}</td>\
             <td style="padding:18px">\
               <a href="product.html?id=${p.id}" style="margin-right:12px;color:var(--purple)">View</a>\
-              <button onclick="addToCart(${p.id})" style="background:transparent;border:none;color:#e11;padding:6px;cursor:pointer">Add</button>\
+              <button type="button" data-add-to-cart data-product-id="${p.id}" data-product-name="${p.name}" data-product-price="${formatPrice(p.price)}" data-product-image="images/product-${p.id}.svg" ${p.stock > 0 ? '' : 'disabled'} style="background:transparent;border:none;color:#e11;padding:6px;cursor:pointer">${p.stock > 0 ? 'Add' : 'Out of stock'}</button>\
             </td>\
           </tr>
         `).join('');
@@ -71,6 +71,7 @@
       }
       loadProducts().catch(e=>{console.error(e);document.getElementById('products-body').innerHTML='<tr><td colspan="4" style="padding:18px">Failed to load products.</td></tr>'});
     </script>
+    <script src="js/cart.js"></script>
     
   </main>
 </body>

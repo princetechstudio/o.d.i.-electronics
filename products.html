@@ -222,7 +222,7 @@
             </div>
             <div class="product-card-footer">
               <a class="btn-link" href="product.html?id=${product.id}">View details</a>
-              <button class="btn-add" onclick="alert('For pricing and availability, contact us on WhatsApp or visit the store.')">Inquire</button>
+              <button class="btn-add" type="button" data-add-to-cart data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${formatPrice(product.price)}" data-product-image="${resolveProductImage(product)}" ${product.stock > 0 ? '' : 'disabled'}>${product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}</button>
             </div>
           </div>
         </article>
@@ -236,5 +236,6 @@
       document.getElementById('catalog-count').textContent = '0 products available';
     });
   </script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

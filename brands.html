@@ -3,30 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Brands — O.D.I. Electronics</title>
+  <title>Brands | O.D.I. Electronics</title>
   <style>
-    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
-    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
-    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
+    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666;--gray-200:#eee;--gray-100:#f7f7fa}
+    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);background:#fafafa}
+    header{padding:18px 24px;background:#fff;border-bottom:1px solid var(--gray-200)}
     .container{max-width:1100px;margin:28px auto;padding:0 20px}
-    .brand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:18px}
-    .brand-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.04);text-align:center}
+    .brand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:18px}
+    .brand-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:22px;box-shadow:0 8px 20px rgba(0,0,0,.04)}
+    .brand-name{font-size:22px;font-weight:900;color:var(--purple);margin-bottom:8px}
+    .brand-meta{color:var(--gray-600);font-size:14px;line-height:1.6}
+    .brand-link{display:inline-flex;margin-top:14px;color:var(--purple);font-weight:800;text-decoration:none;font-size:13px}
     a{color:var(--purple);text-decoration:none}
+    .empty{background:#fff;border:1px dashed var(--gray-200);border-radius:12px;padding:32px;color:var(--gray-600);text-align:center;margin-top:18px}
   </style>
   <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
   <header>
-    <a href="index.html">← Home</a>
+    <a href="index.html">Back to Home</a>
   </header>
   <main class="container">
     <h1>Brands</h1>
-    <p style="color:var(--gray-600)">Browse by brand to see all available models and offers.</p>
-    <div class="brand-grid">
-      <div class="brand-card"><img src="images/brand-samsung.jpg" alt="Samsung" style="max-width:100%;height:auto"><div style="margin-top:8px;font-weight:700">Samsung</div></div>
-      <div class="brand-card"><img src="images/brand-lg.jpg" alt="LG" style="max-width:100%;height:auto"><div style="margin-top:8px;font-weight:700">LG</div></div>
-      <div class="brand-card"><img src="images/brand-hisense.jpg" alt="Hisense" style="max-width:100%;height:auto"><div style="margin-top:8px;font-weight:700">Hisense</div></div>
-    </div>
+    <p style="color:var(--gray-600)">Browse O.D.I. brands and current catalog availability.</p>
+    <div class="brand-grid" id="brand-grid"></div>
   </main>
+  <script>
+    const displayBrands = ['SAMSUNG', 'LG', 'NASCO', 'MIDEA', 'TCL', 'ZARA', 'HY'];
+    const knownBrands = ['SAMSUNG', 'LG', 'NASCO', 'ZARA', 'MIDEA', 'MEDIA', 'MEDEA', 'HY', 'TCL'];
+    const aliases = { MEDIA: 'MIDEA', MEDEA: 'MIDEA' };
+    function brandFor(name){
+      const value = String(name).toUpperCase();
+      const found = knownBrands.find(brand => value.includes(brand));
+      if(!found) return '';
+      return aliases[found] || found;
+    }
+    async function loadBrands(){
+      const target = document.getElementById('brand-grid');
+      try{
+        const res = await fetch('data/products.json', { cache: 'no-store' });
+        const products = await res.json();
+        const counts = products.reduce((acc, product) => {
+          const brand = brandFor(product.name);
+          if(!brand) return acc;
+          acc[brand] = (acc[brand] || 0) + 1;
+          return acc;
+        }, {});
+        const brands = displayBrands.map(brand => [brand, counts[brand] || 0]);
+        if(!brands.length){
+          target.innerHTML = '<div class="empty">No branded products found in the current catalog.</div>';
+          return;
+        }
+        target.innerHTML = brands.map(([brand, count]) => `
+          <article class="brand-card">
+            <div class="brand-name">${brand}</div>
+            <div class="brand-meta">${count ? `${count} product${count === 1 ? '' : 's'} currently listed` : 'No products currently listed'}</div>
+            <a class="brand-link" href="products.html?search=${encodeURIComponent(brand)}">View Products</a>
+          </article>
+        `).join('');
+      }catch(error){
+        console.error(error);
+        target.innerHTML = '<div class="empty">Could not load brands from the product catalog.</div>';
+      }
+    }
+    loadBrands();
+  </script>
 </body>
 </html>

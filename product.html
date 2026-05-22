@@ -32,6 +32,7 @@
         <button id="add-cart">Add to Cart</button>
       </div>
     </div>
+    <script src="js/cart.js"></script>
     <script>
       function getQueryParam(name){
         const params = new URLSearchParams(window.location.search);
@@ -81,7 +82,18 @@
         const candidate = resolveProductImage(p.name, p.id);
         imgEl.src = candidate;
         imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = 'images/product-sample.svg'; };
-        document.getElementById('add-cart').addEventListener('click', ()=>alert('Add to cart: '+p.name+' (static demo)'));
+        const addBtn = document.getElementById('add-cart');
+        addBtn.dataset.addToCart = '';
+        addBtn.dataset.productId = p.id;
+        addBtn.dataset.productName = p.name;
+        addBtn.dataset.productPrice = formatPrice(p.price);
+        addBtn.dataset.productImage = candidate;
+        if(Number(p.stock || 0) <= 0){
+          addBtn.disabled = true;
+          addBtn.textContent = 'Out of Stock';
+          addBtn.style.opacity = '.65';
+          addBtn.style.cursor = 'not-allowed';
+        }
       }
       loadProduct().catch(e=>{console.error(e);document.getElementById('prod-name').textContent='Product not found';});
     </script>

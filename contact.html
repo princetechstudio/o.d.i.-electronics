@@ -13,6 +13,12 @@
     input,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-top:6px}
     button{background:var(--purple);color:#fff;border:none;padding:10px 14px;border-radius:8px;margin-top:12px}
     a{color:var(--purple);text-decoration:none}
+    .location{margin-top:28px;background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden}
+    .location-body{padding:18px}
+    .location-body h2{margin:0 0 8px}
+    .location-body p{color:var(--gray-600);line-height:1.7}
+    .direction-btn{display:inline-flex;margin-top:12px;background:var(--purple);color:#fff;padding:11px 16px;border-radius:10px;font-weight:700}
+    .map-frame{width:100%;height:320px;border:0;display:block}
   </style>
   <link rel="stylesheet" href="styles/responsive.css">
 </head>
@@ -23,6 +29,14 @@
   <main class="container">
     <h1>Contact Us</h1>
     <p style="color:var(--gray-600)">Phone: 0550 900 600 — Email: sales@odielectronics.com</p>
+    <section class="location">
+      <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d15879.826715141768!2d-0.29018265000000004!3d5.7193802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d5.7291802!2d-0.28293!4m5!1s0xfdf9f5b5664b003%3A0x6018260f9256f368!2sPPF7%2B694%20New%20Life%20Last%20Stop%2C%20DN%20Uber%20Driver%20Road%2C%20Amasaman%20Stadium%20Area%2C%20Amasaman%2C%20Ghana!3m2!1d5.723021699999999!2d-0.2865619!5e0!3m2!1sen!2sgh!4v1779451219160!5m2!1sen!2sgh" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="O.D.I. Electronics store location"></iframe>
+      <div class="location-body">
+        <h2>Visit Our Shop</h2>
+        <p>PPF7+694 New Life Last Stop, DN Uber Driver Road, Amasaman Stadium Area, Amasaman, Ghana.</p>
+        <a class="direction-btn" href="https://www.google.com/maps/dir/?api=1&destination=PPF7%2B694%20New%20Life%20Last%20Stop%2C%20DN%20Uber%20Driver%20Road%2C%20Amasaman%20Stadium%20Area%2C%20Amasaman%2C%20Ghana" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </section>
     <form action="#" method="post">
       <label for="name">Name</label>
       <input id="name" name="name" required>

@@ -253,7 +253,6 @@ ul{list-style:none}
 .brand-name{font-size:15px;font-weight:800;color:var(--dark);letter-spacing:-.5px}
 .brand-name.lg{color:#a50034}
 .brand-name.samsung{color:#1428a0}
-.brand-name.hisense{color:#cc0000}
 .brand-name.tcl{color:#003da5}
 
 /* ─── TESTIMONIALS ─── */
@@ -400,10 +399,10 @@ ul{list-style:none}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         My Account
       </a>
-      <button class="header-icon-btn">
+      <a class="header-icon-btn" href="store-location.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Find Store
-      </button>
+      </a>
       <a class="header-icon-btn" href="cart.html" style="position:relative">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
         <span class="cart-badge">0</span>
@@ -460,7 +459,7 @@ ul{list-style:none}
             <div class="mega-promo-tag">🔥 Flash Sale</div>
             <div class="mega-promo-title">Up to 25% Off</div>
             <div class="mega-promo-desc">Selected appliances. Limited stock. Don't miss out!</div>
-            <button class="mega-promo-btn">Shop Deals</button>
+            <button class="mega-promo-btn" onclick="location.href='deals.html'">Shop Deals</button>
           </div>
           <div style="margin-top:16px;padding:12px;background:var(--gray-50);border-radius:12px;font-size:12px;">
             <div style="font-weight:700;color:var(--dark);margin-bottom:6px">💳 Pay small when it reaches</div>
@@ -500,13 +499,12 @@ ul{list-style:none}
           <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span style="color:#1428a0;font-weight:700">Samsung</span></div>
           <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#a50034;font-weight:700">LG</span></div>
           <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#003da5;font-weight:700">TCL</span></div>
-          <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#cc0000;font-weight:700">Hisense</span></div>
           <div class="mega-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/></svg><span style="color:#cc0000;font-weight:700">Nasco</span></div>
         </div>
         <div class="mega-col">
           <div class="mega-promo" style="background:#1428a0;color:#fff;margin-bottom:12px">
             <div style="font-size:10px;font-weight:700;opacity:.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Samsung Deal</div>
-            <div style="font-size:15px;font-weight:800;margin-bottom:4px">55" 4K Smart TV</div>
+            <div style="font-size:15px;font-weight:800;margin-bottom:4px">43" Smart TV</div>
             <div style="font-size:20px;font-weight:900;margin-bottom:4px">GHS 4,999</div>
             <div style="font-size:11px;opacity:.75;text-decoration:line-through;margin-bottom:10px">Was GHS 6,299</div>
             <button class="mega-promo-btn" style="background:#fff;color:#1428a0">Shop Now</button>
@@ -586,29 +584,29 @@ ul{list-style:none}
         <div class="mega-col">
           <div class="mega-col-title">Featured</div>
           <div class="mega-link" style="font-weight:700;color:#1428a0;font-size:15px">SAMSUNG</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs, Fridges &amp; More</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs</div>
           <div class="mega-link" style="font-weight:700;color:#a50034;font-size:15px">LG</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Premium Appliances</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Appliances</div>
+          <div class="mega-link" style="font-weight:700;color:#cc0000;font-size:15px">NASCO</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs, Fridges, ACs &amp; Kitchen</div>
           <div class="mega-link" style="font-weight:700;color:#0066cc;font-size:14px">Midea</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">AC, Fridges &amp; Freezers</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Microwaves</div>
         </div>
         <div class="mega-col">
           <div class="mega-col-title">Popular</div>
-          <div class="mega-link" style="font-weight:700;color:#cc0000;font-size:14px">Hisense</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs &amp; Freezers</div>
           <div class="mega-link" style="font-weight:700;color:#003da5;font-size:14px">TCL</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Android TVs</div>
-          <div class="mega-link" style="font-weight:700;color:#cc0000;font-size:14px">Nasco</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Ghana's Favourite Brand</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">TVs</div>
+          <div class="mega-link" style="font-weight:700;color:#444;font-size:14px">ZARA</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Freezers, Kettles &amp; Display Fridges</div>
+          <div class="mega-link" style="font-weight:700;color:#006633;font-size:14px">HY</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Kettles</div>
         </div>
         <div class="mega-col">
-          <div class="mega-col-title">Local Favourites</div>
-          <div class="mega-link" style="font-weight:700;color:#444;font-size:14px">Bruhm</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Gas Cookers &amp; Fridges</div>
-          <div class="mega-link" style="font-weight:700;color:#006633;font-size:14px">Binatone</div>
-          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Blenders &amp; Small Appliances</div>
-          <div class="mega-link" style="font-weight:600;color:#555;font-size:13px">Scanfrost</div>
-          <div class="mega-link" style="font-weight:600;color:#555;font-size:13px">Polystar</div>
+          <div class="mega-col-title">Other Product Lines</div>
+          <div class="mega-link" style="font-weight:700;color:#555;font-size:14px">MEDIA</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Microwaves</div>
+          <div class="mega-link" style="font-weight:700;color:#555;font-size:14px">MEDEA</div>
+          <div style="font-size:11px;color:var(--gray-500);margin:-4px 0 8px 23px">Microwaves</div>
         </div>
         <div class="mega-col">
           <div style="padding:12px">
@@ -644,7 +642,7 @@ ul{list-style:none}
           Email Us
         </a>
         <div class="drop-divider"></div>
-        <a class="drop-link" href="#">
+        <a class="drop-link" href="store-location.html">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Find Our Store — Accra
         </a>
@@ -699,10 +697,10 @@ ul{list-style:none}
         <div class="hero-appliances-grid">
           <div class="appliance-card featured">
             <div class="product-img" style="width:100%;height:120px"><img src="images/samsung43inches.jpg" alt="Smart TV — Samsung" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
-            <span>Smart TV — Samsung &amp; TCL</span>
+            <span>Smart TV - Samsung &amp; NASCO</span>
           </div>
           <div class="appliance-card">
-            <div class="product-img" style="width:100%;height:120px"><img src="images/product-8.svg" alt="Refrigerator" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
+            <div class="product-img" style="width:100%;height:120px"><img src="images/nas360freezer.jpg" alt="NASCO 360 Freezer" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'"></div>
             <span>Refrigerator</span>
           </div>
           <div class="appliance-card">
@@ -769,82 +767,7 @@ ul{list-style:none}
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<section class="section categories">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">Browse</div>
-      <h2 class="section-h2">Shop By Category</h2>
-      <p class="section-sub">Find exactly what your home needs</p>
-    </div>
-    <div class="cat-grid">
-      <!-- Refrigerators -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="6" x2="9" y2="8"/></svg>
-        </div>
-        <div class="cat-name">Refrigerators</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Smart TVs -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="cat-name">Smart TVs</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Washing Machines -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
-        </div>
-        <div class="cat-name">Washing Machines</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Gas Cookers -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><circle cx="8" cy="13" r="2"/><circle cx="16" cy="13" r="2"/></svg>
-        </div>
-        <div class="cat-name">Gas Cookers</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Air Conditioners -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="22" height="9" rx="2"/><path d="M5 15v4M12 15v4M19 15v4M5 6l3-3M12 6V3M19 6l-3-3"/></svg>
-        </div>
-        <div class="cat-name">Air Conditioners</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Chest Freezers -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 6V3"/><path d="M18 6V3"/></svg>
-        </div>
-        <div class="cat-name">Chest Freezers</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Microwaves -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="14" r="3"/></svg>
-        </div>
-        <div class="cat-name">Microwaves</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-      <!-- Small Appliances -->
-      <div class="cat-card">
-        <div class="cat-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-        </div>
-        <div class="cat-name">Small Appliances</div>
-        <div class="cat-link">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- FEATURED PRODUCTS -->
 <section class="section" style="background:#fff">
@@ -901,10 +824,16 @@ ul{list-style:none}
   }
 
   async function renderFeatured(){
+    const target = document.getElementById('featured-products');
+    if(!target) return;
+
     try{
-      const res = await fetch('data/products.json');
+      const res = await fetch('data/products.json', { cache: 'no-store' });
+      if(!res.ok){
+        throw new Error('Failed to fetch data/products.json (HTTP ' + res.status + ')');
+      }
       const products = await res.json();
-      const target = document.getElementById('featured-products');
+
       const list = products.slice(0,8).map(p => `
         <div class="product-card">
           <div class="product-img">
@@ -917,13 +846,19 @@ ul{list-style:none}
           </div>
           <div class="product-actions">
             <a class="btn-view" href="product.html?id=${p.id}">Details</a>
-            <button class="btn-cart" onclick="alert('Add to cart not available in static demo')">Add to Cart</button>
+<button class="btn-cart" type="button" data-add-to-cart data-product-id="${p.id}" data-product-name="${p.name}" data-product-price="${formatPrice(p.price)}" data-product-image="${resolveFeaturedImage(p)}">Add to Cart</button>
           </div>
         </div>
       `).join('');
+
       target.innerHTML = list;
     }catch(e){
       console.error(e);
+      target.innerHTML = `
+        <div style="padding:24px;text-align:center;color:#7a2db8;font-weight:700">
+          Could not load products. Check the console + ensure <code>data/products.json</code> is reachable.
+        </div>
+      `;
     }
   }
   renderFeatured();
@@ -1023,17 +958,16 @@ ul{list-style:none}
     <div class="section-header">
       <div class="section-tag">Trusted</div>
       <h2 class="section-h2">Shop Top Brands</h2>
-      <p class="section-sub">We carry the world's most trusted home appliance brands</p>
+      <p class="section-sub">Brands currently available in the store catalog</p>
     </div>
     <div class="brands-grid">
       <div class="brand-card"><div class="brand-name samsung">SAMSUNG</div></div>
       <div class="brand-card"><div class="brand-name lg">LG</div></div>
       <div class="brand-card"><div class="brand-name" style="color:#cc0000">NASCO</div></div>
-      <div class="brand-card"><div class="brand-name hisense">Hisense</div></div>
       <div class="brand-card"><div class="brand-name" style="color:#0066cc">Midea</div></div>
       <div class="brand-card"><div class="brand-name tcl">TCL</div></div>
-      <div class="brand-card"><div class="brand-name" style="color:#333">Bruhm</div></div>
-      <div class="brand-card"><div class="brand-name" style="color:#006633">Binatone</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#333">ZARA</div></div>
+      <div class="brand-card"><div class="brand-name" style="color:#006633">HY</div></div>
     </div>
     <div style="text-align:center;margin-top:24px">
       <button class="btn-outline" style="font-size:13px;padding:10px 24px">View All Brands →</button>
@@ -1149,9 +1083,9 @@ ul{list-style:none}
       <!-- Customer Service -->
       <div>
         <h4>Customer Service</h4>
-        <a class="footer-link" href="#">Contact Us</a>
+        <a class="footer-link" href="contact.html">Contact Us</a>
         <a class="footer-link" href="#">FAQs</a>
-        <a class="footer-link" href="#">Track My Order</a>
+<a class="footer-link" href="track-order.html">Track My Order</a>
         <a class="footer-link" href="#">Returns Policy</a>
         <a class="footer-link" href="#">Terms &amp; Conditions</a>
       </div>
@@ -1211,10 +1145,26 @@ document.querySelectorAll('.product-card').forEach(card=>{
 // Cart button feedback
 document.querySelectorAll('.btn-cart').forEach(btn=>{
   btn.addEventListener('click',function(){
-    const orig=this.innerHTML;
-    this.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><polyline points="20 6 9 17 4 12"/></svg> Added!';
-    this.style.background='#16a34a';
-    setTimeout(()=>{this.innerHTML=orig;this.style.background='';},1500);
+    try{
+      const id = Number(this.getAttribute('data-product-id'));
+      const name = this.getAttribute('data-product-name');
+      const price = Number(this.getAttribute('data-product-price'));
+      const image = this.getAttribute('data-product-image');
+      if(!window.odiCart) {
+        alert('Cart not loaded: js/cart.js not available');
+        throw new Error('Cart not loaded');
+      }
+      window.odiCart.addToCart({id, name, price, image}, 1);
+      window.odiCart.updateCartBadge();
+
+      const orig=this.innerHTML;
+      this.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><polyline points="20 6 9 17 4 12"/></svg> Added!';
+      this.style.background='#16a34a';
+      setTimeout(()=>{this.innerHTML=orig;this.style.background='';},1500);
+    } catch(e){
+      console.error(e);
+      alert('Failed to add to cart');
+    }
   });
 });
 
@@ -1252,5 +1202,80 @@ if(newsForm){
   });
 }
 </script>
+<script>
+// Inline cart fallback to avoid dependency on js/cart.js being reachable.
+(function(){
+  const STORAGE_KEY = 'odi_cart_v1';
+  function safeParse(json, fallback){
+    try { return JSON.parse(json); } catch { return fallback; }
+  }
+  function loadCart(){
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const fallback = { items: {}, updatedAt: Date.now() };
+    if(!raw) return fallback;
+    const parsed = safeParse(raw, fallback);
+    if(!parsed || typeof parsed !== 'object' || !parsed.items) return fallback;
+    return parsed;
+  }
+  function saveCart(cart){
+    cart.updatedAt = Date.now();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  }
+  function normalizeProduct(product){
+    if(!product) throw new Error('Missing product');
+    const id = Number(product.id);
+    if(!Number.isFinite(id)) throw new Error('Invalid product id');
+    return {
+      id,
+      name: String(product.name || ''),
+      price: Number(product.price || 0),
+      image: product.image ? String(product.image) : (product.img ? String(product.img) : undefined),
+      qty: 1
+    };
+  }
+  function addToCart(product, qty = 1){
+    const cart = loadCart();
+    const p = normalizeProduct(product);
+    const addQty = Math.max(1, Number(qty || 1));
+    if(!cart.items[p.id]){
+      cart.items[p.id] = { id: p.id, name: p.name, price: p.price, image: p.image, qty: 0 };
+    }
+    cart.items[p.id].qty += addQty;
+    saveCart(cart);
+    return cart.items[p.id];
+  }
+  function setQty(productId, qty){
+    const cart = loadCart();
+    const id = Number(productId);
+    if(!cart.items[id]) return;
+    const next = Math.max(0, Number(qty || 0));
+    if(next <= 0) delete cart.items[id];
+    else cart.items[id].qty = next;
+    saveCart(cart);
+  }
+  function clearCart(){
+    localStorage.removeItem(STORAGE_KEY);
+  }
+  function getCartItems(){
+    const cart = loadCart();
+    return Object.values(cart.items || {}).sort((a,b)=>a.id-b.id);
+  }
+  function getCartCount(){
+    return getCartItems().reduce((sum, it)=> sum + (Number(it.qty)||0), 0);
+  }
+  function formatGhs(amount){
+    const n = Number(amount || 0);
+    return 'GHS ' + n.toFixed(2);
+  }
+  function updateCartBadge(){
+    const badge = document.querySelector('.cart-badge');
+    if(!badge) return;
+    badge.textContent = String(getCartCount());
+  }
+  window.odiCart = window.odiCart || { addToCart, setQty, clearCart, getCartItems, getCartCount, formatGhs, updateCartBadge };
+  updateCartBadge();
+})();
+</script>
+<script src="js/cart.js"></script>
 </body>
 </html>

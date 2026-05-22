@@ -30,8 +30,13 @@
     .summary-card h2{font-size:22px;margin-bottom:18px}
     .summary-row{display:flex;justify-content:space-between;margin-bottom:14px;color:var(--gray-700)}
     .summary-row.total{font-weight:800;color:var(--dark);font-size:18px}
+    .checkout-fields{display:grid;gap:10px;margin:18px 0}
+    .checkout-field label{display:block;font-size:12px;font-weight:800;color:var(--gray-700);margin-bottom:6px}
+    .checkout-field input{width:100%;border:1px solid var(--gray-200);border-radius:10px;padding:11px 12px;color:var(--dark);outline:none}
+    .checkout-field input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(106,13,173,.12)}
     .checkout-btn{display:inline-flex;align-items:center;gap:10px;background:var(--purple);color:#fff;border:none;padding:14px 22px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s}
     .checkout-btn:hover{transform:translateY(-2px)}
+    .checkout-alt{margin-top:10px;display:inline-flex;color:var(--purple);font-size:13px;font-weight:700;background:transparent;border:none;cursor:pointer;padding:0}
     .empty-state{padding:48px;text-align:center;background:#fff;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.06)}
     .placeholder{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--gray-400);font-weight:700;font-size:14px}
   </style>
@@ -57,12 +62,31 @@
       </div>
       <aside class="summary-card">
         <h2>Order Summary</h2>
-        <div class="summary-row"><span>Subtotal</span><span>GHS 0.00</span></div>
-        <div class="summary-row"><span>Delivery</span><span>GHS 0.00</span></div>
-        <div class="summary-row total"><span>Total</span><span>GHS 0.00</span></div>
-        <button class="checkout-btn" disabled style="opacity:.6;cursor:not-allowed">Proceed to Checkout</button>
+        <div class="summary-row"><span>Subtotal</span><span data-total-subtotal>GHS 0.00</span></div>
+        <div class="summary-row"><span>Delivery</span><span data-total-delivery>GHS 0.00</span></div>
+        <div class="summary-row total"><span>Total</span><span data-total-total>GHS 0.00</span></div>
+        <div class="checkout-fields">
+          <div class="checkout-field">
+            <label for="checkout-email">Email address</label>
+            <input id="checkout-email" type="email" placeholder="customer@example.com" autocomplete="email">
+          </div>
+          <div class="checkout-field">
+            <label for="checkout-phone">Phone number</label>
+            <input id="checkout-phone" type="tel" placeholder="0550 900 600" autocomplete="tel">
+          </div>
+        </div>
+        <button class="checkout-btn" disabled style="opacity:.6;cursor:not-allowed">Pay with Paystack</button>
+        <button class="checkout-alt" type="button" data-whatsapp-checkout>Send order on WhatsApp instead</button>
+        <p style="margin-top:12px;color:var(--gray-400);font-size:13px;line-height:1.6">Paystack accepts supported payment channels. O.D.I. will still confirm delivery and warranty details after payment.</p>
+
       </aside>
     </div>
   </main>
+  <script>
+    window.ODI_PAYSTACK_PUBLIC_KEY = 'pk_test_REPLACE_WITH_YOUR_PAYSTACK_PUBLIC_KEY';
+  </script>
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/cart-page.js"></script>
 </body>
 </html>

@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Build My Bundle | O.D.I. Electronics</title>
+  <meta name="description" content="Build a custom appliance bundle with O.D.I. Electronics and request a flexible payment plan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --purple:#6a0dad;
+      --purple-dark:#4d0880;
+      --purple-pale:#f3e8ff;
+      --ink:#171321;
+      --muted:#6d6479;
+      --line:#e8e2ef;
+      --soft:#faf8fc;
+      --green:#16a34a;
+      --red:#dc2626;
+      --gold:#f59e0b;
+      --white:#fff;
+    }
+    body{margin:0;font-family:Poppins,Inter,system-ui,Arial,sans-serif;background:var(--soft);color:var(--ink)}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,select,textarea{font:inherit}
+    .topbar{background:var(--purple);color:#fff;font-size:12px;font-weight:700}
+    .topbar-inner{max-width:1280px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(21,12,32,.06)}
+    .header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand img{height:52px;width:auto;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,.08)}
+    .brand span{font-size:12px;font-weight:900;color:var(--muted)}
+    .nav{margin-left:auto;display:flex;gap:4px;overflow:auto}
+    .nav a{white-space:nowrap;padding:10px 11px;border-radius:10px;color:var(--ink);font-size:13px;font-weight:800}
+    .nav a:hover,.nav a.active{background:var(--purple-pale);color:var(--purple)}
+    .hero{background:#fff;border-bottom:1px solid var(--line)}
+    .hero-inner{max-width:1280px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:34px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+    .hero h1{font-size:clamp(36px,5vw,64px);line-height:1.02;margin:14px 0 14px;font-weight:900;letter-spacing:0}
+    .hero h1 span{color:var(--purple)}
+    .hero p{max-width:680px;color:var(--muted);line-height:1.75;margin:0 0 22px;font-size:16px}
+    .hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    .point{border:1px solid var(--line);background:var(--soft);border-radius:8px;padding:14px}
+    .point strong{display:block;font-size:15px;margin-bottom:4px}
+    .point span{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+    .hero-card{background:linear-gradient(145deg,#fff,#f7efff);border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:0 22px 60px rgba(45,27,70,.12)}
+    .hero-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .hero-card-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+    .hero-card-item img{height:104px;width:100%;object-fit:contain}
+    .hero-card-item strong{display:block;font-size:12px;line-height:1.35;margin-top:8px}
+    .main{max-width:1280px;margin:0 auto;padding:28px 24px 64px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:8px}
+    .panel-head{padding:18px 18px 0}
+    .panel-head h2{margin:0 0 5px;font-size:25px;font-weight:900}
+    .panel-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .builder-tools{padding:18px;display:grid;grid-template-columns:1fr auto;gap:10px}
+    .search{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+    .search input{border:0;outline:0;width:100%;padding:11px 12px;color:var(--ink)}
+    .select{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 12px;color:var(--ink);font-size:13px;font-weight:800}
+    .tabs{padding:0 18px 18px;display:flex;gap:8px;overflow:auto}
+    .tab{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:900;white-space:nowrap;cursor:pointer}
+    .tab.active{background:var(--purple);border-color:var(--purple);color:#fff}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 18px 18px}
+    .product{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+    .product-media{height:150px;background:#fbf9fe;display:grid;place-items:center;padding:14px;position:relative}
+    .product-media img{width:100%;height:100%;object-fit:contain}
+    .stock{position:absolute;left:10px;top:10px;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;background:#dcfce7;color:#166534}
+    .stock.out{background:#fee2e2;color:#991b1b}
+    .product-body{padding:13px;display:flex;flex-direction:column;gap:9px;flex:1}
+    .product h3{font-size:14px;line-height:1.28;margin:0;min-height:36px}
+    .cat{width:max-content;background:#f4f0f8;color:var(--muted);border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;text-transform:uppercase}
+    .price{font-size:17px;font-weight:900;color:var(--purple)}
+    .add{margin-top:auto;border:0;background:var(--purple);color:#fff;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:900;cursor:pointer}
+    .add:hover{background:var(--purple-dark)}
+    .add:disabled{background:#b9adca;cursor:not-allowed}
+    .summary{position:sticky;top:92px;padding:18px}
+    .summary h2{font-size:24px;margin:0 0 5px;font-weight:900}
+    .summary-note{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 16px}
+    .selected{display:flex;flex-direction:column;gap:10px;min-height:78px}
+    .selected-empty{border:1px dashed #d8c8e7;background:#fcf9ff;color:var(--muted);border-radius:8px;padding:18px;text-align:center;font-size:13px;font-weight:700;line-height:1.6}
+    .selected-item{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:9px}
+    .selected-item img{width:54px;height:54px;object-fit:contain;background:#fbf9fe;border-radius:6px}
+    .selected-item strong{display:block;font-size:12px;line-height:1.25}
+    .selected-item span{display:block;color:var(--purple);font-size:12px;font-weight:900;margin-top:3px}
+    .remove{border:0;background:#fff1f2;color:var(--red);border-radius:8px;width:32px;height:32px;font-weight:900;cursor:pointer}
+    .plan{border-top:1px solid var(--line);margin-top:16px;padding-top:16px;display:flex;flex-direction:column;gap:10px}
+    .plan-row{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:14px}
+    .plan-row strong{color:var(--ink)}
+    .plan-row.big{font-size:17px;color:var(--ink);font-weight:900}
+    .plan-row.big strong{font-size:22px;color:var(--purple)}
+    .plan-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+    .field label{display:block;color:var(--muted);font-size:12px;font-weight:900;margin-bottom:6px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink)}
+    .field textarea{min-height:76px;resize:vertical}
+    .actions{display:grid;gap:10px;margin-top:16px}
+    .btn{border:0;border-radius:12px;padding:13px 16px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .btn-primary{background:var(--purple);color:#fff}
+    .btn-primary:hover{background:var(--purple-dark)}
+    .btn-soft{background:var(--purple-pale);color:var(--purple);border:1px solid #dfc5ff}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .empty{grid-column:1/-1;border:1px dashed #d8c8e7;border-radius:8px;padding:42px;text-align:center;color:var(--muted);font-weight:800}
+    .footer{background:#111;color:#fff;padding:38px 0 18px}
+    .footer-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .footer h3,.footer h4{margin:0 0 12px}
+    .footer p,.footer a{color:rgba(255,255,255,.68);font-size:13px;line-height:1.8}
+    .footer a{display:block;margin-bottom:7px}
+    .footer-bottom{padding-top:16px;color:rgba(255,255,255,.48);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:1100px){
+      .hero-inner,.main{grid-template-columns:1fr}.summary{position:static}.products{grid-template-columns:repeat(2,1fr)}.hero-points{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:720px){
+      .topbar-inner{justify-content:center;text-align:center}.header-inner{flex-wrap:wrap}.nav{order:3;width:100%}.hero-inner,.main{padding-left:18px;padding-right:18px}.hero-points{grid-template-columns:1fr}.builder-tools{grid-template-columns:1fr}.products{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.plan-controls{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .hero-card-grid,.footer-grid{grid-template-columns:1fr}.selected-item{grid-template-columns:46px 1fr auto}.hero h1{font-size:34px}
+    }
+  </style>
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Custom appliance bundles</span>
+      <span>Flexible payment estimate before you message us</span>
+      <span>Call 0550 900 600</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="O.D.I. Electronics home">
+        <img src="images/logo.jpeg" alt="O.D.I. Electronics logo">
+        <span>O.D.I. Electronics</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="deals.html">Deals</a>
+        <a href="financing-plans.html">Financing Plans</a>
+        <a href="delivery-info.html">Delivery Info</a>
+        <a class="active" href="build-bundle.html">Build Bundle</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Bundle Builder</div>
+        <h1>Choose the appliances. <span>We price the plan.</span></h1>
+        <p>Build a TV, fridge, washing machine, kitchen or cooling bundle from current catalog items. The estimate helps you plan, then O.D.I. confirms stock, delivery and final payment terms on WhatsApp.</p>
+        <div class="hero-points">
+          <div class="point"><strong>Pick Products</strong><span>Add any available appliance from the catalog.</span></div>
+          <div class="point"><strong>See Estimate</strong><span>View deposit and monthly payment instantly.</span></div>
+          <div class="point"><strong>Send Request</strong><span>Submit your bundle directly to WhatsApp.</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-grid">
+          <div class="hero-card-item">
+            <img src="images/samsung43inches.jpg" alt="TV bundle item">
+            <strong>Start with a TV for entertainment.</strong>
+          </div>
+          <div class="hero-card-item">
+            <img src="images/nas360freezer.jpg" alt="Freezer bundle item">
+            <strong>Add cooling for home or shop stock.</strong>
+          </div>
+          <div class="hero-card-item">
+            <img src="images/5kgwashingmachine.jpg" alt="Washing machine bundle item">
+            <strong>Include laundry essentials.</strong>
+          </div>
+          <div class="hero-card-item">
+            <img src="images/nasco4burner.jpg" alt="Cooker bundle item">
+            <strong>Finish with kitchen appliances.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Pick Bundle Items</h2>
+        <p>Select products from the current O.D.I. catalog. Out of stock items are shown for reference, but cannot be added.</p>
+      </div>
+      <div class="builder-tools">
+        <div class="search">
+          <input id="search-input" type="search" placeholder="Search appliances or brands...">
+        </div>
+        <select class="select" id="sort-select" aria-label="Sort products">
+          <option value="featured">Featured first</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+      <div class="tabs" id="tabs" aria-label="Product categories"></div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <aside class="panel summary" aria-label="Bundle summary">
+      <h2>Your Bundle</h2>
+      <p class="summary-note">Estimate uses a 20% deposit and your selected payment duration. Final offer is confirmed by O.D.I.</p>
+      <div class="selected" id="selected"></div>
+
+      <div class="plan">
+        <div class="plan-row"><span>Bundle Total</span><strong id="total">GHS 0.00</strong></div>
+        <div class="plan-row"><span>Deposit (20%)</span><strong id="deposit">GHS 0.00</strong></div>
+        <div class="plan-row"><span>Balance</span><strong id="balance">GHS 0.00</strong></div>
+        <div class="plan-row big"><span>Monthly</span><strong id="monthly">GHS 0.00</strong></div>
+      </div>
+
+      <div class="plan-controls">
+        <div class="field">
+          <label for="months">Duration</label>
+          <select id="months">
+            <option value="3">3 months</option>
+            <option value="6" selected>6 months</option>
+            <option value="9">9 months</option>
+            <option value="12">12 months</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">Location</label>
+          <input id="location" placeholder="Accra, Tema...">
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:10px">
+        <label for="notes">Notes</label>
+        <textarea id="notes" placeholder="Preferred delivery date, brand preference, budget, or questions..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="send" type="button" disabled>Send Bundle on WhatsApp</button>
+        <button class="btn btn-soft" id="clear" type="button" disabled>Clear Bundle</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h3>O.D.I. Electronics</h3>
+          <p>Big brands, low prices and flexible payment plans for Ghanaian homes and businesses.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <a href="products.html">All Products</a>
+          <a href="deals.html">Deals</a>
+          <a href="build-bundle.html">Build Bundle</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="financing-plans.html">Financing Plans</a>
+          <a href="delivery-info.html">Delivery Info</a>
+          <a href="warranty-policy.html">Warranty Policy</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:0550900600">0550 900 600</a>
+          <a href="https://wa.me/233550900600">WhatsApp Us</a>
+          <a href="mailto:sales@odielectronics.com">sales@odielectronics.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright 2026 O.D.I. Electronics. All rights reserved.</span>
+        <span>Bundle estimates are subject to stock and approval.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const state = { products: [], selected: [], category: 'All', query: '', sort: 'featured' };
+    const categories = ['All', 'Televisions', 'Refrigeration', 'Laundry', 'Kitchen', 'Cooling', 'Other'];
+
+    function price(value){ return Number(value || 0) * 1.02; }
+    function money(value){ return 'GHS ' + Number(value || 0).toFixed(2); }
+    function categoryFor(name){
+      const value = String(name).toUpperCase();
+      if(/TV|INCH/.test(value)) return 'Televisions';
+      if(/FRIDGE|FREEZER/.test(value)) return 'Refrigeration';
+      if(/WASHING/.test(value)) return 'Laundry';
+      if(/KETTLE|BLENDER|MICROWAVE|RICE COOKER|COOKER|BURNER/.test(value)) return 'Kitchen';
+      if(/AC\b/.test(value)) return 'Cooling';
+      return 'Other';
+    }
+    function imageFor(product){
+      const name = String(product.name).toLowerCase();
+      if(name.includes('samsung')) return 'images/samsung43inches.jpg';
+      if(name.includes('tcl') && name.includes('55')) return 'images/tcl55inches.jpg';
+      if(name.includes('televion') || name.includes('55')) return 'images/tcl55inches.jpg';
+      if(name.includes('tcl') && name.includes('43')) return 'images/tcl43inches.jpg';
+      if(name.includes('nasco') && name.includes('50')) return 'images/nasco50inches.jpg';
+      if(name.includes('50')) return 'images/nasco50inches.jpg';
+      if(name.includes('nasco') && name.includes('43')) return 'images/nasco43inches.jpg';
+      if(name.includes('nasco') && name.includes('32')) return 'images/nasco32inches.jpg';
+      if(name.includes('nas360')) return 'images/nas360freezer.jpg';
+      if(name.includes('2-11')) return 'images/nas2-11fridge.jpg';
+      if(name.includes('2-14')) return 'images/nas-2-14fridge.jpg';
+      if(name.includes('display fridge') && name.includes('nasco')) return 'images/nascodisplayfridge.jpg';
+      if(name.includes('zara 450')) return 'images/450deepfreezer.jpg';
+      if(name.includes('display fridge') && name.includes('zara')) return 'images/zaradisplayfridge.jpg';
+      if(/microwave|midea|media|medea/.test(name)){
+        if(name.includes('34')) return 'images/mediamicrowave34litrs.jpg';
+        if(name.includes('30')) return 'images/mediamicrowave30litrs.jpg';
+        if(name.includes('20')) return 'images/mediamicrowave20litrs.jpg';
+      }
+      if(/wash/.test(name)){
+        if(name.includes('7kg')) return 'images/7kgwashinemachine.jpg';
+        if(name.includes('5kg')) return 'images/5kgwashingmachine.jpg';
+      }
+      if(name.includes('4 burner') || name.includes('4-burner') || name.includes('4burner')) return 'images/nasco4burner.jpg';
+      return 'images/product-' + product.id + '.svg';
+    }
+    function enrich(product){
+      return { ...product, category: categoryFor(product.name), image: imageFor(product), displayPrice: price(product.price) };
+    }
+    function visibleProducts(){
+      let list = state.products.map(enrich);
+      if(state.category !== 'All') list = list.filter(product => product.category === state.category);
+      if(state.query){
+        const q = state.query.toLowerCase();
+        list = list.filter(product => product.name.toLowerCase().includes(q) || product.category.toLowerCase().includes(q));
+      }
+      if(state.sort === 'low') list.sort((a,b) => a.displayPrice - b.displayPrice);
+      if(state.sort === 'high') list.sort((a,b) => b.displayPrice - a.displayPrice);
+      if(state.sort === 'featured') list.sort((a,b) => (b.stock > 0) - (a.stock > 0) || a.id - b.id);
+      return list;
+    }
+    function renderTabs(){
+      document.getElementById('tabs').innerHTML = categories.map(cat => (
+        '<button class="tab' + (cat === state.category ? ' active' : '') + '" type="button" data-cat="' + cat + '">' + cat + '</button>'
+      )).join('');
+    }
+    function renderProducts(){
+      const list = visibleProducts();
+      const products = document.getElementById('products');
+      if(!list.length){
+        products.innerHTML = '<div class="empty">No products match your search.</div>';
+        return;
+      }
+      products.innerHTML = list.map(product => {
+        const inStock = Number(product.stock) > 0;
+        const added = state.selected.some(item => item.id === product.id);
+        return `
+          <article class="product">
+            <div class="product-media">
+              <span class="stock${inStock ? '' : ' out'}">${inStock ? 'In stock' : 'Out of stock'}</span>
+              <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'">
+            </div>
+            <div class="product-body">
+              <span class="cat">${product.category}</span>
+              <h3>${product.name}</h3>
+              <div class="price">${money(product.displayPrice)}</div>
+              <button class="add" type="button" data-add="${product.id}" ${!inStock || added ? 'disabled' : ''}>${added ? 'Added' : inStock ? 'Add to Bundle' : 'Unavailable'}</button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+    function renderSummary(){
+      const target = document.getElementById('selected');
+      if(!state.selected.length){
+        target.innerHTML = '<div class="selected-empty">Your bundle is empty. Add products to see the payment estimate.</div>';
+      } else {
+        target.innerHTML = state.selected.map(product => `
+          <div class="selected-item">
+            <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='images/placeholder.svg'">
+            <div><strong>${product.name}</strong><span>${money(product.displayPrice)}</span></div>
+            <button class="remove" type="button" data-remove="${product.id}" aria-label="Remove ${product.name}">x</button>
+          </div>
+        `).join('');
+      }
+      const total = state.selected.reduce((sum, product) => sum + product.displayPrice, 0);
+      const months = Number(document.getElementById('months').value || 6);
+      const deposit = total * 0.2;
+      const balance = total - deposit;
+      const monthly = months ? balance / months : 0;
+      document.getElementById('total').textContent = money(total);
+      document.getElementById('deposit').textContent = money(deposit);
+      document.getElementById('balance').textContent = money(balance);
+      document.getElementById('monthly').textContent = money(monthly);
+      document.getElementById('send').disabled = state.selected.length === 0;
+      document.getElementById('clear').disabled = state.selected.length === 0;
+    }
+    function addProduct(id){
+      const product = state.products.map(enrich).find(item => Number(item.id) === Number(id));
+      if(!product || Number(product.stock) <= 0 || state.selected.some(item => item.id === product.id)) return;
+      state.selected.push(product);
+      renderProducts();
+      renderSummary();
+    }
+    function removeProduct(id){
+      state.selected = state.selected.filter(product => Number(product.id) !== Number(id));
+      renderProducts();
+      renderSummary();
+    }
+    function sendWhatsApp(){
+      if(!state.selected.length) return;
+      const months = Number(document.getElementById('months').value || 6);
+      const location = document.getElementById('location').value.trim();
+      const notes = document.getElementById('notes').value.trim();
+      const total = state.selected.reduce((sum, product) => sum + product.displayPrice, 0);
+      const deposit = total * 0.2;
+      const monthly = (total - deposit) / months;
+      const items = state.selected.map((product, index) => `${index + 1}. ${product.name} - ${money(product.displayPrice)}`).join('\n');
+      const message = [
+        'Hello O.D.I. Electronics, I want to request this appliance bundle:',
+        '',
+        items,
+        '',
+        'Bundle total: ' + money(total),
+        'Estimated 20% deposit: ' + money(deposit),
+        'Estimated monthly payment over ' + months + ' months: ' + money(monthly),
+        location ? 'Location: ' + location : '',
+        notes ? 'Notes: ' + notes : '',
+        '',
+        'Please confirm stock, delivery and final payment terms.'
+      ].filter(Boolean).join('\n');
+      window.open('https://wa.me/233550900600?text=' + encodeURIComponent(message), '_blank', 'noopener');
+    }
+    async function init(){
+      const res = await fetch('data/products.json', { cache: 'no-store' });
+      state.products = await res.json();
+      renderTabs();
+      renderProducts();
+      renderSummary();
+    }
+    document.getElementById('tabs').addEventListener('click', event => {
+      const button = event.target.closest('[data-cat]');
+      if(!button) return;
+      state.category = button.dataset.cat;
+      renderTabs();
+      renderProducts();
+    });
+    document.getElementById('products').addEventListener('click', event => {
+      const button = event.target.closest('[data-add]');
+      if(button) addProduct(button.dataset.add);
+    });
+    document.getElementById('selected').addEventListener('click', event => {
+      const button = event.target.closest('[data-remove]');
+      if(button) removeProduct(button.dataset.remove);
+    });
+    document.getElementById('search-input').addEventListener('input', event => {
+      state.query = event.target.value.trim();
+      renderProducts();
+    });
+    document.getElementById('sort-select').addEventListener('change', event => {
+      state.sort = event.target.value;
+      renderProducts();
+    });
+    document.getElementById('months').addEventListener('change', renderSummary);
+    document.getElementById('send').addEventListener('click', sendWhatsApp);
+    document.getElementById('clear').addEventListener('click', () => {
+      state.selected = [];
+      renderProducts();
+      renderSummary();
+    });
+    init().catch(error => {
+      console.error(error);
+      document.getElementById('products').innerHTML = '<div class="empty">Could not load product data. Please refresh the page.</div>';
+    });
+  </script>
+</body>
+</html>

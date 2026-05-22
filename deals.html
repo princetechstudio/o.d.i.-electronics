@@ -3,32 +3,430 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Deals — O.D.I. Electronics</title>
+  <title>Deals | O.D.I. Electronics</title>
+  <meta name="description" content="Shop O.D.I. Electronics deals on TVs, fridges, washing machines, kitchen appliances, ACs and more in Ghana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--purple:#6a0dad;--dark:#111;--gray-600:#666}
-    body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;margin:0;color:var(--dark);}
-    header{padding:18px 24px;background:#fff;border-bottom:1px solid #eee}
-    .container{max-width:1100px;margin:28px auto;padding:0 20px}
-    .hero{display:flex;gap:24px;align-items:center}
-    .hero img{max-width:480px;width:100%;height:auto;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
-    .hero-content h1{margin:0 0 12px 0}
-    a{color:var(--purple);text-decoration:none}
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --purple:#6a0dad;
+      --purple-dark:#4d0880;
+      --purple-pale:#f3e8ff;
+      --blue:#0f75bc;
+      --gold:#f59e0b;
+      --green:#16a34a;
+      --red:#dc2626;
+      --ink:#171321;
+      --muted:#6c6577;
+      --line:#e8e2ef;
+      --soft:#faf8fc;
+      --white:#fff;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,Inter,system-ui,Arial,sans-serif;color:var(--ink);background:var(--soft)}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,select{font:inherit}
+    .topbar{background:var(--purple);color:#fff;font-size:12px;font-weight:600}
+    .topbar-inner{max-width:1280px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(21,12,32,.06)}
+    .header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand img{width:auto;height:52px;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,.08)}
+    .brand span{display:block;font-size:12px;font-weight:800;color:var(--muted)}
+    .search{flex:1;display:flex;min-width:180px;border:2px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+    .search input{width:100%;border:0;outline:0;padding:11px 14px;color:var(--ink)}
+    .search button{border:0;background:var(--purple);color:#fff;padding:0 16px;font-weight:800;cursor:pointer}
+    .header-actions{display:flex;align-items:center;gap:8px}
+    .icon-link{position:relative;border:0;background:transparent;color:var(--muted);font-size:11px;font-weight:700;padding:8px 10px;border-radius:10px;display:grid;place-items:center;gap:2px}
+    .icon-link:hover{background:var(--purple-pale);color:var(--purple)}
+    .icon-link svg{width:22px;height:22px}
+    .cart-badge{position:absolute;top:3px;right:4px;background:var(--purple);color:#fff;border-radius:50%;min-width:17px;height:17px;padding:0 4px;display:grid;place-items:center;font-size:10px}
+    .nav{background:#fff;border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:4px;overflow:auto}
+    .nav a{white-space:nowrap;padding:14px 13px;border-bottom:2px solid transparent;color:var(--ink);font-size:13px;font-weight:700}
+    .nav a:hover,.nav a.active{color:var(--purple);border-color:var(--purple)}
+    .page-hero{background:#fff;position:relative;overflow:hidden}
+    .hero-inner{max-width:1280px;margin:0 auto;padding:42px 24px 34px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:34px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(220,38,38,.22);background:#fff1f2;color:var(--red);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+    .hero-title{margin:14px 0 12px;font-size:clamp(36px,5vw,66px);line-height:1.02;font-weight:900;letter-spacing:0}
+    .hero-title span{color:var(--purple)}
+    .hero-copy{max-width:680px;color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 24px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px}
+    .btn-primary{background:var(--purple);color:#fff;box-shadow:0 10px 24px rgba(106,13,173,.24)}
+    .btn-primary:hover{background:var(--purple-dark)}
+    .btn-soft{background:var(--purple-pale);color:var(--purple);border:1px solid #dfc5ff}
+    .hero-panel{background:linear-gradient(145deg,#ffffff 0%,#f8f1ff 100%);border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:0 22px 60px rgba(45,27,70,.12)}
+    .hero-product{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .hero-product-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+    .hero-product-card img{width:100%;height:98px;object-fit:contain}
+    .hero-product-card strong{font-size:12px;line-height:1.3}
+    .save-chip{display:inline-flex;width:max-content;background:var(--red);color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:5px 8px;margin-bottom:8px}
+    .deal-stats{max-width:1280px;margin:0 auto;padding:0 24px 26px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px}
+    .stat strong{display:block;font-size:22px;color:var(--purple);line-height:1}
+    .stat span{display:block;margin-top:6px;color:var(--muted);font-size:12px;font-weight:700}
+    .main{max-width:1280px;margin:0 auto;padding:28px 24px 64px}
+    .toolbar{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:18px}
+    .section-title h2{font-size:28px;margin:0 0 4px;font-weight:900}
+    .section-title p{margin:0;color:var(--muted);font-size:14px}
+    .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 18px}
+    .filter{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:800;cursor:pointer}
+    .filter.active{background:var(--purple);border-color:var(--purple);color:#fff}
+    .select{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink);font-size:13px;font-weight:700;min-height:42px}
+    .deals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .deal-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;min-height:100%;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .deal-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(25,17,36,.10);border-color:#d6b5ff}
+    .deal-media{position:relative;background:#fbf9fe;aspect-ratio:1.05;display:grid;place-items:center;padding:18px}
+    .deal-media img{width:100%;height:100%;object-fit:contain}
+    .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:900}
+    .stock{position:absolute;right:12px;bottom:12px;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:900;background:#dcfce7;color:#166534}
+    .stock.out{background:#fee2e2;color:#991b1b}
+    .deal-body{padding:15px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .category{width:max-content;background:#f5f2f8;color:var(--muted);font-size:11px;font-weight:900;border-radius:999px;padding:5px 9px;text-transform:uppercase;letter-spacing:.5px}
+    .deal-name{margin:0;font-size:16px;line-height:1.28;font-weight:800;min-height:42px}
+    .price-line{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+    .price-now{font-size:21px;font-weight:900;color:var(--purple)}
+    .price-was{font-size:13px;color:#91889c;text-decoration:line-through}
+    .deal-copy{color:var(--muted);font-size:13px;line-height:1.6;margin:0;min-height:42px}
+    .deal-footer{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:auto}
+    .btn-cart{background:var(--purple);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:800;cursor:pointer}
+    .btn-cart:disabled{background:#b8a9c8;cursor:not-allowed}
+    .btn-view{border:1px solid var(--line);background:#fff;color:var(--purple);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:800}
+    .bundle-band{margin-top:34px;background:#171321;color:#fff;border-radius:8px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .bundle-band h2{margin:0 0 8px;font-size:26px}
+    .bundle-band p{margin:0;color:rgba(255,255,255,.74);line-height:1.7}
+    .empty{grid-column:1/-1;background:#fff;border:1px dashed #d8c8e7;border-radius:8px;padding:48px;text-align:center;color:var(--muted);font-weight:700}
+    .footer{background:#111;color:#fff;padding:42px 0 18px}
+    .footer-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .footer h3,.footer h4{margin:0 0 12px}
+    .footer p,.footer a{color:rgba(255,255,255,.68);font-size:13px;line-height:1.8}
+    .footer a{display:block;margin-bottom:7px}
+    .footer-bottom{padding-top:16px;color:rgba(255,255,255,.48);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.38);z-index:80}
+    .wa-float svg{width:31px;height:31px}
+    @media(max-width:1040px){
+      .hero-inner{grid-template-columns:1fr}.hero-panel{max-width:620px}.deals-grid{grid-template-columns:repeat(3,1fr)}.deal-stats{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr 1fr}.section-title{grid-column:1/-1}
+    }
+    @media(max-width:760px){
+      .topbar-inner{justify-content:center;text-align:center}.header-inner{flex-wrap:wrap}.search{order:3;flex-basis:100%}.nav-inner{padding:0 14px}.hero-inner{padding:30px 18px}.main{padding:24px 18px 48px}.deals-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.bundle-band{grid-template-columns:1fr}.hero-product{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){
+      .deals-grid,.deal-stats,.footer-grid{grid-template-columns:1fr}.hero-product{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.deal-name{min-height:auto}.hero-actions .btn{width:100%}
+    }
   </style>
   <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-  <header>
-    <a href="index.html">← Home</a>
-  </header>
-  <main class="container">
-    <section class="hero">
-      <div class="hero-content">
-        <div style="font-size:12px;color:var(--purple);font-weight:700">Deals</div>
-        <h1>Today's Deals</h1>
-        <p style="color:var(--gray-600);max-width:540px">Browse our current promotions, bundles and clearance items.</p>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Limited deals on available stock</span>
+      <span>Call 0550 900 600 or chat on WhatsApp for today pricing</span>
+      <span>Flexible payment plans available</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="O.D.I. Electronics home">
+        <img src="images/logo.jpeg" alt="O.D.I. Electronics logo">
+        <span>O.D.I. Electronics</span>
+      </a>
+      <form class="search" id="search-form">
+        <input id="search-input" type="search" placeholder="Search TVs, fridges, washing machines...">
+        <button type="submit">Search</button>
+      </form>
+      <div class="header-actions">
+        <a class="icon-link" href="account.html" aria-label="My account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Account
+        </a>
+        <a class="icon-link" href="cart.html" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+          Cart
+        </a>
       </div>
-      <img src="images/deals-hero.jpg" alt="Deals hero image">
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="appliances.html">Appliances</a>
+      <a href="tvs-audio.html">TVs & Audio</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="laundry.html">Laundry</a>
+      <a class="active" href="deals.html">Deals</a>
+      <a href="financing-plans.html">Financing Plans</a>
+      <a href="delivery-info.html">Delivery Info</a>
+      <a href="warranty-policy.html">Warranty Policy</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">O.D.I. Deals</div>
+        <h1 class="hero-title">Big savings on <span>home essentials.</span></h1>
+        <p class="hero-copy">Shop today's selected offers across televisions, refrigeration, laundry, kitchen appliances and cooling. Prices include the store display markup used across the site, with extra deal savings applied here.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#deal-grid">Shop Deals</a>
+          <a class="btn btn-soft" href="https://wa.me/233550900600" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Featured deal products">
+        <div class="hero-product">
+          <div class="hero-product-card">
+            <span class="save-chip">Save up to 18%</span>
+            <img src="images/tcl55inches.jpg" alt="TV deal">
+            <strong>TV deals for movie nights and football days</strong>
+          </div>
+          <div class="hero-product-card">
+            <span class="save-chip">Bundle offer</span>
+            <img src="images/nas360freezer.jpg" alt="Freezer deal">
+            <strong>Fridges and freezers for homes and shops</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deal-stats">
+      <div class="stat"><strong id="stat-count">0</strong><span>deals loaded from catalog</span></div>
+      <div class="stat"><strong>20%</strong><span>deposit options available</span></div>
+      <div class="stat"><strong>Accra</strong><span>delivery available</span></div>
+      <div class="stat"><strong>Warranty</strong><span>included on qualifying items</span></div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="toolbar">
+      <div class="section-title">
+        <h2>Today's Deal Picks</h2>
+        <p id="deal-summary">Loading current offers...</p>
+      </div>
+      <select class="select" id="sort-select" aria-label="Sort deals">
+        <option value="featured">Featured first</option>
+        <option value="discount">Biggest savings</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+      </select>
+      <select class="select" id="stock-select" aria-label="Filter availability">
+        <option value="all">All stock</option>
+        <option value="in">In stock only</option>
+        <option value="out">Out of stock</option>
+      </select>
+    </div>
+
+    <div class="filter-row" id="filters" aria-label="Deal categories"></div>
+    <section class="deals-grid" id="deal-grid" aria-live="polite"></section>
+
+    <section class="bundle-band">
+      <div>
+        <h2>Need a home bundle?</h2>
+        <p>Ask O.D.I. to combine a TV, fridge, washing machine or kitchen appliance into one payment plan. We will confirm stock, delivery and the exact installment option before checkout.</p>
+      </div>
+      <a class="btn btn-primary" href="build-bundle.html">Build My Bundle</a>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h3>O.D.I. Electronics</h3>
+          <p>Ghana's trusted home appliances and electronics retailer. Big brands, low prices and flexible payment plans.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <a href="products.html">All Products</a>
+          <a href="deals.html">Deals</a>
+          <a href="brands.html">Brands</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="delivery-info.html">Delivery Info</a>
+          <a href="warranty-policy.html">Warranty Policy</a>
+          <a href="track-order.html">Track Order</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:0550900600">0550 900 600</a>
+          <a href="https://wa.me/233550900600">WhatsApp Us</a>
+          <a href="mailto:sales@odielectronics.com">sales@odielectronics.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright 2026 O.D.I. Electronics. All rights reserved.</span>
+        <span>Prices and stock are confirmed before purchase.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/233550900600" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.12 1.523 5.853L.057 23.5l5.787-1.493A11.934 11.934 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.031-1.384l-.36-.215-3.735.979 1.004-3.634-.236-.373A9.819 9.819 0 0 1 2.182 12C2.182 6.569 6.569 2.182 12 2.182c5.431 0 9.818 4.387 9.818 9.818 0 5.431-4.387 9.818-9.818 9.818z"/></svg>
+  </a>
+
+  <script src="js/cart.js"></script>
+  <script>
+    const state = { products: [], category: 'All', sort: 'featured', stock: 'all', query: '' };
+    const dealRules = [
+      { test: p => /TV|INCH/i.test(p.name), category: 'Televisions', discount: 18 },
+      { test: p => /FRIDGE|FREEZER/i.test(p.name), category: 'Refrigeration', discount: 14 },
+      { test: p => /WASHING/i.test(p.name), category: 'Laundry', discount: 12 },
+      { test: p => /KETTLE|BLENDER|MICROWAVE|RICE COOKER|COOKER|BURNER/i.test(p.name), category: 'Kitchen', discount: 10 },
+      { test: p => /AC\b/i.test(p.name), category: 'Cooling', discount: 9 }
+    ];
+
+    function basePrice(price){ return Number(price || 0) * 1.02; }
+    function money(value){ return 'GHS ' + Number(value || 0).toFixed(2); }
+    function getDeal(product){
+      const rule = dealRules.find(rule => rule.test(product)) || { category: 'Other', discount: 7 };
+      const was = basePrice(product.price);
+      const now = was * (1 - rule.discount / 100);
+      return { ...product, category: rule.category, discount: rule.discount, was, now };
+    }
+    function imageFor(product){
+      const name = String(product.name).toLowerCase();
+      if(name.includes('samsung')) return 'images/samsung43inches.jpg';
+      if(name.includes('tcl') && name.includes('55')) return 'images/tcl55inches.jpg';
+      if(name.includes('televion') || name.includes('55')) return 'images/tcl55inches.jpg';
+      if(name.includes('tcl') && name.includes('43')) return 'images/tcl43inches.jpg';
+      if(name.includes('nasco') && name.includes('50')) return 'images/nasco50inches.jpg';
+      if(name.includes('50')) return 'images/nasco50inches.jpg';
+      if(name.includes('nasco') && name.includes('43')) return 'images/nasco43inches.jpg';
+      if(name.includes('nasco') && name.includes('32')) return 'images/nasco32inches.jpg';
+      if(name.includes('nas360')) return 'images/nas360freezer.jpg';
+      if(name.includes('2-11')) return 'images/nas2-11fridge.jpg';
+      if(name.includes('2-14')) return 'images/nas-2-14fridge.jpg';
+      if(name.includes('display fridge') && name.includes('nasco')) return 'images/nascodisplayfridge.jpg';
+      if(name.includes('zara 450')) return 'images/450deepfreezer.jpg';
+      if(name.includes('display fridge') && name.includes('zara')) return 'images/zaradisplayfridge.jpg';
+      if(/microwave|midea|media|medea/.test(name)){
+        if(name.includes('34')) return 'images/mediamicrowave34litrs.jpg';
+        if(name.includes('30')) return 'images/mediamicrowave30litrs.jpg';
+        if(name.includes('20')) return 'images/mediamicrowave20litrs.jpg';
+      }
+      if(/wash/.test(name)){
+        if(name.includes('7kg')) return 'images/7kgwashinemachine.jpg';
+        if(name.includes('5kg')) return 'images/5kgwashingmachine.jpg';
+      }
+      if(name.includes('4 burner') || name.includes('4-burner') || name.includes('4burner')) return 'images/nasco4burner.jpg';
+      return 'images/product-' + product.id + '.svg';
+    }
+    function copyFor(product){
+      if(product.category === 'Televisions') return 'A strong pick for streaming, sports and family entertainment.';
+      if(product.category === 'Refrigeration') return 'Keep food, drinks and shop stock fresh with dependable cooling.';
+      if(product.category === 'Laundry') return 'Make weekly washing easier with practical capacity and simple controls.';
+      if(product.category === 'Kitchen') return 'Fast, useful kitchen help for cooking, prep and everyday meals.';
+      if(product.category === 'Cooling') return 'Comfortable cooling for bedrooms, offices and living spaces.';
+      return 'A practical appliance deal selected from the current O.D.I. catalog.';
+    }
+    function filteredDeals(){
+      let list = state.products.map(getDeal);
+      if(state.category !== 'All') list = list.filter(product => product.category === state.category);
+      if(state.stock === 'in') list = list.filter(product => Number(product.stock) > 0);
+      if(state.stock === 'out') list = list.filter(product => Number(product.stock) <= 0);
+      if(state.query){
+        const q = state.query.toLowerCase();
+        list = list.filter(product => product.name.toLowerCase().includes(q) || product.category.toLowerCase().includes(q));
+      }
+      if(state.sort === 'discount') list.sort((a,b) => b.discount - a.discount || a.now - b.now);
+      if(state.sort === 'low') list.sort((a,b) => a.now - b.now);
+      if(state.sort === 'high') list.sort((a,b) => b.now - a.now);
+      if(state.sort === 'featured') list.sort((a,b) => (b.stock > 0) - (a.stock > 0) || b.discount - a.discount);
+      return list;
+    }
+    function renderFilters(){
+      const cats = ['All', ...Array.from(new Set(state.products.map(getDeal).map(p => p.category))).sort()];
+      document.getElementById('filters').innerHTML = cats.map(cat => (
+        '<button class="filter' + (cat === state.category ? ' active' : '') + '" type="button" data-category="' + cat + '">' + cat + '</button>'
+      )).join('');
+    }
+    function renderDeals(){
+      const list = filteredDeals();
+      const grid = document.getElementById('deal-grid');
+      document.getElementById('stat-count').textContent = String(state.products.length);
+      document.getElementById('deal-summary').textContent = list.length + ' deal' + (list.length === 1 ? '' : 's') + ' shown' + (state.query ? ' for "' + state.query + '"' : '') + '.';
+      if(!list.length){
+        grid.innerHTML = '<div class="empty">No deals match your current filters.</div>';
+        return;
+      }
+      grid.innerHTML = list.map(product => {
+        const inStock = Number(product.stock) > 0;
+        return `
+          <article class="deal-card">
+            <div class="deal-media">
+              <span class="badge">Save ${product.discount}%</span>
+              <img src="${imageFor(product)}" alt="${product.name}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg'">
+              <span class="stock${inStock ? '' : ' out'}">${inStock ? 'In stock' : 'Out of stock'}</span>
+            </div>
+            <div class="deal-body">
+              <span class="category">${product.category}</span>
+              <h3 class="deal-name">${product.name}</h3>
+              <div class="price-line">
+                <span class="price-now">${money(product.now)}</span>
+                <span class="price-was">${money(product.was)}</span>
+              </div>
+              <p class="deal-copy">${copyFor(product)}</p>
+              <div class="deal-footer">
+                <button class="btn-cart" type="button" data-add="${product.id}" ${inStock ? '' : 'disabled'}>${inStock ? 'Add to Cart' : 'Ask Availability'}</button>
+                <a class="btn-view" href="product.html?id=${product.id}">Details</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+    function addDealToCart(id, button){
+      const product = state.products.map(getDeal).find(item => Number(item.id) === Number(id));
+      if(!product || !window.odiCart) return;
+      window.odiCart.addToCart({ id: product.id, name: product.name, price: product.now, image: imageFor(product) }, 1);
+      window.odiCart.updateCartBadge();
+      const original = button.textContent;
+      button.textContent = 'Added';
+      button.style.background = '#16a34a';
+      setTimeout(() => { button.textContent = original; button.style.background = ''; }, 1200);
+    }
+    async function init(){
+      const res = await fetch('data/products.json', { cache: 'no-store' });
+      state.products = await res.json();
+      renderFilters();
+      renderDeals();
+    }
+    document.getElementById('filters').addEventListener('click', event => {
+      const button = event.target.closest('[data-category]');
+      if(!button) return;
+      state.category = button.dataset.category;
+      renderFilters();
+      renderDeals();
+    });
+    document.getElementById('sort-select').addEventListener('change', event => {
+      state.sort = event.target.value;
+      renderDeals();
+    });
+    document.getElementById('stock-select').addEventListener('change', event => {
+      state.stock = event.target.value;
+      renderDeals();
+    });
+    document.getElementById('deal-grid').addEventListener('click', event => {
+      const button = event.target.closest('[data-add]');
+      if(button) addDealToCart(button.dataset.add, button);
+    });
+    document.getElementById('search-form').addEventListener('submit', event => {
+      event.preventDefault();
+      state.query = document.getElementById('search-input').value.trim();
+      renderDeals();
+    });
+    init().catch(error => {
+      console.error(error);
+      document.getElementById('deal-grid').innerHTML = '<div class="empty">Failed to load deal products. Please refresh the page.</div>';
+      document.getElementById('deal-summary').textContent = 'Deals could not be loaded.';
+    });
+  </script>
 </body>
 </html>
