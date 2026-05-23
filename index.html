@@ -1127,15 +1127,28 @@ ul{list-style:none}
 </a>
 
 <script>
-// Nav active state
+// Nav active state (tap-to-open dropdowns on mobile too)
 document.querySelectorAll('.nav-item').forEach(item=>{
-  item.addEventListener('click',function(){
-    if(!this.querySelector('.dropdown')){
+  item.addEventListener('click',function(e){
+    // If this nav item contains a dropdown, toggle it on tap
+    const hasDropdown = !!this.querySelector('.dropdown');
+
+    // Don't swallow clicks on direct links
+    if(this.tagName && this.tagName.toLowerCase()==='a') return;
+
+    if(hasDropdown){
+      e.preventDefault();
+      const isActive = this.classList.contains('active');
       document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
-      this.classList.add('active');
+      if(!isActive) this.classList.add('active');
+      return;
     }
+
+    document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+    this.classList.add('active');
   });
 });
+
 
 // Smooth hover effects for product cards
 document.querySelectorAll('.product-card').forEach(card=>{

@@ -323,11 +323,19 @@
       clearError();
       try {
         const provider = new GoogleAuthProvider();
+        // Helps Firebase produce clearer OAuth errors in some environments
+        provider.setCustomParameters({ prompt: 'select_account' });
         const result = await signInWithPopup(auth, provider);
         console.debug('Social sign-in success', { provider: provider.providerId, uid: result.user.uid, email: result.user.email });
         // Keep the user on the account page and display their dashboard.
       } catch (error) {
-        showError('Google sign-in failed: ' + (error.message || 'Try again.'));
+        // Surface unauthorized-domain cause more clearly to the user
+        const msg = error?.message || 'Try again.';
+        if(String(msg).includes('auth/unauthorized-domain')){
+          showError('Google sign-in failed (unauthorized-domain). Enable this domain in Firebase Auth → Authorized domains.');
+        } else {
+          showError('Google sign-in failed: ' + msg);
+        }
       }
     });
 
