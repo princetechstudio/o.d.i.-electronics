@@ -37,6 +37,22 @@ a{word-break:break-word}
   .feature-card{padding:14px}
   .hero-copy{font-size:15px}
   .steps{gap:12px}
+
+  /* Cart / summary pages (e.g., cart.html) */
+  .cart-grid{grid-template-columns:1fr!important}
+  .cart-item{grid-template-columns:90px 1fr auto!important}
+  .cart-img{width:90px!important;height:90px!important}
+  .summary-card{margin-top:16px!important}
+
+  /* Make tap targets comfortable */
+  button{touch-action:manipulation}
+}
+
+
+/* Enable tap-to-open dropdowns on mobile (phones don’t have hover) */
+@media (max-width:768px){
+  .nav-item.active > .dropdown{display:block!important}
+  .nav-item.active > .dropdown.mega{display:grid!important}
 }
 
 /* Small layout centering for narrow screens */
@@ -44,3 +60,4 @@ a{word-break:break-word}
   .hero-title{font-size:22px}
   .header-title strong{font-size:16px}
 }
+

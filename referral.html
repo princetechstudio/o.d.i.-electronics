@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Referral Program | O.D.I. Electronics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{--purple:#6A0DAD;--purple-dark:#4d0880;--dark:#1A1A1A;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-500:#adb5bd;--gray-600:#6c757d;--white:#fff;--green:#16a34a;--red:#dc2626}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+
+    .header{background:#fff;border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+    .header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .site-logo{height:46px;width:auto;border-radius:10px;object-fit:cover}
+    .logo-sub{font-size:12px;font-weight:800;color:var(--gray-600);letter-spacing:1px;text-transform:none}
+
+    .container{max-width:980px;margin:0 auto;padding:36px 24px 80px}
+
+    .hero{background:linear-gradient(135deg,#f8f0ff 0%,#fdf5ff 50%,#f0e8ff 100%);border:1px solid rgba(106,13,173,.12);border-radius:26px;box-shadow:0 20px 60px rgba(106,13,173,.12);padding:26px}
+    .crumbs{color:var(--gray-600);font-size:13px;margin-bottom:10px}
+    .crumbs a{color:var(--purple);font-weight:800}
+
+    .hero h1{font-size:44px;line-height:1.05;font-weight:900;margin:6px 0 10px}
+    .hero p{font-size:15px;color:var(--gray-600);line-height:1.7;max-width:720px}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    .card{background:#fff;border:1px solid var(--gray-200);border-radius:20px;padding:18px;box-shadow:0 10px 30px rgba(17,24,39,.04)}
+    .card h2{font-size:16px;font-weight:900;margin-bottom:8px}
+    .card p{font-size:13px;color:var(--gray-600);line-height:1.6}
+
+    .input-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .code{flex:1;min-width:260px;display:flex;align-items:center;gap:10px}
+    .code input{width:100%;padding:14px 14px;border-radius:16px;border:2px solid var(--gray-200);outline:none;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px}
+    .code input:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(106,13,173,.10)}
+
+    .btn{background:var(--purple);color:#fff;border:none;padding:14px 18px;border-radius:16px;font-size:14px;font-weight:900;cursor:pointer;transition:transform .2s,background .2s;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px);background:var(--purple-dark)}
+    .btn.secondary{background:#fff;color:var(--purple);border:2px solid var(--purple)}
+
+    .msg{display:none;margin-top:12px;padding:12px 14px;border-radius:16px;font-size:13px;font-weight:800;line-height:1.5}
+    .msg.ok{display:block;background:rgba(22,163,74,.10);border:1px solid rgba(22,163,74,.25);color:var(--green)}
+    .msg.err{display:block;background:rgba(220,38,38,.10);border:1px solid rgba(220,38,38,.25);color:var(--red)}
+
+    .share-note{margin-top:14px;font-size:12px;color:var(--gray-600);line-height:1.6}
+    .list{margin-top:12px;display:grid;gap:10px}
+    .li{display:flex;gap:12px;align-items:flex-start}
+    .bullet{width:28px;height:28px;border-radius:12px;background:rgba(106,13,173,.10);color:var(--purple);display:grid;place-items:center;font-weight:900}
+    .li strong{display:block;font-size:13px;margin-bottom:2px}
+    .li span{font-size:13px;color:var(--gray-600);line-height:1.6}
+
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    @media(max-width:480px){h1{font-size:32px}.hero{padding:18px}.container{padding:26px 16px 60px}}
+
+    footer{background:#111;color:#fff;padding:52px 0 0;margin-top:40px}
+    .footer-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer-brand-logo{font-size:24px;font-weight:900;margin-bottom:12px}
+    .footer-brand-logo span{color:#8E44AD}
+    .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px}
+    .footer-col h4{font-size:13px;font-weight:800;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px;opacity:.95}
+    .footer-link{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px;transition:color .2s}
+    .footer-link:hover{color:#8E44AD}
+    .footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px}
+
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <img src="images/logo.jpeg" alt="O.D.I. Electronics" class="site-logo"/>
+        <div>
+          <div class="logo-sub">O.D.I. Electronics</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="crumbs"><a href="index.html">Home</a> &raquo; Referral Program</div>
+      <h1>Invite friends &amp; get rewarded</h1>
+      <p>Share your personal referral link. When your friend uses it to shop, you can earn rewards (set up your referral rules in your backend later).</p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Your referral link</h2>
+          <p>Everyone gets a unique link. If you don’t have one yet, we’ll create a local demo code.</p>
+
+          <div class="input-row">
+            <div class="code">
+              <input id="referral-url" type="text" readonly aria-label="Referral link"/>
+            </div>
+            <button class="btn" id="copy-btn" type="button">Copy</button>
+          </div>
+
+          <div class="share-note">Tip: You can paste the link into WhatsApp, Facebook, or SMS.</div>
+          <div class="msg" id="msg"></div>
+        </div>
+
+        <div class="card">
+          <h2>How it works</h2>
+          <div class="list">
+            <div class="li"><div class="bullet">1</div><div><strong>Share</strong><span>Send your referral link to friends.</span></div></div>
+            <div class="li"><div class="bullet">2</div><div><strong>They shop</strong><span>Your friend uses the link and places an order.</span></div></div>
+            <div class="li"><div class="bullet">3</div><div><strong>You benefit</strong><span>Rewards are applied based on your campaign rules.</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <button class="btn secondary" type="button" id="whatsapp-btn">Share on WhatsApp</button>
+        <a class="btn secondary" href="account.html">Go to My Account</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-logo">O.D.I. <span>Electronics</span></div>
+          <div class="footer-tagline">Ghana's trusted home appliances and electronics retailer. Big brands, low prices, and flexible payment plans.</div>
+        </div>
+        <div>
+          <h4 class="footer-col">About</h4>
+          <a class="footer-link" href="our-story.html">Our Story</a>
+          <a class="footer-link" href="careers.html">Careers</a>
+        </div>
+        <div>
+          <h4 class="footer-col">Help</h4>
+          <a class="footer-link" href="faqs.html">FAQs</a>
+          <a class="footer-link" href="track-order.html">Track My Order</a>
+        </div>
+        <div>
+          <h4 class="footer-col">Policies</h4>
+          <a class="footer-link" href="warranty-policy.html">Warranty Policy</a>
+          <a class="footer-link" href="returns-policy.html">Returns Policy</a>
+        </div>
+        <div>
+          <h4 class="footer-col">Contact</h4>
+          <a class="footer-link" href="tel:0550900600">0550 900 600</a>
+          <a class="footer-link" href="https://wa.me/233550900600">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 O.D.I. Electronics</span>
+        <span>Proudly serving Ghana 🇬🇭</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const STORAGE_KEY = 'odi_referral_code_v1';
+      const BASE_URL = location.origin + location.pathname.replace(/referral\.html$/,'');
+      // Use your Vercel live host as the referral base
+      const REFERRAL_BASE = 'https://o-d-i-electronics.vercel.app';
+      const FALLBACK_SLUG = 'index.html';
+
+
+      function getOrCreateCode(){
+        try{
+          const existing = localStorage.getItem(STORAGE_KEY);
+          if(existing) return existing;
+          const code = 'ODIREF-' + Math.random().toString(36).slice(2,8).toUpperCase();
+          localStorage.setItem(STORAGE_KEY, code);
+          return code;
+        }catch(e){
+          return 'ODIREF-DEMO';
+        }
+      }
+
+      function buildReferralUrl(code){
+        // Attach as query param so it can be read by your checkout/order logic later.
+        const root = (REFERRAL_BASE && REFERRAL_BASE.endsWith('/')) ? REFERRAL_BASE : (REFERRAL_BASE + '/');
+        return root + FALLBACK_SLUG + '?ref=' + encodeURIComponent(code);
+      }
+
+
+      const code = getOrCreateCode();
+      const referralUrl = buildReferralUrl(code);
+
+      // Demo: initialize referral stats storage for the current browser
+      // (In production, stats should be stored per authenticated customer in your backend.)
+      try{
+        const initEKey = 'odi_referral_earnings_v1';
+        const initSKey = 'odi_referral_stats_v1';
+        const existingE = localStorage.getItem(initEKey);
+        const existingS = localStorage.getItem(initSKey);
+        if(!existingE) localStorage.setItem(initEKey, JSON.stringify({ total: 0 }));
+        if(!existingS) localStorage.setItem(initSKey, JSON.stringify({ count: 0 }));
+      }catch(e){}
+
+
+      const input = document.getElementById('referral-url');
+      const copyBtn = document.getElementById('copy-btn');
+      const msg = document.getElementById('msg');
+      const waBtn = document.getElementById('whatsapp-btn');
+
+      if(input) input.value = referralUrl;
+
+      function setMsg(text, ok){
+        if(!msg) return;
+        msg.className = 'msg ' + (ok ? 'ok' : 'err');
+        msg.textContent = text;
+        msg.style.display = 'block';
+      }
+
+      async function copy(){
+        try{
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            await navigator.clipboard.writeText(referralUrl);
+          } else {
+            const tmp = document.createElement('textarea');
+            tmp.value = referralUrl;
+            document.body.appendChild(tmp);
+            tmp.select();
+            document.execCommand('copy');
+            tmp.remove();
+          }
+          setMsg('Copied referral link!', true);
+        }catch(e){
+          setMsg('Could not copy automatically. Please copy the link manually.', false);
+        }
+      }
+
+      if(copyBtn) copyBtn.addEventListener('click', copy);
+
+      if(waBtn){
+        waBtn.addEventListener('click', function(){
+          const text = 'Join me on O.D.I. Electronics using my referral link: ' + referralUrl;
+          window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

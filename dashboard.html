@@ -83,15 +83,24 @@
           <h3>Member perks</h3>
           <p>Unlock exclusive deals, early access promotions, and personalized recommendations.</p>
         </div>
+        <div class="card">
+          <h3>Referral earnings</h3>
+          <p><b id="referral-count">0</b> referred customers • You’ve earned <b id="referral-earnings">GHS 0.00</b></p>
+          <p style="margin-top:8px">Request a withdrawal when you’re ready.</p>
+          <button class="secondary-action" id="referral-withdraw-btn" style="margin-top:14px">Request withdrawal</button>
+          <div id="referral-withdraw-msg" style="margin-top:10px;color:var(--gray-500);font-size:13px"></div>
+        </div>
       </div>
+
 
       <div class="alert" id="dashboard-notice" style="display:none"></div>
     </section>
   </div>
 
-  <script type="module">
+<script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
     import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
+    import { getDatabase, ref, get, set } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js';
 
     const firebaseConfig = {
       apiKey: "AIzaSyCCxRdcHxFIrvtQgPkvj_bisiHDdejsnIQ",
@@ -112,6 +121,92 @@
     const dashboardNotice = document.getElementById('dashboard-notice');
     const signOutBtn = document.getElementById('dashboard-signout-btn');
 
+    const referralCountEl = document.getElementById('referral-count');
+    const referralEarningsEl = document.getElementById('referral-earnings');
+    const referralWithdrawBtn = document.getElementById('referral-withdraw-btn');
+    const referralWithdrawMsg = document.getElementById('referral-withdraw-msg');
+
+    // Referral stats/withdrawal via Firebase UID (Realtime Database)
+    // Expected path (per user request): use "accounts/{uid}/referrals"
+
+
+    function fmtGhs(n){
+      const v = Number(n || 0);
+      return v.toFixed(2);
+    }
+
+    function setWithdrawMsg(text){
+      if(referralWithdrawMsg) referralWithdrawMsg.textContent = text || '';
+    }
+
+    async function fetchReferralData(uid){
+      // Realtime Database fetch
+      try{
+        const snap = await get(ref(db, `accounts/${uid}/referrals`));
+        const val = snap.exists() ? snap.val() : {};
+        return {
+          referredCount: Number(val.referredCount || 0),
+          earningsTotal: Number(val.earningsTotal || 0),
+          withdrawals: Array.isArray(val.withdrawals) ? val.withdrawals : (val.withdrawals ? Object.values(val.withdrawals) : [])
+        };
+      }catch(e){
+        console.error('fetchReferralData error', e);
+        return { referredCount: 0, earningsTotal: 0, withdrawals: [] };
+      }
+    }
+
+    async function renderReferralStats(){
+      // Use current user uid
+      const uid = auth.currentUser?.uid;
+      if(!uid){
+        if(referralCountEl) referralCountEl.textContent = '0';
+        if(referralEarningsEl) referralEarningsEl.textContent = 'GHS 0.00';
+        return;
+      }
+      const data = await fetchReferralData(uid);
+      if(referralCountEl) referralCountEl.textContent = String(data.referredCount || 0);
+      if(referralEarningsEl) referralEarningsEl.textContent = 'GHS ' + fmtGhs(data.earningsTotal || 0);
+    }
+
+    async function requestWithdrawal(){
+      const uid = auth.currentUser?.uid;
+      if(!uid){
+        setWithdrawMsg('Please sign in first.');
+        return;
+      }
+      setWithdrawMsg('Submitting withdrawal request...');
+
+      const data = await fetchReferralData(uid);
+      const total = Number(data.earningsTotal || 0);
+      if(total <= 0){
+        setWithdrawMsg('No earnings available for withdrawal yet.');
+        return;
+      }
+
+      // Demo: create a withdrawal request entry under accounts/{uid}/referrals/withdrawals
+      // Use Firebase push to avoid overwriting; in this static repo we keep it simple with unique key.
+      try{
+        const raw = await get(ref(db, `accounts/${uid}/referrals/withdrawals`));
+        const current = raw.exists() ? raw.val() : {};
+        const key = 'w_' + Date.now();
+        const next = {
+          ...(current && typeof current === 'object' && !Array.isArray(current) ? current : {}),
+          [key]: {
+            amount: total,
+            requestedAt: new Date().toISOString(),
+            status: 'requested'
+          }
+        };
+
+        await set(ref(db, `accounts/${uid}/referrals/withdrawals`), next);
+        setWithdrawMsg('Withdrawal request submitted. We will contact you shortly.');
+      }catch(e){
+        console.error(e);
+        setWithdrawMsg('Unable to submit withdrawal request right now. Please try again.');
+      }
+    }
+
+
     function requireSignedIn(user) {
       if (!user) {
         window.location.href = 'account.html';
@@ -126,9 +221,17 @@
       userEmail.textContent = user.email || 'No email available';
       dashboardNotice.style.display = 'block';
       dashboardNotice.textContent = 'Welcome back! If you need order status or account support, return to your account page or sign out from here.';
+
+      // Show referral stats for this account (demo uses localStorage)
+      renderReferralStats();
     });
 
+    if(referralWithdrawBtn){
+      referralWithdrawBtn.addEventListener('click', requestWithdrawal);
+    }
+
     signOutBtn.addEventListener('click', async () => {
+
       try {
         await signOut(auth);
         window.location.href = 'account.html';
